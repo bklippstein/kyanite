@@ -81,16 +81,27 @@ Dir['tasks/**/*.rake'].each { |t| load t }
   
   # git_commit
   #
-  desc 'git_add -A'
+  desc 'git commit -m'
   task :git_commit do
     sh "#{'sudo ' unless Hoe::WINDOZE }git commit " + ' -m "rake commit"'
   end  
 
 
+  # git push origin master
+  #
+  desc 'git_push'
+  task :git_push do
+    sh "#{'sudo ' unless Hoe::WINDOZE }git push origin master"
+  end  
 
 
-
-
+  
+  # git_deploy
+  #
+  desc ':git_add, :git_commit, :git_push'
+  task :git_deploy => [ :git_add, :git_commit, :git_push ] do
+    puts 'done.'
+  end  
 
 
 

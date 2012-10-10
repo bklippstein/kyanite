@@ -30,7 +30,7 @@ http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 
 
 == Homepage
-http://kyanite.rubyforge.org
+http://kyanite.rubyforge.org (*)
 
 
 == Author
