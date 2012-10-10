@@ -69,13 +69,22 @@ Dir['tasks/**/*.rake'].each { |t| load t }
   end        
     
   
-  # Task
+  
+  # git_add
   #
   desc 'git_add -A'
   task :git_add do
     sh "#{'sudo ' unless Hoe::WINDOZE }git add -A"
   end    
-
+    
+  
+  
+  # git_commit
+  #
+  desc 'git_add -A'
+  task :git_commit do
+    sh "#{'sudo ' unless Hoe::WINDOZE }git commit " + ' -m "rake commit"'
+  end  
 
 
 
