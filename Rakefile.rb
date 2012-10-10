@@ -96,7 +96,7 @@ end
   # Task :publish
   #
   desc 'uninstall gem, release, reinstall gem'
-  task :publish => [ :rubygems_release, :gem_uninstall, :git_publish, :sleep_15, :gem_install] do
+  task :publish => [ :docs, :rubygems_release, :gem_uninstall, :git_publish, :sleep_15, :gem_install] do
     puts 'done.'
   end  
 
@@ -145,7 +145,7 @@ end
   #
   desc 'git commit -m'
   task :git_commit do
-    sh "#{'sudo ' unless Hoe::WINDOZE }git commit " + ' -m "rake commit"'
+    sh "#{'sudo ' unless Hoe::WINDOZE }git commit " + ' -m "---"'
   end  
 
 

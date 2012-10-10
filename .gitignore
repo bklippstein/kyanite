@@ -5,7 +5,7 @@ spielwiese.rb
 
 
 # === Directories ===
-pkg/**/* 
+pkg/
 
 
 # === Windows Helper ===
