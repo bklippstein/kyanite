@@ -1,0 +1,32 @@
+== 0.5.5 2012-10-09
+* fixed missing file in Manifest.txt
+
+== 0.5.4 2012-10-09
+* fixed bug in smart_load_path
+
+== 0.5.3 2012-10-09
+* fixed bug in smart_load_path
+
+== 0.5.2 2012-10-09
+* fixed small bug in reduce94
+* mgsub added
+
+== 0.5.1 2012-10-08
+* improved documentation
+
+== 0.5.0 2012-10-07
+* now works with Ruby 1.9.x
+
+== 0.4.0 2008-12-10
+* improved documentation
+* fixed bug on Linux systems
+
+== 0.3.7 2008-12-10
+* first public release
+
+== 0.0.1 2008-08-01
+* Initial release
+ 
+  
+
+

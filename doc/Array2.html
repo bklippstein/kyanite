@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+
+<title>class Array2 - Kyanite</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/kyanite/array/array2.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Array.html">Array</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-clean4view">#clean4view</a>
+    
+    <li><a href="#method-i-clean4view-21">#clean4view!</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-row">#row</a>
+    
+    <li><a href="#method-i-row_size">#row_size</a>
+    
+    <li><a href="#method-i-set_element-21">#set_element!</a>
+    
+    <li><a href="#method-i-set_row-21">#set_row!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Div.html">Div</a>
+  
+    <li class="file"><a href="./License_txt.html">License</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Tree.html">Tree</a>
+  
+    <li><a href="./Tree/TreeNode.html">Tree::TreeNode</a>
+  
+    <li><a href="./Array.html">Array</a>
+  
+    <li><a href="./Array2.html">Array2</a>
+  
+    <li><a href="./ArrayOfEnumerables.html">ArrayOfEnumerables</a>
+  
+    <li><a href="./ArrayOfNumerics.html">ArrayOfNumerics</a>
+  
+    <li><a href="./ArrayOfStrings.html">ArrayOfStrings</a>
+  
+    <li><a href="./CallTracker.html">CallTracker</a>
+  
+    <li><a href="./CallerUtils.html">CallerUtils</a>
+  
+    <li><a href="./Class.html">Class</a>
+  
+    <li><a href="./Dictionary.html">Dictionary</a>
+  
+    <li><a href="./Enumerable.html">Enumerable</a>
+  
+    <li><a href="./EnumerableEnumerables.html">EnumerableEnumerables</a>
+  
+    <li><a href="./EnumerableNumerics.html">EnumerableNumerics</a>
+  
+    <li><a href="./EnumerableStrings.html">EnumerableStrings</a>
+  
+    <li><a href="./FalseClass.html">FalseClass</a>
+  
+    <li><a href="./Float.html">Float</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Integer.html">Integer</a>
+  
+    <li><a href="./KKernel.html">KKernel</a>
+  
+    <li><a href="./Kyanite.html">Kyanite</a>
+  
+    <li><a href="./Matrix2.html">Matrix2</a>
+  
+    <li><a href="./NilClass.html">NilClass</a>
+  
+    <li><a href="./Numeric.html">Numeric</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Optimizer.html">Optimizer</a>
+  
+    <li><a href="./OrderedSet.html">OrderedSet</a>
+  
+    <li><a href="./Range.html">Range</a>
+  
+    <li><a href="./Set.html">Set</a>
+  
+    <li><a href="./SortedSet.html">SortedSet</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./Symbol.html">Symbol</a>
+  
+    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
+  
+    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
+  
+    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
+  
+    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
+  
+    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
+  
+    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
+  
+    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+  
+    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
+  
+    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
+  
+    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
+  
+    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
+  
+    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
+  
+    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
+  
+    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
+  
+    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
+  
+    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
+  
+    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
+  
+    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
+  
+    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
+  
+    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
+  
+    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
+  
+    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
+  
+    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
+  
+    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
+  
+    <li><a href="./TrueClass.html">TrueClass</a>
+  
+    <li><a href="./Undoable.html">Undoable</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Array2</h1>
+
+  <div id="description" class="description">
+    
+<p>Ein <a href="Array2.html">Array2</a> ist eine spezielle Form von <a
+href="Array.html">Array</a>, nämlich immer zweidimensional. Siehe auch <a
+href="Matrix2.html">Matrix2</a>!</p>
+
+<p>Ein <a href="Array2.html">Array2</a> kann <strong>in jeder Zeile eine
+verschiedene Anzahl Spalten </strong> haben (im Gegensatz zu Instanzen der
+Klasse <a href="Matrix2.html">Matrix2</a>!) Jede Zeile hat einen
+Zeilenheader (Zelle 0), einen Spaltenheader gibt es nicht.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-clean4view" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clean4view</span><span
+            class="method-args">(level = 0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Liefert eine bereinigte Kopie des <a href="Array2.html">Array2</a>.</p>
+<dl class="rdoc-list note-list"><dt>Level=0
+<dd>
+<p>Platzhalter für den More-Link durch echten More-Link ersetzen</p>
+</dd><dt>Level=1
+<dd>
+<p>Zeilen ohne Zeilenheader werden gelöscht</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="clean4view-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clean4view</span>(<span class="ruby-identifier">level</span> = <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">new</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">zeile</span><span class="ruby-operator">|</span> 
+                            <span class="ruby-keyword">if</span> <span class="ruby-identifier">zeile</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">level</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span>
+                                <span class="ruby-keyword">nil</span>
+                            <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">zeile</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:more</span>  
+                                <span class="ruby-identifier">zeile</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">zeile</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">more!</span>
+                            <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">zeile</span>
+                            <span class="ruby-keyword">end</span>
+                          }
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Array2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>.<span class="ruby-identifier">compact</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clean4view-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clean4view-method -->
+
+    
+      <div id="method-i-clean4view-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clean4view!</span><span
+            class="method-args">(level = 0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>In-place-Variante von clean4view.</p>
+          
+
+          
+          <div class="method-source-code" id="clean4view-21-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clean4view!</span>(<span class="ruby-identifier">level</span> = <span class="ruby-value">0</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">clean4view</span>(<span class="ruby-identifier">level</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clean4view-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clean4view-21-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gibt das <a href="Array2.html">Array2</a> menschenlesbar aus. 
+Beispielaufruf:</p>
+
+<pre>pp germany.adms_and_orte.inspect</pre>
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+    <span class="ruby-identifier">analyze</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">analyze</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">zeile</span> <span class="ruby-operator">|</span> 
+                                ( <span class="ruby-identifier">zeile</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">zelle</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">zelle</span>.<span class="ruby-identifier">inspect</span> } ).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;  |  &quot;</span>)
+                            <span class="ruby-keyword">end</span> <span class="ruby-comment"># zeile</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">analyze</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-row" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">row</span><span
+            class="method-args">(i)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Liefert eine bestimmte Zeile zurück.</p>
+
+<p>Tests: TestMatrix2#test_matrix_zellen_und_zeilen</p>
+          
+
+          
+          <div class="method-source-code" id="row-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">row</span>(<span class="ruby-identifier">i</span>)                                    
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">i</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- row-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- row-method -->
+
+    
+      <div id="method-i-row_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">row_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Wieviele Zeilen hat das <a href="Array2.html">Array2</a>?</p>
+
+<p>Tests: TestMatrix2#test_matrix_zellen_und_zeilen</p>
+          
+
+          
+          <div class="method-source-code" id="row_size-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">row_size</span>                                
+    <span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- row_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- row_size-method -->
+
+    
+      <div id="method-i-set_element-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_element!</span><span
+            class="method-args">(i,j,wert)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Schreibt den Wert einer Zelle. Siehe auch set_row! und set_column!
+Stattdessen kann man auch schreiben:</p>
+
+<pre>myarray[r][c] = neuerwert</pre>
+
+<p>Tests: TestMatrix2#test_matrix_zellen_und_zeilen</p>
+          
+
+          
+          <div class="method-source-code" id="set_element-21-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_element!</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>,<span class="ruby-identifier">wert</span>)                    
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">wert</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_element-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_element-21-method -->
+
+    
+      <div id="method-i-set_row-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_row!</span><span
+            class="method-args">(i,wert)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Setzt den Wert einer Zeile.</p>
+
+<p>Tests: TestMatrix2#test_matrix_zellen_und_zeilen</p>
+          
+
+          
+          <div class="method-source-code" id="set_row-21-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_row!</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">wert</span>)                        
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">wert</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_row-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_row-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
