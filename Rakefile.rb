@@ -101,7 +101,12 @@ Dir['tasks/**/*.rake'].each { |t| load t }
   desc ':git_add, :git_commit, :git_push'
   task :git_publish => [ :git_add, :git_commit, :git_push ] do
     puts
-    puts 'done. Visit https://github.com/bklippstein/kyanite'
+    puts
+    if Hoe::WINDOZE
+      sh "start https://github.com/bklippstein/kyanite"
+    else
+      puts 'done. Visit https://github.com/bklippstein/kyanite'
+    end
   end  
 
 
