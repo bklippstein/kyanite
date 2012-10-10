@@ -161,8 +161,8 @@ end
     end      
     
     sh 'git add -A '    
-    sh 'git commit -a -m "commit" '    
-    sh 'git push origin gh-pages '    
+    sh "git commit " + ' -m "---"'
+    #sh 'git push origin gh-pages '    
         
   end
     
