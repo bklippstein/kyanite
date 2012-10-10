@@ -1,6 +1,18 @@
 # ruby encoding: utf-8
 # ü
 
+
+    
+    
+
+  
+  
+
+
+# ---------------------------------------------------------
+# div
+#
+
   # Task :deploy
   #
   desc 'Uninstall gem, release, reinstall gem'
@@ -36,6 +48,9 @@
   task :gem_install do
     sh "#{'sudo ' unless Hoe::WINDOZE }gem install kyanite"
   end    
+  
+  
+  
   
   
 

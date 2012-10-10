@@ -57,7 +57,24 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 
 
 
-
+# ---------------------------------------------------------
+# git
+#
+    
+  # git_status
+  #
+  desc 'git status'
+  task :git_status do
+    sh "#{'sudo ' unless Hoe::WINDOZE }git status"
+  end        
+    
+  
+  # Task
+  #
+  desc 'git_add -A'
+  task :git_add do
+    sh "#{'sudo ' unless Hoe::WINDOZE }git add -A"
+  end    
 
 
 
