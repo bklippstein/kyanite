@@ -96,11 +96,12 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 
 
   
-  # git_deploy
+  # git_publish
   #
   desc ':git_add, :git_commit, :git_push'
-  task :git_deploy => [ :git_add, :git_commit, :git_push ] do
-    puts 'done.'
+  task :git_publish => [ :git_add, :git_commit, :git_push ] do
+    puts
+    puts 'done. Visit https://github.com/bklippstein/kyanite'
   end  
 
 
