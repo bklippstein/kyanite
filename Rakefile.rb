@@ -1,9 +1,13 @@
 # ruby encoding: utf-8
 
+$github_username = 'bklippstein'
+$projectname = File.dirname(__FILE__).split("/")[-1].strip  # Name des Projekt-Stammverzeichnisses
+
+
 require 'rubygems'
 require 'hoe'
 require 'rake'
-require File.dirname(__FILE__) + '/lib/kyanite'
+require File.dirname(__FILE__) + "/lib/#{$projectname}"     # Hauptdatei der Library
 require 'kyanite/rake'
 require 'rdoc/task'
 
@@ -14,13 +18,13 @@ require 'rdoc/task'
 #  
 # http://nubyonrails.com/articles/tutorial-publishing-rubygems-with-hoe
 #
-$hoe = Hoe.spec 'kyanite' do 
+$hoe = Hoe.spec $projectname do 
 
   # self.rubyforge_name = 'yourgemx' # if different than 'yourgem'
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  urls                  << ['http://bklippstein.github.com/kyanite/']   
+  urls                  << ["http://#{$github_username}.github.com/#{$projectname}/"]   
   remote_rdoc_dir       = ''      # Release to root only one project
   extra_deps            << ['activesupport',   '>= 3.2.8']
   extra_deps            << ['facets',          '>= 2.9.3']
@@ -29,6 +33,9 @@ $hoe = Hoe.spec 'kyanite' do
 
                     
 end
+
+# require 'pp'
+# pp $hoe
 
 
 # -------------------------------------------------------------------------------------------------------
@@ -54,11 +61,13 @@ end
   desc ':git_add, :git_commit, :git_push'
   task :git_publish => [ :git_add, :git_commit, :git_push ] do
     puts
-    puts
+    puts '------------------------------------------------------------------------------------'
+    puts ':git_publish          publish project to github '
+    puts     
     if Hoe::WINDOZE
-      sh "start https://github.com/bklippstein/kyanite "
+      sh "start https://github.com/#{$github_username}/#{$projectname} "
     else
-      puts 'done. Visit https://github.com/bklippstein/kyanite'
+      puts "done. Visit https://github.com/#{$github_username}/#{$projectname} "
     end
   end  
   
@@ -101,14 +110,18 @@ end
   
   # git_publish_docs
   #
-  desc 'Update gh-pages branch'
+  desc 'publish docs to github'
   task :git_publish_docs do
+    puts
+    puts '------------------------------------------------------------------------------------'
+    puts ':git_publish_docs     publish docs to github '
+    puts      
   
     # Repository erstellen, wenn nötig
     Dir.chdir '/tmp' do
-      sh 'git clone https://github.com/bklippstein/kyanite ' do |ok,res|
+      sh "git clone https://github.com/#{$github_username}/#{$projectname} " do |ok,res|
         if ok
-          Dir.chdir '/tmp/kyanite' do
+          Dir.chdir "/tmp/#{$projectname}" do
             sh 'git checkout --orphan gh-pages '
           end          
         end
@@ -116,25 +129,25 @@ end
     end
     
     # alles löschen
-    Dir.chdir '/tmp/kyanite' do 
+    Dir.chdir "/tmp/#{$projectname}" do 
       sh 'git rm -rf --ignore-unmatch . '
     end    
     
     # doc rüberkopieren 
     Dir.chdir 'doc' do
-      sh 'xcopy /E *.* \tmp\kyanite '
+      sh "xcopy /E *.* \tmp\#{$projectname} "
     end      
     
     # publish   
-    Dir.chdir '/tmp/kyanite' do
+    Dir.chdir "/tmp/#{$projectname}" do
       sh 'git add -A '    
       sh "git commit " + ' -m "---" --allow-empty'
       sh 'git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enthält die Login-Daten
       
       if Hoe::WINDOZE
-        sh "start http://bklippstein.github.com/kyanite "
+        sh "start http://#{$github_username}.github.com/#{$projectname} "
       else
-        puts 'done. Visit http://bklippstein.github.com/kyanite '
+        puts "done. Visit http://#{$github_username}.github.com/#{$projectname} "
       end # if   
     
     end # do chdir   
@@ -152,9 +165,13 @@ end
   
   # Task :rubygems_publish
   #
-  desc 'release actual version'
+  desc 'release actual version to rubygems'
   task :rubygems_publish  do
-    ENV["VERSION"] = Kyanite::VERSION
+    puts
+    puts '------------------------------------------------------------------------------------'
+    puts ':rubygems_publish     release actual version to rubygems'
+    puts  
+    ENV["VERSION"] = $projectname.to_class.const_get('VERSION')
     Rake::Task[:release].invoke
 
   end  
@@ -163,18 +180,26 @@ end
   
   # Task :gem_uninstall
   #
-  desc 'Uninstall gem'
+  desc 'uninstall old gem'
   task :gem_uninstall do
-    sh "#{'sudo ' unless Hoe::WINDOZE }gem uninstall kyanite --a --ignore-dependencies "
+    puts
+    puts '------------------------------------------------------------------------------------'
+    puts ':gem_uninstall        uninstall old gem'
+    puts    
+    sh "#{'sudo ' unless Hoe::WINDOZE }gem uninstall #{$projectname} --a --ignore-dependencies "
   end  
   
 
   
   # Task :gem_install
   #
-  desc 'Install gem from remote'
+  desc 'install gem from rubygems'
   task :gem_install do
-    sh "#{'sudo ' unless Hoe::WINDOZE }gem install kyanite "
+    puts
+    puts '------------------------------------------------------------------------------------'
+    puts ':gem_install          install gem from rubygems'
+    puts     
+    sh "#{'sudo ' unless Hoe::WINDOZE }gem install #{$projectname} "
   end    
   
   
@@ -189,23 +214,24 @@ end
 
 remove_task 'docs' 
 
-desc "Generate RDoc documentation for Kyanite"
+desc "generate RDoc documentation"
 Rake::RDocTask.new(:docs) do |rd|
-    rd.title    = "Kyanite #{Kyanite::VERSION}"
+
+    # puts
+    # puts '------------------------------------------------------------------------------------'
+    # puts ':docs                 generate RDoc documentation'
+    # puts
+    rd.title    = "#{$projectname.capitalize} #{$projectname.to_class.const_get('VERSION')}"
 
     rd.rdoc_dir = 'doc'   
     rd.rdoc_files.include('lib/**/*.rb')
     rd.rdoc_files.include('test/**/test_*.rb')
-    rd.rdoc_files.include('README.txt', 'License.txt', 'Div')
+    rd.rdoc_files.include('README.txt', 'License.txt', 'History.txt', 'Div')
     
     rd.rdoc_files.exclude('lib/kyanite/array/array2')
     rd.rdoc_files.exclude('lib/kyanite/array/matrix2')
     rd.rdoc_files.exclude('lib/kyanite/operation/call_tracker')
-    #rd.rdoc_files.exclude('lib/kyanite.rb')
-    
-    #rd.main = 'README.txt'
 
-      
     rd.options += [
         '--tab-width', '4',
         '--main', 'README.txt',

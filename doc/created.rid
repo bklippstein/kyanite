@@ -1,4 +1,4 @@
-Thu, 11 Oct 2012 11:25:32 +0200
+Thu, 11 Oct 2012 12:33:20 +0200
 lib/kyanite/array/array.rb	Mon, 08 Oct 2012 20:16:40 +0200
 lib/kyanite/array/array2.rb	Mon, 08 Oct 2012 12:52:59 +0200
 lib/kyanite/array/matrix2.rb	Mon, 08 Oct 2012 09:39:30 +0200
@@ -54,7 +54,7 @@ lib/kyanite/symbol.rb	Mon, 08 Oct 2012 09:37:59 +0200
 lib/kyanite/tree.rb	Tue, 09 Oct 2012 12:19:39 +0200
 lib/kyanite/undoable.rb	Mon, 08 Oct 2012 09:38:27 +0200
 lib/kyanite/unit_test.rb	Mon, 08 Oct 2012 09:38:34 +0200
-lib/kyanite.rb	Thu, 11 Oct 2012 10:55:23 +0200
+lib/kyanite.rb	Thu, 11 Oct 2012 12:33:06 +0200
 test/array/test_array.rb	Wed, 10 Oct 2012 00:32:29 +0200
 test/array/test_matrix2.rb	Tue, 09 Oct 2012 12:22:41 +0200
 test/enumerable/test_enumerable_enumerables.rb	Tue, 09 Oct 2012 12:22:55 +0200
@@ -81,4 +81,5 @@ test/test_set.rb	Tue, 09 Oct 2012 12:29:45 +0200
 test/test_tree.rb	Tue, 09 Oct 2012 12:32:16 +0200
 README.txt	Thu, 11 Oct 2012 10:48:49 +0200
 License.txt	Wed, 10 Oct 2012 09:59:59 +0200
+History.txt	Tue, 09 Oct 2012 20:39:10 +0200
 Div	Mon, 08 Oct 2012 09:48:43 +0200
