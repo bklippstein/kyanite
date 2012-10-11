@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+
+<title>module Enumerable - Kyanite 0.5.13</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/kyanite/enumerable/enumerable_enumerables.rb
+    <li>lib/kyanite/enumerable/structure.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-contentclass">#contentclass</a>
+    
+    <li><a href="#method-i-distribution">#distribution</a>
+    
+    <li><a href="#method-i-is_collection-3F">#is_collection?</a>
+    
+    <li><a href="#method-i-transpose-21">#transpose!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Div.html">Div</a>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./License_txt.html">License</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Tree.html">Tree</a>
+  
+    <li><a href="./Tree/TreeNode.html">Tree::TreeNode</a>
+  
+    <li><a href="./Array.html">Array</a>
+  
+    <li><a href="./Array2.html">Array2</a>
+  
+    <li><a href="./ArrayOfEnumerables.html">ArrayOfEnumerables</a>
+  
+    <li><a href="./ArrayOfNumerics.html">ArrayOfNumerics</a>
+  
+    <li><a href="./ArrayOfStrings.html">ArrayOfStrings</a>
+  
+    <li><a href="./CallTracker.html">CallTracker</a>
+  
+    <li><a href="./CallerUtils.html">CallerUtils</a>
+  
+    <li><a href="./Class.html">Class</a>
+  
+    <li><a href="./Dictionary.html">Dictionary</a>
+  
+    <li><a href="./Enumerable.html">Enumerable</a>
+  
+    <li><a href="./EnumerableEnumerables.html">EnumerableEnumerables</a>
+  
+    <li><a href="./EnumerableNumerics.html">EnumerableNumerics</a>
+  
+    <li><a href="./EnumerableStrings.html">EnumerableStrings</a>
+  
+    <li><a href="./FalseClass.html">FalseClass</a>
+  
+    <li><a href="./Float.html">Float</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Integer.html">Integer</a>
+  
+    <li><a href="./KKernel.html">KKernel</a>
+  
+    <li><a href="./Kyanite.html">Kyanite</a>
+  
+    <li><a href="./Matrix2.html">Matrix2</a>
+  
+    <li><a href="./NilClass.html">NilClass</a>
+  
+    <li><a href="./Numeric.html">Numeric</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Optimizer.html">Optimizer</a>
+  
+    <li><a href="./OrderedSet.html">OrderedSet</a>
+  
+    <li><a href="./Range.html">Range</a>
+  
+    <li><a href="./Set.html">Set</a>
+  
+    <li><a href="./SortedSet.html">SortedSet</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./Symbol.html">Symbol</a>
+  
+    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
+  
+    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
+  
+    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
+  
+    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
+  
+    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
+  
+    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
+  
+    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+  
+    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
+  
+    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
+  
+    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
+  
+    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
+  
+    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
+  
+    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
+  
+    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
+  
+    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
+  
+    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
+  
+    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
+  
+    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
+  
+    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
+  
+    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
+  
+    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
+  
+    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
+  
+    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
+  
+    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
+  
+    <li><a href="./TrueClass.html">TrueClass</a>
+  
+    <li><a href="./Undoable.html">Undoable</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Enumerable</h1>
+
+  <div id="description" class="description">
+    <dl class="rdoc-list label-list"><dt> | <a href="Kyanite.html">Kyanite</a> | <a href="Object.html">Object</a> | <a href="Array.html">Array</a> | <a href="Set.html">Set</a> | <strong><a href="Enumerable.html">Enumerable</a></strong> | <a href="Hash.html">Hash</a> | 
+<dd>
+<p>| <strong><a href="Enumerable.html">Enumerable</a></strong> | <a
+href="EnumerableNumerics.html">EnumerableNumerics</a> | <a
+href="EnumerableStrings.html">EnumerableStrings</a> | <a
+href="EnumerableEnumerables.html">EnumerableEnumerables</a> |</p>
+</dd></dl>
+<hr style="height: 1px">
+
+<h2 id="label-General+Enumerations"><strong>General</strong> <strong>Enumerations</strong></h2>
+
+<p>See <a
+href="TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+for tests and examples.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-contentclass" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contentclass</span><span
+            class="method-args">( options={} )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Was für Objekte beinhaltet die Collection? Liefert die Klasse der
+Contentelemente, oder <code>Object</code> wenn es verschiedene sind.</p>
+
+<p>Parameter ist die Genauigkeit, mit der der Inhalt geprüft wird.</p>
+
+<pre class="ruby">:<span class="ruby-identifier">precision</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>      <span class="ruby-identifier">nur</span> <span class="ruby-identifier">das</span> <span class="ruby-identifier">erste</span> <span class="ruby-constant">Element</span> <span class="ruby-identifier">wird</span> <span class="ruby-identifier">geprüft</span>
+:<span class="ruby-identifier">precision</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>      <span class="ruby-identifier">das</span> <span class="ruby-identifier">erste</span> <span class="ruby-identifier">und</span> <span class="ruby-identifier">das</span> <span class="ruby-identifier">letzte</span> <span class="ruby-constant">Element</span> <span class="ruby-identifier">werden</span> <span class="ruby-identifier">geprüft</span>   (<span class="ruby-constant">STANDARD</span>)
+:<span class="ruby-identifier">precision</span>  =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">all</span>   <span class="ruby-identifier">alle</span> <span class="ruby-constant">Elemente</span> <span class="ruby-identifier">werden</span> <span class="ruby-identifier">geprüft</span>
+:<span class="ruby-identifier">ignore_nil</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>   <span class="ruby-constant">NilClass</span> <span class="ruby-identifier">wird</span> <span class="ruby-identifier">nicht</span> <span class="ruby-identifier">aufgeführt</span>                    (<span class="ruby-constant">STANDARD</span>)
+:<span class="ruby-identifier">ignore_nil</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>  <span class="ruby-constant">NilClass</span> <span class="ruby-identifier">wird</span> <span class="ruby-identifier">mit</span> <span class="ruby-identifier">aufgeführt</span>
+</pre>
+
+<p>See <a
+href="TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+for tests and examples.</p>
+          
+
+          
+          <div class="method-source-code" id="contentclass-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/structure.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contentclass</span>( <span class="ruby-identifier">options</span>={} )
+  <span class="ruby-identifier">precision</span>  = <span class="ruby-identifier">options</span>[<span class="ruby-value">:precision</span>]    <span class="ruby-operator">||</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">ignore_nil</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:ignore_nil</span>];  <span class="ruby-identifier">ignore_nil</span> = <span class="ruby-keyword">true</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_nil</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>   <span class="ruby-keyword">if</span>  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">empty?</span> 
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">precision</span>
+  
+  <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">class</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NilClass</span>  <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">ignore_nil</span> )
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">contentclass</span>( <span class="ruby-value">:precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">precision</span>, <span class="ruby-value">:ignore_nil</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>  )
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">class</span>    
+    <span class="ruby-identifier">l</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">class</span>   
+    <span class="ruby-keyword">if</span> ( (<span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NilClass</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NilClass</span>) <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">ignore_nil</span> )
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">contentclass</span>( <span class="ruby-value">:precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">precision</span>, <span class="ruby-value">:ignore_nil</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>  )
+    <span class="ruby-keyword">end</span>      
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">l</span>      
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">f</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">ancestors</span> &amp; <span class="ruby-identifier">l</span>.<span class="ruby-identifier">ancestors</span>
+      <span class="ruby-comment">#see result - [Object, Kernel, Precision, Perception::NumericI,  PP::ObjectMixin,  KKernel]</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Numeric</span>      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Numeric</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Enumerable</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Enumerable</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Object</span>
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+    <span class="ruby-keyword">unless</span> ( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hashery</span><span class="ruby-operator">::</span><span class="ruby-constant">Dictionary</span>) )
+      <span class="ruby-identifier">c</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">class</span>}
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">c</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span>}      
+    <span class="ruby-keyword">end</span> 
+    <span class="ruby-identifier">c</span> = <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> [<span class="ruby-constant">NilClass</span>]  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_nil</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">uniq!</span>  
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">empty?</span> 
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>       <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_nil</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">NilClass</span>   
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">c</span>[<span class="ruby-value">0</span>]       <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> 
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">c</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">ancestors</span>
+    <span class="ruby-identifier">c</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span> &amp; <span class="ruby-identifier">e</span>.<span class="ruby-identifier">ancestors</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment">#see result - [Object, Kernel, Precision, Perception::NumericI,  PP::ObjectMixin,  KKernel]      </span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Numeric</span>      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Numeric</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Enumerable</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Enumerable</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Object</span>
+
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># case precision</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">':precision should be 1, 2 or :all'</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment">#case</span>
+  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- contentclass-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- contentclass-method -->
+
+    
+      <div id="method-i-distribution" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">distribution</span><span
+            class="method-args">( mode = :size)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Liefert die Verteilung der size  oder die Verteilung der class  oder die
+Verteilung eines anderen Merkmals der aufgezählten Elemente. die Methode
+gibt es auch als <a
+href="Hash.html#method-i-distribution">Hash#distribution</a>.</p>
+
+<p>See <a
+href="TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+for tests and examples.</p>
+          
+
+          
+          <div class="method-source-code" id="distribution-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/structure.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">distribution</span>( <span class="ruby-identifier">mode</span> = <span class="ruby-value">:size</span>)
+  <span class="ruby-identifier">verteilung</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">element</span> <span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">element</span>.<span class="ruby-identifier">respond</span>(<span class="ruby-identifier">mode</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">verteilung</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">verteilung</span>[<span class="ruby-identifier">value</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">verteilung</span>[<span class="ruby-identifier">value</span>] = <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># if      </span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment">#each</span>
+  <span class="ruby-identifier">verteilung</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">sort</span>   
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- distribution-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- distribution-method -->
+
+    
+      <div id="method-i-is_collection-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_collection?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Enthält ein Objekt mehrere Objekte? Rückgabe: true</p>
+
+<p><a href="String.html">String</a> und <a href="Range.html">Range</a> gelten
+nicht als Collection. See <a
+href="TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+for tests and examples.</p>
+          
+
+          
+          <div class="method-source-code" id="is_collection-3F-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/structure.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_collection?</span>;                 <span class="ruby-keyword">true</span>;          <span class="ruby-keyword">end</span></pre>
+          </div><!-- is_collection-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_collection-3F-method -->
+
+    
+      <div id="method-i-transpose-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">transpose!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>In-place-Variante von transpose.</p>
+          
+
+          
+          <div class="method-source-code" id="transpose-21-source">
+            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_enumerables.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">transpose!</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">transpose</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- transpose-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- transpose-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

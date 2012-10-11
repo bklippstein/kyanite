@@ -60,10 +60,7 @@ end
   #
   desc ':git_add, :git_commit, :git_push'
   task :git_publish => [ :git_add, :git_commit, :git_push ] do
-    puts
-    puts '------------------------------------------------------------------------------------'
-    puts ':git_publish          publish project to github '
-    puts     
+    puts; puts; puts; puts   
     if Hoe::WINDOZE
       sh "start https://github.com/#{$github_username}/#{$projectname} "
     else
@@ -79,7 +76,7 @@ end
   task :git_status do
     if Hoe::WINDOZE
       sh "git status "
-      sh "chcp 65001 > NUL "
+      sh 'chcp 65001 > NUL '
     else
       sh "sudo git status "
     end  
@@ -93,7 +90,7 @@ end
   task :git_add do
     if Hoe::WINDOZE
       sh "git add -A "
-      sh "chcp 65001 > NUL "
+      sh 'chcp 65001 > NUL '
     else
       sh "sudo git add -A "
     end    
@@ -107,7 +104,7 @@ end
   task :git_commit do
     if Hoe::WINDOZE
       sh 'git commit -m "---" '
-      sh "chcp 65001 > NUL "
+      sh 'chcp 65001 > NUL '
     else
       sh 'sudo git commit -m "---" '
     end     
@@ -120,7 +117,7 @@ end
   task :git_push do
     if Hoe::WINDOZE
       sh 'git push origin master '
-      sh "chcp 65001 > NUL "
+      sh 'chcp 65001 > NUL '
     else
       sh 'sudo git push origin master '
     end     
@@ -132,41 +129,57 @@ end
   #
   desc 'publish docs to github'
   task :git_publish_docs do
-    puts
-    puts '------------------------------------------------------------------------------------'
-    puts ':git_publish_docs     publish docs to github '
-    puts      
+    puts; puts; puts; puts     
   
     # Repository erstellen, wenn nötig
     Dir.chdir '/tmp' do
-      sh "git clone https://github.com/#{$github_username}/#{$projectname} " do |ok,res|
+      sh "#{'sudo ' unless Hoe::WINDOZE }git clone https://github.com/#{$github_username}/#{$projectname} " do |ok,res|
         if ok
           Dir.chdir "/tmp/#{$projectname}" do
-            sh 'git checkout --orphan gh-pages '
-          end          
+            if Hoe::WINDOZE
+              sh 'git checkout --orphan gh-pages '
+              sh 'chcp 65001 > NUL '
+            else
+              sh 'sudo git checkout --orphan gh-pages '
+            end            
+          end # do chdir      
+        else # not ok      
+          sh 'chcp 65001 > NUL '   if Hoe::WINDOZE
         end
       end # do sh
-    end
+    end # do chdir
     
     # alles löschen
     Dir.chdir "/tmp/#{$projectname}" do 
-      sh 'git rm -rf --ignore-unmatch . '
+      if Hoe::WINDOZE
+        sh 'git rm -rf --ignore-unmatch . '
+        sh 'chcp 65001 > NUL '
+      else
+        sh 'sudo git rm -rf --ignore-unmatch . '
+      end      
     end    
     
     # doc rüberkopieren 
     Dir.chdir 'doc' do
-      sh "xcopy /E *.* \tmp\#{$projectname} "
+      if Hoe::WINDOZE
+        sh "xcopy /E *.* \tmp\#{$projectname} "
+        sh 'chcp 65001 > NUL '
+      else
+        sh "sudo cp . \tmp\#{$projectname} "
+      end      
     end      
     
     # publish   
     Dir.chdir "/tmp/#{$projectname}" do
-      sh 'git add -A '    
-      sh "git commit " + ' -m "---" --allow-empty'
-      sh 'git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enthält die Login-Daten
-      
       if Hoe::WINDOZE
+        sh 'git add -A '    
+        sh 'sudo git commit -m "---" --allow-empty'
+        sh 'git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enthält die Login-Daten      
         sh "start http://#{$github_username}.github.com/#{$projectname} "
       else
+        sh 'sudo git add -A '    
+        sh 'sudo git commit -m "---" --allow-empty'
+        sh 'sudo git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enthält die Login-Daten           
         puts "done. Visit http://#{$github_username}.github.com/#{$projectname} "
       end # if   
     
@@ -187,10 +200,7 @@ end
   #
   desc 'release actual version to rubygems'
   task :rubygems_publish  do
-    puts
-    puts '------------------------------------------------------------------------------------'
-    puts ':rubygems_publish     release actual version to rubygems'
-    puts  
+    puts; puts; puts; puts  
     ENV["VERSION"] = $projectname.to_class.const_get('VERSION')
     Rake::Task[:release].invoke
 
@@ -202,10 +212,7 @@ end
   #
   desc 'uninstall old gem'
   task :gem_uninstall do
-    puts
-    puts '------------------------------------------------------------------------------------'
-    puts ':gem_uninstall        uninstall old gem'
-    puts    
+    puts; puts; puts; puts   
     sh "#{'sudo ' unless Hoe::WINDOZE }gem uninstall #{$projectname} --a --ignore-dependencies "
   end  
   
@@ -215,10 +222,7 @@ end
   #
   desc 'install gem from rubygems'
   task :gem_install do
-    puts
-    puts '------------------------------------------------------------------------------------'
-    puts ':gem_install          install gem from rubygems'
-    puts     
+    puts; puts; puts; puts     
     sh "#{'sudo ' unless Hoe::WINDOZE }gem install #{$projectname} "
   end    
   
@@ -237,10 +241,6 @@ remove_task 'docs'
 desc "generate RDoc documentation"
 Rake::RDocTask.new(:docs) do |rd|
 
-    # puts
-    # puts '------------------------------------------------------------------------------------'
-    # puts ':docs                 generate RDoc documentation'
-    # puts
     rd.title    = "#{$projectname.capitalize} #{$projectname.to_class.const_get('VERSION')}"
 
     rd.rdoc_dir = 'doc'   
