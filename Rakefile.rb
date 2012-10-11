@@ -77,7 +77,12 @@ end
   #
   desc 'git status'
   task :git_status do
-    sh "#{'sudo ' unless Hoe::WINDOZE }git status "
+    if Hoe::WINDOZE
+      sh "git status "
+      sh "chcp 65001 > NUL "
+    else
+      sh "sudo git status "
+    end  
   end        
     
   
@@ -86,7 +91,12 @@ end
   #
   desc 'git_add -A'
   task :git_add do
-    sh "#{'sudo ' unless Hoe::WINDOZE }git add -A "
+    if Hoe::WINDOZE
+      sh "git add -A "
+      sh "chcp 65001 > NUL "
+    else
+      sh "sudo git add -A "
+    end    
   end    
     
   
@@ -95,7 +105,12 @@ end
   #
   desc 'git commit -m'
   task :git_commit do
-    sh "#{'sudo ' unless Hoe::WINDOZE }git commit " + ' -m "---"'
+    if Hoe::WINDOZE
+      sh 'git commit -m "---" '
+      sh "chcp 65001 > NUL "
+    else
+      sh 'sudo git commit -m "---" '
+    end     
   end  
 
 
@@ -103,7 +118,12 @@ end
   #
   desc 'git_push'
   task :git_push do
-    sh "#{'sudo ' unless Hoe::WINDOZE }git push origin master "
+    if Hoe::WINDOZE
+      sh 'git push origin master '
+      sh "chcp 65001 > NUL "
+    else
+      sh 'sudo git push origin master '
+    end     
   end  
 
 
