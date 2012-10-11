@@ -2,9 +2,9 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class CallTracker - kyanite-0.5.9 Documentation</title>
+<title>class CallTracker - Kyanite 0.5.10</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -93,11 +93,9 @@
 
   <ul>
   
-    <li class="file"><a href="./History_txt.html">History</a>
+    <li class="file"><a href="./Div.html">Div</a>
   
     <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
   
     <li class="file"><a href="./README_txt.html">README</a>
   
@@ -172,6 +170,54 @@
     <li><a href="./String.html">String</a>
   
     <li><a href="./Symbol.html">Symbol</a>
+  
+    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
+  
+    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
+  
+    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
+  
+    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
+  
+    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
+  
+    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
+  
+    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+  
+    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
+  
+    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
+  
+    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
+  
+    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
+  
+    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
+  
+    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
+  
+    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
+  
+    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
+  
+    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
+  
+    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
+  
+    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
+  
+    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
+  
+    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
+  
+    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
+  
+    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
+  
+    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
+  
+    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
   
     <li><a href="./TrueClass.html">TrueClass</a>
   
@@ -412,7 +458,7 @@ the count for that method.</p>
             <pre><span class="ruby-comment"># File lib/kyanite/operation/call_tracker.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">tally_calls</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">binding</span>, <span class="ruby-identifier">klass</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@to_trace</span>[<span class="ruby-identifier">klass</span>] <span class="ruby-keyword">and</span> <span class="ruby-ivar">@to_trace</span>[<span class="ruby-identifier">klass</span>][<span class="ruby-identifier">symbol</span>] <span class="ruby-keyword">and</span> 
-      (<span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-string">'call'</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">==</span><span class="ruby-string">'c-call'</span>)
+  (<span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-string">'call'</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">==</span><span class="ruby-string">'c-call'</span>)
     <span class="ruby-identifier">stack</span> = <span class="ruby-identifier">caller</span>
     <span class="ruby-identifier">stack</span> = <span class="ruby-identifier">stack</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span>(<span class="ruby-ivar">@show_stack_depth</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@show_stack_depth</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span>)]
     <span class="ruby-ivar">@to_trace</span>[<span class="ruby-identifier">klass</span>][<span class="ruby-identifier">symbol</span>][<span class="ruby-identifier">stack</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>

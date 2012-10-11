@@ -9,50 +9,6 @@ require 'rdoc/task'
 
 
 
-
-
-
-
-
-#  ----------------------------------------------------------------------------------------------
-#  Documentation
-#  
-# http://rubeh.tumblr.com/post/27622544/rake-rdoctask-with-all-of-the-options-stubbed-out
-# http://www.java2s.com/Code/Ruby/Language-Basics/RDocoptionsareusedlikethisrdocoptionsnames.htm
-
-
-remove_task 'docs' 
-
-desc "Generate RDoc documentation for Kyanite"
-Rake::RDocTask.new(:docs) do |rd|
-    rd.title    = "Kyanite"
-
-    rd.rdoc_dir = 'doc'   
-    rd.rdoc_files.include('lib/**/*.rb')
-    rd.rdoc_files.include('test/**/test_*.rb')
-    rd.rdoc_files.include('README.txt', 'License.txt', 'Div')
-    
-    rd.rdoc_files.exclude('lib/kyanite/array/array2')
-    rd.rdoc_files.exclude('lib/kyanite/array/matrix2')
-    rd.rdoc_files.exclude('lib/kyanite/operation/call_tracker')
-    #rd.rdoc_files.exclude('lib/kyanite.rb')
-    
-    #rd.main = 'README.txt'
-
-      
-    rd.options += [
-        '--tab-width', '4',
-        '--main', 'README.txt',
-        '--show-hash',        # A name of the form #name in a comment is a possible hyperlink to an instance method name. When displayed, the # is removed unless this option is specified.
-        '--line-numbers',
-        '--all',
-        '--charset=utf8'      
-      ]      
-      
-end
-
-
-
 #  ----------------------------------------------------------------------------------------------
 #  Hoe
 #  
@@ -64,7 +20,7 @@ $hoe = Hoe.spec 'kyanite' do
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  urls                  << ['http://kyanite.rubyforge.org']   
+  urls                  << ['http://bklippstein.github.com/kyanite/']   
   remote_rdoc_dir       = ''      # Release to root only one project
   extra_deps            << ['activesupport',   '>= 3.2.8']
   extra_deps            << ['facets',          '>= 2.9.3']
@@ -82,7 +38,7 @@ end
   # Task :publish
   #
   desc 'publish all on github and rubygems, reinstall gem'
-  task :publish => [ :docs, :rubygems_publish, :gem_uninstall, :git_publish, :sleep_15, :gem_install] do
+  task :publish => [ :redocs, :rubygems_publish, :gem_uninstall, :git_publish, :git_publish_docs, :sleep_15, :gem_install] do
     puts 'done.'
   end  
 
@@ -142,104 +98,57 @@ end
   end  
 
 
+  
   # git_publish_docs
   #
   desc 'Update gh-pages branch'
   task :git_publish_docs do
   
+    # Repository erstellen, wenn n√∂tig
     Dir.chdir '/tmp' do
-      sh 'git clone https://github.com/bklippstein/kyanite '
+      sh 'git clone https://github.com/bklippstein/kyanite ' do |ok,res|
+        if ok
+          Dir.chdir '/tmp/kyanite' do
+            sh 'git checkout --orphan gh-pages '
+          end          
+        end
+      end # do sh
     end
     
-    Dir.chdir '/tmp/kyanite' do
-      sh 'git checkout --orphan gh-pages '
-      sh 'git rm -rf . '
+    # alles l√∂schen
+    Dir.chdir '/tmp/kyanite' do 
+      sh 'git rm -rf --ignore-unmatch . '
     end    
     
+    # doc r√ºberkopieren 
     Dir.chdir 'doc' do
       sh 'xcopy /E *.* \tmp\kyanite '
     end      
     
-    sh 'git add -A '    
-    sh "git commit " + ' -m "---"'
-    #sh 'git push origin gh-pages '    
-        
-  end
-    
-    
-  # git_publish_docs
-  #
-  desc 'Update gh-pages branch'
-  task :git_publish_docs2 do
-  
-  
-  
-    # sh "mv doc/*.* /tmp/kyanite " 
-    # sh "copy ./doc/* /tmp/kyanite -recurse "   
-    #sh "git branch"
-    #sh "copy -r doc/* /tmp/kyanite "    
-    
-  end    
-    
-    
-    
-    #sh "ls"   
-    #sh "cp -r doc/* /tmp/kyanite"   
+    # publish   
+    Dir.chdir '/tmp/kyanite' do
+      sh 'git add -A '    
+      sh "git commit " + ' -m "---" --allow-empty'
+      sh 'git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enth√§lt die Login-Daten
       
+      if Hoe::WINDOZE
+        sh "start http://bklippstein.github.com/kyanite "
+      else
+        puts 'done. Visit http://bklippstein.github.com/kyanite '
+      end # if   
     
-
+    end # do chdir   
     
-    
-    
-  
-    # sh "rm -r /temp-doc "                                              # tempor‰ren Ordner entfernen
-    # sh "mv ./doc /temp-doc "                                or abort   # tempor‰ren Ordner neu erstellen
-    # sh "git checkout gh-pages "                             or abort
-    # sh "rm -r ./doc "                                       or abort   # lokalen doc-Ordner lˆschen
-    # sh "mv -v /temp-doc/doc . "                             or abort   # 
-    # sh "git add . "                                         or abort   # 
-    # sh "git commit --all -m 'updating doc and coverage' "   or abort   # 
-    # sh "git checkout master "                               or abort   # 
-    # sh "git push origin gh-pages "         
-
-# cd /tmp
-# git clone https://github.com/bklippstein/kyanite    
-    
-    
-  # system(" set -x; mv -v ./coverage /tmp ") or abort
-  # system(" set -x; git checkout gh-pages ") or abort
-  # system(" set -x; rm -rf ./doc ./coverage ") or abort
-  # system(" set -x; mv -v /tmp/doc . ") or abort
-  # system(" set -x; mv -v /tmp/coverage . ") or abort
-  # system(" set -x; git add . ") or abort 
-  # system(" set -x; git commit --all -m 'updating doc and coverage' ") or abort
-  # system(" set -x; git checkout master ") or abort
-  # puts "don't forget to run: git push origin gh-pages"    
-  
-  
-    # rev = `git rev-parse --short HEAD`.strip
-    # Dir.chdir 'docs' do
-      # sh "git add *.html"
-      # sh "git commit -m 'rebuild pages from #{rev}'" do |ok,res|
-        # if ok
-          # verbose { puts "gh-pages updated" }
-          # sh "git push -q o HEAD:gh-pages"
-        # end
-      # end
-    # end
+        
+  end # do task
     
     
 
-
-
-
-  
   
 # -------------------------------------------------------------------------------------------------------
 # rubygems
 #  
 
-  
   
   # Task :rubygems_publish
   #
@@ -268,6 +177,46 @@ end
     sh "#{'sudo ' unless Hoe::WINDOZE }gem install kyanite "
   end    
   
+  
+  
+  
+#  ----------------------------------------------------------------------------------------------
+#  Documentation
+#  
+# http://rubeh.tumblr.com/post/27622544/rake-rdoctask-with-all-of-the-options-stubbed-out
+# http://www.java2s.com/Code/Ruby/Language-Basics/RDocoptionsareusedlikethisrdocoptionsnames.htm
+#   
+
+remove_task 'docs' 
+
+desc "Generate RDoc documentation for Kyanite"
+Rake::RDocTask.new(:docs) do |rd|
+    rd.title    = "Kyanite #{Kyanite::VERSION}"
+
+    rd.rdoc_dir = 'doc'   
+    rd.rdoc_files.include('lib/**/*.rb')
+    rd.rdoc_files.include('test/**/test_*.rb')
+    rd.rdoc_files.include('README.txt', 'License.txt', 'Div')
+    
+    rd.rdoc_files.exclude('lib/kyanite/array/array2')
+    rd.rdoc_files.exclude('lib/kyanite/array/matrix2')
+    rd.rdoc_files.exclude('lib/kyanite/operation/call_tracker')
+    #rd.rdoc_files.exclude('lib/kyanite.rb')
+    
+    #rd.main = 'README.txt'
+
+      
+    rd.options += [
+        '--tab-width', '4',
+        '--main', 'README.txt',
+        '--show-hash',        # A name of the form #name in a comment is a possible hyperlink to an instance method name. When displayed, the # is removed unless this option is specified.
+        '--line-numbers',
+        '--all',
+        '--charset=utf8'      
+      ]      
+      
+end
+
   
 #  ----------------------------------------------------------------------------------------------
 #  Local Tasks

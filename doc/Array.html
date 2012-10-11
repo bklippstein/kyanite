@@ -2,9 +2,9 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class Array - kyanite-0.5.9 Documentation</title>
+<title>class Array - Kyanite 0.5.10</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -55,6 +55,9 @@
     <li>lib/kyanite/enumerable/enumerable_strings.rb
     <li>lib/kyanite/enumerable/structure.rb
     <li>lib/kyanite/set.rb
+    <li>test/enumerable/test_enumerable_enumerables.rb
+    <li>test/enumerable/test_enumerable_numerics.rb
+    <li>test/enumerable/test_enumerable_strings.rb
   </ul>
 </nav>
 
@@ -92,6 +95,14 @@
   
   
     <li><a class="include" href="Enumerable.html">Enumerable</a>
+  
+  
+  
+    <li><a class="include" href="EnumerableEnumerables.html">EnumerableEnumerables</a>
+  
+  
+  
+    <li><a class="include" href="EnumerableStrings.html">EnumerableStrings</a>
   
   
   </ul>
@@ -134,11 +145,9 @@
 
   <ul>
   
-    <li class="file"><a href="./History_txt.html">History</a>
+    <li class="file"><a href="./Div.html">Div</a>
   
     <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
   
     <li class="file"><a href="./README_txt.html">README</a>
   
@@ -214,6 +223,54 @@
   
     <li><a href="./Symbol.html">Symbol</a>
   
+    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
+  
+    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
+  
+    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
+  
+    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
+  
+    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
+  
+    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
+  
+    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
+  
+    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
+  
+    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
+  
+    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
+  
+    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
+  
+    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
+  
+    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
+  
+    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
+  
+    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
+  
+    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
+  
+    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
+  
+    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
+  
+    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
+  
+    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
+  
+    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
+  
+    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
+  
+    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
+  
+    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
+  
     <li><a href="./TrueClass.html">TrueClass</a>
   
     <li><a href="./Undoable.html">Undoable</a>
@@ -240,7 +297,8 @@ href="Range.html">Range</a> |</p>
 
 <h2 id="label-Tools+And+Casts+For+Array"><strong>Tools</strong> <strong>And</strong> <strong>Casts</strong> <strong>For</strong> <strong><a href="Array.html">Array</a></strong></h2>
 
-<p>See TestKyaniteArray for tests and examples.</p>
+<p>See <a href="TestKyaniteArray.html">TestKyaniteArray</a> for tests and
+examples.</p>
 
 <p>Aus <a
 href="http://facets.rubyforge.org/doc/api/core/classes/Array.html">Facets/Array</a>
@@ -310,7 +368,8 @@ eingefügt:</p>
 
 <p>Liefert eine Integerzahl.</p>
 
-<p>Tests and examples see TestKyaniteArray#test_rephrase_index</p>
+<p>Tests and examples see <a
+href="TestKyaniteArray.html#method-i-test_rephrase_index">TestKyaniteArray#test_rephrase_index</a></p>
           
 
           
@@ -370,7 +429,8 @@ noch aus einem Element besteht, wird er ‘pur’ zurückgeliefert und nicht als
 [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>].<span class="ruby-identifier">shift_complement</span>.<span class="ruby-identifier">shift_complement</span>.<span class="ruby-identifier">shift_complement</span>  =<span class="ruby-operator">&gt;</span>  <span class="ruby-keyword">nil</span>
 </pre>
 
-<p>Tests and examples see TestKyaniteArray#test_array_shift_complement</p>
+<p>Tests and examples see <a
+href="TestKyaniteArray.html#method-i-test_array_shift_complement">TestKyaniteArray#test_array_shift_complement</a></p>
           
 
           
@@ -633,8 +693,8 @@ geordneter <a href="Hash.html">Hash</a>)</p>
           
           <p>Liefert ein <a href="OrderedSet.html">OrderedSet</a>, das dem <a
 href="Array.html">Array</a> entspricht.  Übersicht über die verschiedenen
-Set-Klassen siehe <a href="Set.html">Set</a>. Tests siehe
-TestKyaniteSet#test_ordered_set</p>
+Set-Klassen siehe <a href="Set.html">Set</a>. Tests siehe <a
+href="TestKyaniteSet.html#method-i-test_ordered_set">TestKyaniteSet#test_ordered_set</a></p>
           
 
           
@@ -668,7 +728,8 @@ TestKyaniteSet#test_ordered_set</p>
 href="Array.html">Array</a> entspricht.  Übersicht über die verschiedenen
 Set-Klassen siehe <a href="Set.html">Set</a>.</p>
 
-<p>Tests siehe TestKyaniteSet#test_sorted_set</p>
+<p>Tests siehe <a
+href="TestKyaniteSet.html#method-i-test_sorted_set">TestKyaniteSet#test_sorted_set</a></p>
           
 
           

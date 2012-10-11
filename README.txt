@@ -2,7 +2,7 @@
 
 = *Kyanite*
 
-http://kyanite.rubyforge.org
+http://bklippstein.github.com/kyanite/
 
 [ | *Kyanite* | Object | Array | Set | Enumerable | Hash | ]     | *Kyanite* | TrueClass | FalseClass | NilClass | Div | 
 ---
@@ -30,11 +30,11 @@ http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 
 
 == Homepage
-http://kyanite.rubyforge.org 
+http://bklippstein.github.com/kyanite/
 
 
 == Author
-Björn Klippstein
+Björn Klippstein 
 
 
 == Disclaimer
