@@ -29,6 +29,7 @@ lib/kyanite/general/object.rb
 lib/kyanite/general/true_false.rb
 lib/kyanite/general/undoable.rb
 lib/kyanite/hash.rb
+lib/kyanite/hoe.rb
 lib/kyanite/matrix2.rb
 lib/kyanite/nil.rb
 lib/kyanite/numeric.rb
@@ -37,6 +38,7 @@ lib/kyanite/numeric/integer.rb
 lib/kyanite/numeric/numeric.rb
 lib/kyanite/operation.rb
 lib/kyanite/operation/call_tracker.rb
+lib/kyanite/operation/hoe.rb
 lib/kyanite/operation/rake.rb
 lib/kyanite/operation/regexp.rb
 lib/kyanite/operation/unit_test.rb

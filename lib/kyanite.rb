@@ -16,13 +16,8 @@ end
 
 module Kyanite #:nodoc
 
-  VERSION  = '0.5.16'
-  
-  class << self
-    attr_accessor :projectname
-    attr_accessor :github_username
-  end  
-  
+  VERSION  = '0.5.17'
+    
 end
     
 

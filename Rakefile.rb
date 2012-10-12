@@ -3,10 +3,10 @@
 projectname = File.dirname(__FILE__).split("/")[-1].strip   # Name des Projekt-Stammverzeichnisses
 require File.dirname(__FILE__) + "/lib/#{projectname}"      # Hauptdatei der Library
 
+require 'kyanite/hoe'
 Kyanite.projectname = projectname
 Kyanite.github_username = 'bklippstein'
 
-require 'hoe'
 require 'rdoc/task'
 require 'kyanite/rake'
 
