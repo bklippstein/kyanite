@@ -1,16 +1,16 @@
 
-puts "Hallo"
-
-module Kyanite #:nodoc
-  module_function
-  def github_username; @github_username; end
-  def github_username= v; @github_username = v; end
-  
-end
+# puts "Hallo"
 
 
 
-puts Kyanite.github_username
+require 'kyanite'
+
+
+
+
+Kyanite.projectname = 'kyanite'
+
+puts Kyanite.projectname.to_class.const_get('VERSION')
 
 
 

@@ -1,12 +1,5 @@
 # ruby encoding: utf-8
 
-module Kyanite #:nodoc
-  module_function
-  def github_username;    @github_username;     end
-  def github_username= v; @github_username = v; end
-  
-end
-
 #== *Rake* 
 #Beispiele siehe Rakefile.rb
 #* Methode remove_task, um Tasks überschreiben zu können
@@ -62,13 +55,13 @@ end
 
   # git_publish
   #
-  desc ':git_add, :git_commit, :git_push'
+  desc 'publish actual version to github'
   task :git_publish => [ :git_add, :git_commit, :git_push ] do
     puts; puts; puts; puts   
     if Hoe::WINDOZE
-      sh "start https://github.com/#{Kyanite.github_username}/#{$projectname} "
+      sh "start https://github.com/#{Kyanite.github_username}/#{Kyanite.projectname} "
     else
-      puts "done. Visit https://github.com/#{Kyanite.github_username}/#{$projectname} "
+      puts "done. Visit https://github.com/#{Kyanite.github_username}/#{Kyanite.projectname} "
     end
   end  
   
@@ -137,9 +130,9 @@ end
   
     # Repository erstellen, wenn nötig
     Dir.chdir '/tmp' do
-      sh "#{'sudo ' unless Hoe::WINDOZE }git clone https://github.com/#{Kyanite.github_username}/#{$projectname} " do |ok,res|
+      sh "#{'sudo ' unless Hoe::WINDOZE }git clone https://github.com/#{Kyanite.github_username}/#{Kyanite.projectname} " do |ok,res|
         if ok
-          Dir.chdir "/tmp/#{$projectname}" do
+          Dir.chdir "/tmp/#{Kyanite.projectname}" do
             if Hoe::WINDOZE
               sh 'git checkout --orphan gh-pages '
               sh 'chcp 65001 > NUL '
@@ -154,7 +147,7 @@ end
     end # do chdir
     
     # alles löschen
-    Dir.chdir "/tmp/#{$projectname}" do 
+    Dir.chdir "/tmp/#{Kyanite.projectname}" do 
       if Hoe::WINDOZE
         sh 'git rm -rf --ignore-unmatch . '
         sh 'chcp 65001 > NUL '
@@ -166,25 +159,25 @@ end
     # doc rüberkopieren 
     Dir.chdir 'doc' do
       if Hoe::WINDOZE
-        sh "xcopy /E *.* \\tmp\\#{$projectname} "
+        sh "xcopy /E *.* \\tmp\\#{Kyanite.projectname} "
         sh 'chcp 65001 > NUL '
       else
-        sh "sudo cp . /tmp/#{$projectname} "
+        sh "sudo cp . /tmp/#{Kyanite.projectname} "
       end      
     end      
     
     # publish   
-    Dir.chdir "/tmp/#{$projectname}" do
+    Dir.chdir "/tmp/#{Kyanite.projectname}" do
       if Hoe::WINDOZE
         sh 'git add -A '    
         sh 'sudo git commit -m "---" --allow-empty'
         sh 'git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enthält die Login-Daten      
-        sh "start http://#{Kyanite.github_username}.github.com/#{$projectname} "
+        sh "start http://#{Kyanite.github_username}.github.com/#{Kyanite.projectname} "
       else
         sh 'sudo git add -A '    
         sh 'sudo git commit -m "---" --allow-empty'
         sh 'sudo git push origin +gh-pages '  # .netrc enthält die Login-Daten           
-        puts "done. Visit http://#{Kyanite.github_username}.github.com/#{$projectname} "
+        puts "done. Visit http://#{Kyanite.github_username}.github.com/#{Kyanite.projectname} "
       end # if   
     
     end # do chdir   
@@ -205,7 +198,7 @@ end
   desc 'release actual version to rubygems'
   task :rubygems_publish  do
     puts; puts; puts; puts  
-    ENV["VERSION"] = $projectname.to_class.const_get('VERSION')
+    ENV["VERSION"] = Kyanite.projectname.to_class.const_get('VERSION')
     Rake::Task[:release].invoke
 
   end  
@@ -217,7 +210,7 @@ end
   desc 'uninstall old gem'
   task :gem_uninstall do
     puts; puts; puts; puts   
-    sh "#{'sudo ' unless Hoe::WINDOZE }gem uninstall #{$projectname} --a --ignore-dependencies "
+    sh "#{'sudo ' unless Hoe::WINDOZE }gem uninstall #{Kyanite.projectname} --a --ignore-dependencies "
   end  
   
 
@@ -227,7 +220,7 @@ end
   desc 'install gem from rubygems'
   task :gem_install do
     puts; puts; puts; puts     
-    sh "#{'sudo ' unless Hoe::WINDOZE }gem install #{$projectname} "
+    sh "#{'sudo ' unless Hoe::WINDOZE }gem install #{Kyanite.projectname} "
   end    
   
 

@@ -8,13 +8,13 @@ require 'rubytree'
 require 'kyanite/nil'
 
 
-module Tree # :nodoc: 
+module Tree #:nodoc: 
 
   # [ | *Kyanite* | Object | Array | Set | Enumerable | Hash | ]     | Kyanite | TrueClass | FalseClass | NilClass | *Div* | 
   # [ ] | Div | <b>Tree::TreeNode</b> | Optimizer | 
   # ---
   #
-  # == *Ergänzungen* *zu* *rubytree* *0.5.2*  
+  # == Ergänzungen zu rubytree
   # See TestKyaniteTree for tests and examples.
   #
   class TreeNode

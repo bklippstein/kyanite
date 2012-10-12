@@ -16,7 +16,12 @@ end
 
 module Kyanite #:nodoc
 
-  VERSION  = '0.5.14'
+  VERSION  = '0.5.15'
+  
+  class << self
+    attr_accessor :projectname
+    attr_accessor :github_username
+  end  
   
 end
     
@@ -38,3 +43,4 @@ end
   require 'kyanite/symbol'
   require 'kyanite/tree'
 # require 'kyanite/unit_test'         # nur für Tests
+

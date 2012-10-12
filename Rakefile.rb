@@ -1,18 +1,16 @@
 # ruby encoding: utf-8
 
+projectname = File.dirname(__FILE__).split("/")[-1].strip   # Name des Projekt-Stammverzeichnisses
+require File.dirname(__FILE__) + "/lib/#{projectname}"      # Hauptdatei der Library
 
-$projectname = File.dirname(__FILE__).split("/")[-1].strip  # Name des Projekt-Stammverzeichnisses
-
-
-require 'rubygems'
-require 'hoe'
-require 'rake'
-require File.dirname(__FILE__) + "/lib/#{$projectname}"     # Hauptdatei der Library
-require 'kyanite/rake'
-require 'rdoc/task'
-
-
+Kyanite.projectname = projectname
 Kyanite.github_username = 'bklippstein'
+
+require 'hoe'
+require 'rdoc/task'
+require 'kyanite/rake'
+
+
 
 
 #  ----------------------------------------------------------------------------------------------
@@ -20,13 +18,13 @@ Kyanite.github_username = 'bklippstein'
 #  
 # http://nubyonrails.com/articles/tutorial-publishing-rubygems-with-hoe
 #
-$hoe = Hoe.spec $projectname do 
+$hoe = Hoe.spec Kyanite.projectname do 
 
   # self.rubyforge_name = 'yourgemx' # if different than 'yourgem'
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  urls                  << ["http://#{Kyanite::github_username}.github.com/#{$projectname}/"]   
+  urls                  << ["http://#{Kyanite::github_username}.github.com/#{Kyanite.projectname}/"]   
   remote_rdoc_dir       = ''      # Release to root only one project
   extra_deps            << ['activesupport',   '>= 3.2.8']
   extra_deps            << ['facets',          '>= 2.9.3']
@@ -55,7 +53,7 @@ remove_task 'docs'
 desc "generate RDoc documentation"
 Rake::RDocTask.new(:docs) do |rd|
 
-    rd.title    = "#{$projectname.capitalize} #{$projectname.to_class.const_get('VERSION')}"
+    rd.title    = "#{Kyanite.projectname.capitalize} #{Kyanite.projectname.to_class.const_get('VERSION')}"
 
     rd.rdoc_dir = 'doc'   
     rd.rdoc_files.include('lib/**/*.rb')

@@ -18,8 +18,10 @@ require 'kyanite/enumerable'                          # is_collection?
 # == *Tools* *For* *Hash*
 # See TestKyaniteHash for tests and examples.
 #
-# [Generelle Anmerkungen zu Hashes]   Definiert man in irgendeinem Objekt die Methode <tt>==(other)</tt>, so muss man auch die Methode +hash+ neu definieren! 
-# [ ]                                 Rubys +delete+ und +delete_if+ verändern den Hash! Siehe TestHash#test_delete
+# === Generelle Anmerkungen zu Hashes
+# Definiert man in irgendeinem Objekt die Methode <tt>==(other)</tt>, so muss man auch die Methode +hash+ neu definieren! 
+#
+# Rubys +delete+ und +delete_if+ verändern den Hash! Siehe TestHash#test_delete
 #
 #
 class Hash

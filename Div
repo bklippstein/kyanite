@@ -4,14 +4,37 @@
 [ ] | *Div* | Tree::TreeNode | Optimizer | 
 ---
 
-== *Div*
+== Sonstige Klassen
 * Tree::TreeNode    Ergänzungen zu rubytree
 * Optimizer         Auswahl von Objekten auf Basis von Scores
 * Undoable          Undo für komplexe Objekte
 
 
-== *Unit* *Tests* 
-Die Klasse UnitTest enthält Ergänzungen zu Test::Unit::TestCase:
-* Statusanzeige für durchlaufende Tests
-* KKernel#smart_load_path vereinfacht die require-Statements in den Tests.  Wird in allen Kyanite-Tests angewendet, Verwendung siehe dort. 
+== Unit Tests
+Durchlaufende Tests besitzen eine Statusanzeige, wenn man UnitTest statt Test::Unit::TestCase: verwendet.
+
+smart_load_path vereinfacht die require-Statements in den Tests. Usage:
+  if $0 == __FILE__ 
+    require 'kyanite/smart_load_path'
+    smart_load_path   
+  end
+  require 'kyanite/unit_test'
+  require 'my_library'
+Das +require 'my_library'+ lädt die aktuelle Version von +my_library+ im übergeordneten Projektverzeichnis, nicht nur die über gem installierte Version.
+
+
+== Rake Tasks
+Usage: In Rakefile
+  require 'kyanite'
+  Kyanite.projectname = File.dirname(__FILE__).split("/")[-1].strip  # Name des Projekt-Stammverzeichnisses
+  Kyanite.github_username = 'my_username_on_github'
+
+Console:
+  rake rubygems_publish      # release actual version to rubygems
+  rake git_publish           # publish actual version to github
+  rake git_publish_docs      # publish docs to github
+  
+  rake publish               # publish all to github and rubygems, reinstall gem 
+
+
 
