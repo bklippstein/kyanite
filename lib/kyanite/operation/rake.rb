@@ -42,7 +42,7 @@ end
   # Task :publish
   #
   desc 'publish all on github and rubygems, reinstall gem'
-  task :publish => [ :redocs, :rubygems_publish, :gem_uninstall, :git_publish, :git_publish_docs, :sleep_15, :gem_install] do
+  task :publish => [ :utf8, :redocs, :rubygems_publish, :gem_uninstall, :git_publish, :git_publish_docs, :sleep_15, :utf8, :gem_install] do
     puts 'done.'
   end  
 
@@ -160,7 +160,6 @@ end
     Dir.chdir 'doc' do
       if Hoe::WINDOZE
         sh "xcopy /E *.* \\tmp\\#{Kyanite.projectname} "
-        sh 'chcp 65001 > NUL '
       else
         sh "sudo cp . /tmp/#{Kyanite.projectname} "
       end      
@@ -170,9 +169,10 @@ end
     Dir.chdir "/tmp/#{Kyanite.projectname}" do
       if Hoe::WINDOZE
         sh 'git add -A '    
-        sh 'sudo git commit -m "---" --allow-empty'
+        sh 'git commit -m "---" --allow-empty'
         sh 'git push origin +gh-pages '  # C:\Users\Klippstein\_netrc enthält die Login-Daten      
         sh "start http://#{Kyanite.github_username}.github.com/#{Kyanite.projectname} "
+        sh 'chcp 65001 > NUL '        
       else
         sh 'sudo git add -A '    
         sh 'sudo git commit -m "---" --allow-empty'
@@ -219,7 +219,7 @@ end
   #
   desc 'install gem from rubygems'
   task :gem_install do
-    puts; puts; puts; puts     
+    puts; puts; puts; puts        
     sh "#{'sudo ' unless Hoe::WINDOZE }gem install #{Kyanite.projectname} "
   end    
   
@@ -229,8 +229,29 @@ end
 
 
 # -------------------------------------------------------------------------------------------------------
-# Sleep
+# Div
 #
+
+# Task :utf8
+#
+desc 'Set Codepage to 65001'
+task :utf8 do
+
+  sh 'chcp 65001 > NUL '  if Hoe::WINDOZE
+
+end
+
+
+# Task :version
+#
+desc 'VERSION of the current project'
+task :version do
+
+    version = Kyanite.projectname.to_class.const_get('VERSION')
+    puts "\n#{Kyanite.projectname} (#{version})\n\n"
+
+end
+
 
 
 # Task :sleep_5
@@ -245,7 +266,7 @@ task :sleep_5 do
   else
     sh "sleep 5"
   end
-  #puts '---------------------------------------------------'
+
 end
 
 
@@ -261,13 +282,11 @@ task :sleep_15 do
   else
     sh "sleep 15"
   end
-  #puts '---------------------------------------------------'
+
 end
 
 
-# -------------------------------------------------------------------------------------------------------
-# Div
-#    
+ 
   
     # namespace :manifest do
     # desc 'Recreate Manifest.txt to include ALL files'

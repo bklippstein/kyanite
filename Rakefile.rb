@@ -51,7 +51,7 @@ end
 remove_task 'docs' 
 
 desc "generate RDoc documentation"
-Rake::RDocTask.new(:docs) do |rd|
+Rake::RDocTask.new(:docs) do |rd| 
 
     rd.title    = "#{Kyanite.projectname.capitalize} #{Kyanite.projectname.to_class.const_get('VERSION')}"
 

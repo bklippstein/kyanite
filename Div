@@ -24,10 +24,17 @@ Das +require 'my_library'+ lädt die aktuelle Version von +my_library+ im überg
 
 
 == Rake Tasks
-Usage: In Rakefile
-  require 'kyanite'
-  Kyanite.projectname = File.dirname(__FILE__).split("/")[-1].strip  # Name des Projekt-Stammverzeichnisses
-  Kyanite.github_username = 'my_username_on_github'
+Usage: Head of Rakefile
+  projectname = File.dirname(__FILE__).split("/")[-1].strip   # Name des Projekt-Stammverzeichnisses
+  require File.dirname(__FILE__) + "/lib/#{projectname}"      # Hauptdatei der Library
+
+  Kyanite.projectname = projectname
+  Kyanite.github_username = 'bklippstein'
+
+  require 'hoe'
+  require 'rdoc/task'
+  require 'kyanite/rake'
+  
 
 Console:
   rake rubygems_publish      # release actual version to rubygems

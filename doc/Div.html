@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>Div - Kyanite 0.5.15</title>
+<title>Div - Kyanite 0.5.16</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -234,11 +234,17 @@ Test::Unit::TestCase: verwendet.</p>
 
 <h2 id="label-Rake+Tasks">Rake Tasks</h2>
 
-<p>Usage: In Rakefile</p>
+<p>Usage: Head of Rakefile</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'kyanite'</span>
-<span class="ruby-constant">Kyanite</span>.<span class="ruby-identifier">projectname</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)[<span class="ruby-value">-1</span>].<span class="ruby-identifier">strip</span>  <span class="ruby-comment"># Name des Projekt-Stammverzeichnisses</span>
-<span class="ruby-constant">Kyanite</span>.<span class="ruby-identifier">github_username</span> = <span class="ruby-string">'my_username_on_github'</span>
+<pre class="ruby"><span class="ruby-identifier">projectname</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)[<span class="ruby-value">-1</span>].<span class="ruby-identifier">strip</span>   <span class="ruby-comment"># Name des Projekt-Stammverzeichnisses</span>
+<span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/lib/#{projectname}&quot;</span>      <span class="ruby-comment"># Hauptdatei der Library</span>
+
+<span class="ruby-constant">Kyanite</span>.<span class="ruby-identifier">projectname</span> = <span class="ruby-identifier">projectname</span>
+<span class="ruby-constant">Kyanite</span>.<span class="ruby-identifier">github_username</span> = <span class="ruby-string">'bklippstein'</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">'hoe'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'rdoc/task'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'kyanite/rake'</span>
 </pre>
 
 <p>Console:</p>
