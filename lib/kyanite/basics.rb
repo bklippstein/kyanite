@@ -12,8 +12,7 @@
 # require 'kyanite/general'    
 # require 'kyanite/general/callerutils'
   require 'kyanite/general/classutils'  
-  require 'kyanite/general/kernel'     
-  require 'kyanite/general/nil'     
+  require 'kyanite/general/kernel'      
   require 'kyanite/general/object'    
 # require 'kyanite/general/optimizer'    
   require 'kyanite/general/true_false'       
@@ -45,7 +44,6 @@
 # require 'kyanite/dictionary'   
   require 'kyanite/hash'   
 # require 'kyanite/matrix2'   
-# require 'kyanite/nil'               # ist schon in general
   require 'kyanite/range'  
 # require 'kyanite/set'  
   require 'kyanite/symbol'  

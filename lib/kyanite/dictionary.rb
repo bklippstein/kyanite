@@ -94,15 +94,16 @@ class Array
 end
 
 
-class NilClass
+if defined? TransparentNil
+  class NilClass
 
-  # Rückgabe: Leeres Dictionary    
-  def to_dictionary;                      Dictionary.new;     end  
+    # Rückgabe: Leeres Dictionary    
+    def to_dictionary;                      Dictionary.new;     end  
 
-  def fetch_by_index(*a);                 nil;                end  
+    def fetch_by_index(*a);                 nil;                end  
 
+  end
 end
-
 
 
 # ---------------------------------------------------------

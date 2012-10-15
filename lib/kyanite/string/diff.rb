@@ -64,22 +64,22 @@ class String
 end
 
 
+if defined? TransparentNil
+  class NilClass
 
-class NilClass
-
-  # Rückgabe: Leerer String,
-  # siehe String#overlap
-  def overlap(*a);              '';             end  
-  
-  # Rückgabe: b,
-  # siehe String#diff  
-  def diff(b);                  b;              end  
-  
-  # Rückgabe: ['', b],
-  # siehe String#overlapdiff
-  def overlapdiff(b);           ['', b];        end  
+    # Rückgabe: Leerer String,
+    # siehe String#overlap
+    def overlap(*a);              '';             end  
+    
+    # Rückgabe: b,
+    # siehe String#diff  
+    def diff(b);                  b;              end  
+    
+    # Rückgabe: ['', b],
+    # siehe String#overlapdiff
+    def overlapdiff(b);           ['', b];        end  
+  end
 end
-
 
 
 

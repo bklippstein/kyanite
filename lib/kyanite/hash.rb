@@ -148,14 +148,15 @@ class Hash
 
 end #class   
  
-
-class NilClass
-  def compact_keys!;          nil;            end   
-  def compact_values!;        nil;            end   
-  def delete_key(*a);         nil;            end   
-  def delete_value(*a);       nil;            end   
-  def arrayize(*a);           nil;            end   
-  def fuzzyget(*a);           nil;            end   
+if defined? TransparentNil
+  class NilClass
+    def compact_keys!;          nil;            end   
+    def compact_values!;        nil;            end   
+    def delete_key(*a);         nil;            end   
+    def delete_value(*a);       nil;            end   
+    def arrayize(*a);           nil;            end   
+    def fuzzyget(*a);           nil;            end   
+  end
 end
 
     

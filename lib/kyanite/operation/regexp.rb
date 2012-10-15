@@ -19,9 +19,10 @@ class String
 
 end
 
-
-class NilClass
-  def show_regexp(*a);                          nil;            end 
+if defined? TransparentNil
+  class NilClass
+    def show_regexp(*a);                          nil;            end 
+  end
 end
 
 

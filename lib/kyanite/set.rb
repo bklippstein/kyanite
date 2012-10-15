@@ -1,4 +1,10 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
+  smart_load_path   
+end
+
 require 'set'
 require 'kyanite/enumerable'             # is_collection? 
 require 'kyanite/general/kernel'         # silence_warnings
@@ -199,22 +205,6 @@ class Array
 end # class
   
   
-
-
-class NilClass
-
-  # Rückgabe: Leeres Set
-  def to_set;                         Set.new;              end   
-
-  # Rückgabe: Leeres SortedSet
-  def to_sorted_set;                  SortedSet.new;        end    
-
-  # Rückgabe: Leeres OrderedSet
-  def to_ordered_set;                 OrderedSet.new;       end     
-end
-
-
-
 class Object
 
   # Liefert ein Set mit einem Element
@@ -223,17 +213,38 @@ class Object
   
 end
 
+
+if defined? TransparentNil
+  class NilClass
+
+    # Rückgabe: Leeres Set
+    def to_set;                         Set.new;              end   
+
+    # Rückgabe: Leeres SortedSet
+    def to_sorted_set;                  SortedSet.new;        end    
+
+    # Rückgabe: Leeres OrderedSet
+    def to_ordered_set;                 OrderedSet.new;       end     
+  end
+end
+
+
+
+
     
 # ==================================================================================
 # Ausprobieren
 #
 if $0 == __FILE__ 
 
-  test = [:a, :b, :c].to_ordered_set
-  see :test # .inspect_see
-  see_pp test
-  seee.process_print( test, :method => :pp )
-  see :test# .inspect_see
+
+  puts nil.to_set
+
+  # test = [:a, :b, :c].to_ordered_set
+  # see :test # .inspect_see
+  # see_pp test
+  # seee.process_print( test, :method => :pp )
+  # see :test# .inspect_see
 
 end
 

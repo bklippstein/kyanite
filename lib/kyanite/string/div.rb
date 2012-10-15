@@ -18,9 +18,11 @@ class String
 end
 
 
-class NilClass
+if defined? TransparentNil
+  class NilClass
 
-  # Rückgabe: 0
-  def count_words;                   0;          end  
-  
+    # Rückgabe: 0
+    def count_words;                   0;          end  
+    
+  end
 end

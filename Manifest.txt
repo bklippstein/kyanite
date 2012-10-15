@@ -1,3 +1,4 @@
+console.rb
 Div
 History.txt
 License.txt
@@ -24,14 +25,12 @@ lib/kyanite/general.rb
 lib/kyanite/general/callerutils.rb
 lib/kyanite/general/classutils.rb
 lib/kyanite/general/kernel.rb
-lib/kyanite/general/nil.rb
 lib/kyanite/general/object.rb
 lib/kyanite/general/true_false.rb
 lib/kyanite/general/undoable.rb
 lib/kyanite/hash.rb
 lib/kyanite/hoe.rb
 lib/kyanite/matrix2.rb
-lib/kyanite/nil.rb
 lib/kyanite/numeric.rb
 lib/kyanite/numeric/float.rb
 lib/kyanite/numeric/integer.rb
@@ -63,7 +62,6 @@ lib/kyanite/symbol.rb
 lib/kyanite/tree.rb
 lib/kyanite/undoable.rb
 lib/kyanite/unit_test.rb
-script/console.rb
 test/_start_all.rb
 test/array/test_array.rb
 test/array/test_matrix2.rb
@@ -72,7 +70,6 @@ test/enumerable/test_enumerable_numerics.rb
 test/enumerable/test_enumerable_strings.rb
 test/enumerable/test_structure.rb
 test/general/test_classutils.rb
-test/general/test_nil.rb
 test/general/test_object.rb
 test/general/test_true_false.rb
 test/numeric/test_numeric_integer.rb

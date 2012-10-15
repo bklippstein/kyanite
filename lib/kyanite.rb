@@ -16,7 +16,7 @@ end
 
 module Kyanite #:nodoc
 
-  VERSION  = '0.5.17'
+  VERSION  = '0.6.0'
     
 end
     
@@ -28,7 +28,6 @@ end
   require 'kyanite/general'
   require 'kyanite/hash'
 # require 'kyanite/matrix2'           # ist schon in array
-# require 'kyanite/nil'               # ist schon in general
   require 'kyanite/numeric'
 # require 'kyanite/operation'         # nur manuell   
   require 'kyanite/optimizer'

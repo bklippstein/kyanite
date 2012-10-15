@@ -100,16 +100,16 @@ class String
 
 end
 
-
-class NilClass
-  def to_identifier;                  nil;            end
-  def to_integer;                     nil;            end
-  def to_integer_optional;            nil;            end
-  def to_nil(*a);                     nil;            end  
-  def to_x;                           nil;            end  
-  def from_x;                         nil;            end  
+if defined? TransparentNil
+  class NilClass
+    def to_identifier;                  nil;            end
+    def to_integer;                     nil;            end
+    def to_integer_optional;            nil;            end
+    def to_nil(*a);                     nil;            end  
+    def to_x;                           nil;            end  
+    def from_x;                         nil;            end  
+  end
 end
-
 
 
 

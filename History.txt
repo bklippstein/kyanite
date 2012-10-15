@@ -1,3 +1,6 @@
+== 0.6.0 2012-10-15
+* improved nil-Handling 
+
 == 0.5.13 2012-10-09
 * Rakefile: publish project & docs on github & rubygems
 

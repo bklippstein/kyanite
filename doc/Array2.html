@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class Array2 - Kyanite 0.5.17</title>
+<title>class Array2 - Kyanite 0.6.0</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -193,8 +193,6 @@
   
     <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
   
-    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
-  
     <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
   
     <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
@@ -290,7 +288,7 @@ Zeilenheader (Zelle 0), einen Spaltenheader gibt es nicht.</p>
 
           
           <div class="method-source-code" id="clean4view-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">clean4view</span>(<span class="ruby-identifier">level</span> = <span class="ruby-value">0</span>)
     <span class="ruby-identifier">new</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">zeile</span><span class="ruby-operator">|</span> 
                             <span class="ruby-keyword">if</span> <span class="ruby-identifier">zeile</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">level</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span>
@@ -329,7 +327,7 @@ Zeilenheader (Zelle 0), einen Spaltenheader gibt es nicht.</p>
 
           
           <div class="method-source-code" id="clean4view-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 95</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">clean4view!</span>(<span class="ruby-identifier">level</span> = <span class="ruby-value">0</span>)
     <span class="ruby-keyword">self</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">clean4view</span>(<span class="ruby-identifier">level</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -362,7 +360,7 @@ Beispielaufruf:</p>
 
           
           <div class="method-source-code" id="inspect-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 66</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
     <span class="ruby-identifier">analyze</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-identifier">analyze</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">zeile</span> <span class="ruby-operator">|</span> 
@@ -398,7 +396,7 @@ Beispielaufruf:</p>
 
           
           <div class="method-source-code" id="row-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">row</span>(<span class="ruby-identifier">i</span>)                                    
     <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">i</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -430,7 +428,7 @@ Beispielaufruf:</p>
 
           
           <div class="method-source-code" id="row_size-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 57</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">row_size</span>                                
     <span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span></pre>
@@ -465,7 +463,7 @@ Stattdessen kann man auch schreiben:</p>
 
           
           <div class="method-source-code" id="set_element-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_element!</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>,<span class="ruby-identifier">wert</span>)                    
     <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">wert</span>.<span class="ruby-identifier">dup</span>
 <span class="ruby-keyword">end</span></pre>
@@ -497,7 +495,7 @@ Stattdessen kann man auch schreiben:</p>
 
           
           <div class="method-source-code" id="set_row-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_row!</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">wert</span>)                        
     <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">wert</span>.<span class="ruby-identifier">dup</span>
 <span class="ruby-keyword">end</span></pre>

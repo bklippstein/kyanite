@@ -26,14 +26,14 @@ class String
   end # def
 end
 
+if defined? TransparentNil
+  class NilClass
 
-class NilClass
-
-    # Rückgabe: false
-    # redundante Definition!        
-    def include?(*a);                   false;          end  
+      # Rückgabe: false
+      # redundante Definition!        
+      def include?(*a);                   false;          end  
+  end
 end
-
 
 # -----------------------------------------------------------------------------------------
 #  ausprobieren

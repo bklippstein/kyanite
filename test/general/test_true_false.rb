@@ -7,7 +7,7 @@ end
 
 require 'kyanite/unit_test'
 require 'kyanite/general/true_false'
-require 'kyanite/general/nil'
+
 
 # Tests for TrueClass, FalseClass
 class TestKyaniteTrueFalse < UnitTest

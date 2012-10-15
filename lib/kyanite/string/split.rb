@@ -129,16 +129,17 @@ class String
 end
 
 
-class NilClass
+if defined? TransparentNil
+  class NilClass
 
-  # Rückgabe: Leerer String,
-  # siehe String#split
-  def cut(*a);                            '';             end  
-  
-  def nchar(*a);                          nil;            end  
-  def split_by_index(*a);                 nil;            end  
-  def extract(*a);                        nil;            end  
-  def split_numeric;                      nil;            end  
-  def without_versioninfo;          nil;            end    
+    # Rückgabe: Leerer String,
+    # siehe String#split
+    def cut(*a);                            '';             end  
+    
+    def nchar(*a);                          nil;            end  
+    def split_by_index(*a);                 nil;            end  
+    def extract(*a);                        nil;            end  
+    def split_numeric;                      nil;            end  
+    def without_versioninfo;          nil;            end    
+  end
 end
-

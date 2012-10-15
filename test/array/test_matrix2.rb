@@ -5,9 +5,10 @@ if $0 == __FILE__
   smart_load_path   
 end
 
+require 'transparent_nil'    unless defined? TransparentNil
 require 'kyanite/unit_test'
 require 'kyanite/matrix2'
-require 'kyanite/general/nil'   
+require 'transparent_nil'   
 
 # require 'benchmark'
 # include Benchmark

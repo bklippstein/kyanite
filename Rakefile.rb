@@ -24,12 +24,12 @@ $hoe = Hoe.spec Kyanite.projectname do
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  urls                  << ["http://#{Kyanite::github_username}.github.com/#{Kyanite.projectname}/"]   
-  remote_rdoc_dir       = ''      # Release to root only one project
+  extra_deps            << ['transparent_nil', '>= 0.1.3']
   extra_deps            << ['activesupport',   '>= 3.2.8']
   extra_deps            << ['facets',          '>= 2.9.3']
   extra_deps            << ['rubytree',        '>= 0.8.3'] 
-
+  remote_rdoc_dir = '' # Release to root only one project  
+  urls                  = [["http://#{Kyanite.github_username}.github.com/#{Kyanite.projectname}/"]]
 
                     
 end
@@ -91,7 +91,7 @@ remove_task 'deps:email'
 remove_task 'install_gem'
 remove_task 'multi' 
 remove_task 'newb' 
-Dir['tasks/**/*.rake'].each { |t| load t }  
+#Dir['tasks/**/*.rake'].each { |t| load t }  
   
   
   

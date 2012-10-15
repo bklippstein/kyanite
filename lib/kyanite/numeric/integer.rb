@@ -32,10 +32,10 @@ class Integer
 end # class
 
 
-
-class NilClass
-  def to_time;                        nil;            end   
+if defined? TransparentNil
+  class NilClass
+    def to_time;                        nil;            end   
+  end
 end
-
 
 

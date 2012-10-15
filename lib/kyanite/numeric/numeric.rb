@@ -47,7 +47,8 @@ class Numeric
     
 end # class
 
-
-class NilClass
-  def substract(other); nil; end
+if defined? TransparentNil
+  class NilClass
+    def substract(other); nil; end
+  end
 end

@@ -195,21 +195,19 @@ class String
   
 end # class  
 
+if defined? TransparentNil
+  class NilClass
 
-class NilClass
+    # Rückgabe: Leerer String  
+    def to_classname;             '';                   end  
 
-  # Rückgabe: Leerer String  
-  def to_classname;             '';                   end  
+    def camelize;                 nil;                  end 
+    def constantize;              nil;                  end 
+    def demodulize;               nil;                  end 
+    def to_class;                 nil;                  end  
+    def underscore;               nil;                  end 
 
-  def camelize;                 nil;                  end 
-  def constantize;              nil;                  end 
-  def demodulize;               nil;                  end 
-  def to_class;                 nil;                  end  
-  def underscore;               nil;                  end 
-  
-  
-  
-
+  end
 end
 
 

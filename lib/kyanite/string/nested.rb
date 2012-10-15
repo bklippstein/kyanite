@@ -217,16 +217,17 @@ class String
 end # class
 
 
-class NilClass
-  
-  # Rückgabe: 0
-  def nestinglevel;               0;              end   
-  
-  def anti;                       nil;            end
-  def index_bracket;              nil;            end
-  def mask(*a);                   nil;            end
+if defined? TransparentNil
+  class NilClass
+    
+    # Rückgabe: 0
+    def nestinglevel;               0;              end   
+    
+    def anti;                       nil;            end
+    def index_bracket;              nil;            end
+    def mask(*a);                   nil;            end
+  end
 end
-
 
 
 # ------------------------------------------------------------------------------

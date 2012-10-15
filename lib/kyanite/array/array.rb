@@ -113,11 +113,11 @@ end #  class Array
 
 
 
-
-class NilClass
-  def shift_complement;               nil;            end  
+if defined? TransparentNil
+  class NilClass
+    def shift_complement;               nil;            end  
+  end
 end
-
     
     
     

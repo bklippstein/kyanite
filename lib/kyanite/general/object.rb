@@ -85,20 +85,20 @@ end
 
 
 
+if defined? TransparentNil
+  class NilClass
+   
+    # Rückgabe: false
+    def blank?;                         false;          end    
 
-class NilClass
- 
-  # Rückgabe: false
-  def blank?;                         false;          end    
-
-  # Rückgabe: false
-  def is_numeric?;                    false;          end
-  
-  def to_nil;                         nil;            end   
-  def to_nil_unless(*a);              nil;            end   
-  def name_of_constant(*a);           nil;            end   
+    # Rückgabe: false
+    def is_numeric?;                    false;          end
+    
+    def to_nil;                         nil;            end   
+    def to_nil_unless(*a);              nil;            end   
+    def name_of_constant(*a);           nil;            end   
+  end
 end
-
 
 
 

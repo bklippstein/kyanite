@@ -68,12 +68,13 @@ class Array
 end
 
 
-class NilClass
-  def transpose!;                     nil;            end  
-  def transpose;                      nil;            end  
-  def rectangle;                      nil;            end  
+if defined? TransparentNil
+  class NilClass
+    def transpose!;                     nil;            end  
+    def transpose;                      nil;            end  
+    def rectangle;                      nil;            end  
+  end
 end
-
 
 
 

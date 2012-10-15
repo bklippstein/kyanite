@@ -3,15 +3,11 @@
 
 
 
-require 'kyanite'
+require 'transparent_nil'  
 
 
 
-
-Kyanite.projectname = 'kyanite'
-
-puts Kyanite.projectname.to_class.const_get('VERSION')
-
+log "Hallo"
 
 
   

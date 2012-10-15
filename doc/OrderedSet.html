@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class OrderedSet - Kyanite 0.5.17</title>
+<title>class OrderedSet - Kyanite 0.6.0</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -197,8 +197,6 @@
   
     <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
   
-    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
-  
     <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
   
     <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
@@ -293,7 +291,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">enum</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yields: o</span>
   <span class="ruby-ivar">@hash</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Dictionary</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span>
@@ -335,7 +333,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>   
     <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">to_set</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">to_set</span>
@@ -367,7 +365,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 91</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
   <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">order</span>[<span class="ruby-identifier">index</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -397,7 +395,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 118</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 124</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
   <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">e</span> ) }
   <span class="ruby-keyword">self</span>
@@ -428,7 +426,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="first-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 127</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">first</span>
   <span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -458,7 +456,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 114</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>(<span class="ruby-identifier">object</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">object</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -488,7 +486,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="last-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 131</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 137</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">last</span>
   <span class="ruby-keyword">self</span>[<span class="ruby-value">-1</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -518,7 +516,7 @@ sei denn, man sorgt dafür mit Dictionary#order_by</p>
 
           
           <div class="method-source-code" id="order_by-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 123</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">order_by</span>( &amp;<span class="ruby-identifier">block</span> )
   <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">order_by</span>( &amp;<span class="ruby-identifier">block</span> )
 <span class="ruby-keyword">end</span></pre>
@@ -550,7 +548,7 @@ gerne auf <a href="OrderedSet.html#method-i-to_a">#to_a</a> basieren.</p>
 
           
           <div class="method-source-code" id="to_a-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 102</span>
+            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_a</span> 
   <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">order</span>
 <span class="ruby-keyword">end</span></pre>

@@ -5,7 +5,7 @@ if $0 == __FILE__
 end
 
 require 'rubytree'
-require 'kyanite/nil'
+require 'transparent_nil'  
 
 
 module Tree #:nodoc: 

@@ -9,7 +9,8 @@
     smart_load_path   
   end
 
-     
+  require 'transparent_nil'     
+  
 	# Test-Verzeichnis der Applikation
 	test_verzeichnis = File.expand_path(File.dirname(__FILE__) )    
     

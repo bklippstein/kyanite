@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class TestKyaniteSet - Kyanite 0.5.17</title>
+<title>class TestKyaniteSet - Kyanite 0.6.0</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -197,8 +197,6 @@
   
     <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
   
-    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
-  
     <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
   
     <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
@@ -282,7 +280,7 @@ href="SortedSet.html">SortedSet</a></p>
 
           
           <div class="method-source-code" id="test_each-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 89</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_each</span>
   <span class="ruby-identifier">test</span> = [<span class="ruby-value">:d</span>, <span class="ruby-value">:c</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>].<span class="ruby-identifier">to_set</span>
   <span class="ruby-identifier">result</span> = []
@@ -331,7 +329,7 @@ href="SortedSet.html">SortedSet</a></p>
 
           
           <div class="method-source-code" id="test_equal-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 46</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_equal</span>
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'Set'</span>].<span class="ruby-identifier">to_set</span>,                        [<span class="ruby-string">'Set'</span>].<span class="ruby-identifier">to_set</span>
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>].<span class="ruby-identifier">to_set</span>,                       [<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>].<span class="ruby-identifier">to_set</span>    
@@ -377,7 +375,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_equal_2-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 131</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_equal_2</span>
   <span class="ruby-identifier">print</span> <span class="ruby-string">'x'</span>
   <span class="ruby-comment">#return</span>
@@ -460,7 +458,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_hash-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 65</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_hash</span>
   <span class="ruby-identifier">s</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> {<span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-value">:private</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>}
@@ -494,7 +492,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_index-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 75</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_index</span>
   <span class="ruby-identifier">test</span> = [<span class="ruby-value">:d</span>, <span class="ruby-value">:c</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>].<span class="ruby-identifier">to_ordered_set</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>,   <span class="ruby-identifier">test</span>.<span class="ruby-identifier">index</span>(<span class="ruby-value">:d</span>)
@@ -526,7 +524,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_is_collection-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 82</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_is_collection</span>
   <span class="ruby-identifier">assert</span> [<span class="ruby-value">1</span>].<span class="ruby-identifier">to_set</span>.<span class="ruby-identifier">is_collection?</span>
   <span class="ruby-identifier">assert</span> [<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sorted_set</span>.<span class="ruby-identifier">is_collection?</span>
@@ -558,7 +556,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_ordered_set-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 27</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_ordered_set</span>
   <span class="ruby-comment"># assert ([5,2,7,1].to_ordered_set != [1,2,7,5].to_ordered_set) </span>
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>,<span class="ruby-value">5</span>],                                   [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">5</span>,<span class="ruby-value">2</span>,<span class="ruby-value">5</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">to_ordered_set</span>.<span class="ruby-identifier">to_a</span> 
@@ -595,7 +593,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_set-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 18</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_set</span>
   <span class="ruby-identifier">array</span> = [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">5</span>,<span class="ruby-value">2</span>,<span class="ruby-value">5</span>,<span class="ruby-value">1</span>]
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>,<span class="ruby-value">5</span>],                     <span class="ruby-identifier">array</span>.<span class="ruby-identifier">uniq</span>              <span class="ruby-comment"># uniq</span>
@@ -628,7 +626,7 @@ assert_equal expected,  [[:eins, :zwei], :drei].to_set_of_sets + [[:a, :b],
 
           
           <div class="method-source-code" id="test_sorted_set-source">
-            <pre><span class="ruby-comment"># File test/test_set.rb, line 40</span>
+            <pre><span class="ruby-comment"># File test/test_set.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_sorted_set</span>
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">5</span>,<span class="ruby-value">7</span>],                                   [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">5</span>,<span class="ruby-value">2</span>,<span class="ruby-value">5</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sorted_set</span>.<span class="ruby-identifier">to_a</span> 
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">5</span>,<span class="ruby-value">7</span>],                                   [<span class="ruby-value">5</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">5</span>,<span class="ruby-value">2</span>,<span class="ruby-value">5</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sorted_set</span>.<span class="ruby-identifier">to_a</span> 

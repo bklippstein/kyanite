@@ -138,20 +138,20 @@ class Array
 end
 
 
-
-class NilClass
-  def average;                                  nil;            end  
-  def avg;                                      nil;            end  
-  def mean;                                     nil;            end  
-  def mean_arithmetric;                         nil;            end  
-  def mean_geometric;                           nil;            end  
-  def mean_harmonic(*a);                        nil;            end  
-  def parallel(*a);                             nil;            end           
-  def prd;                                      nil;            end  
-  def sum;                                      nil;            end  
-  def summation;                                nil;            end  
+if defined? TransparentNil
+  class NilClass
+    def average;                                  nil;            end  
+    def avg;                                      nil;            end  
+    def mean;                                     nil;            end  
+    def mean_arithmetric;                         nil;            end  
+    def mean_geometric;                           nil;            end  
+    def mean_harmonic(*a);                        nil;            end  
+    def parallel(*a);                             nil;            end           
+    def prd;                                      nil;            end  
+    def sum;                                      nil;            end  
+    def summation;                                nil;            end  
+  end
 end
-
 
 # ==================================================================================
 # Ausprobieren

@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class String - Kyanite 0.5.17</title>
+<title>class String - Kyanite 0.6.0</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -326,8 +326,6 @@
     <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
   
     <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
-  
-    <li><a href="./TestKyaniteNil.html">TestKyaniteNil</a>
   
     <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
   
@@ -1619,7 +1617,7 @@ href="TestKyaniteStringList.html">TestKyaniteStringList</a></p>
   
   <span class="ruby-comment"># einzelnen String oder einzelnes Symbol angegeben -&gt; ohne Separator ausgeben</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">elemente</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)  <span class="ruby-operator">||</span>  <span class="ruby-operator">!</span><span class="ruby-identifier">elemente</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:each_index</span>) 
-    <span class="ruby-identifier">e</span> = <span class="ruby-identifier">elemente</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">e</span> = <span class="ruby-identifier">elemente</span>.<span class="ruby-identifier">dup</span>          
     <span class="ruby-identifier">e</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">e</span>               <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>    
     <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{self}#{options[:pre]}#{e}#{options[:post]}&quot;</span>     
   <span class="ruby-keyword">end</span>

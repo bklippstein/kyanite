@@ -1,7 +1,11 @@
 # ruby encoding: utf-8
 
+if $0 == __FILE__ 
+  require File.join(File.dirname(__FILE__), '..', '..', '..', 'smart_load_path.rb' )
+  smart_load_path   
+end
+
 require 'hashery' 
-require 'kyanite/nil'
 require 'kyanite/string/div'
 
 
@@ -72,8 +76,10 @@ unless defined?(TR_UPCASE_ALL_REGEXP)
   # Spaces entfernen
   allkeys.split(//).each do |key|
     next unless base[key]
-    base[key].strip!.gsub!(' ','').gsub!(' ','')
-    base[key.upcase].strip!.gsub!(' ','').gsub!(' ','')
+    next if base[key].nil?
+    # base[key].strip!.gsub!(' ','').gsub!(' ','')
+    base[key].strip!.gsub!(' ','')
+    base[key.upcase].strip!.gsub!(' ','')
   end
 
 
@@ -145,26 +151,30 @@ end # unless defined?
 #
 if $0 == __FILE__ then
 
-  require 'perception'
-  rawlog "\n----------------------------------------------------------\n\n"
+
+  puts TR_DOWNCASE_ONLY.inspect
+
+
+  # require 'perception'
+  # rawlog "\n----------------------------------------------------------\n\n"
   
-  rawlog 'TR_DOWNCASE_ONLY=     '
-  rawlog TR_DOWNCASE_ONLY
-  rawlog "\n" 
+  # rawlog 'TR_DOWNCASE_ONLY=     '
+  # rawlog TR_DOWNCASE_ONLY
+  # rawlog "\n" 
   
-  rawlog 'TR_FULL=     '
-  rawlog TR_FULL
-  rawlog "\n"
-  rawlog 'TR_REDUCED=  '
-  rawlog TR_REDUCED
-  rawlog "\n"  
+  # rawlog 'TR_FULL=     '
+  # rawlog TR_FULL
+  # rawlog "\n"
+  # rawlog 'TR_REDUCED=  '
+  # rawlog TR_REDUCED
+  # rawlog "\n"  
   
-  rawlog 'TR_UPCASE=   '
-  rawlog TR_UPCASE
-  rawlog "\n"
-  rawlog 'TR_DOWNCASE= '
-  rawlog TR_DOWNCASE
-  rawlog "\n"
+  # rawlog 'TR_UPCASE=   '
+  # rawlog TR_UPCASE
+  # rawlog "\n"
+  # rawlog 'TR_DOWNCASE= '
+  # rawlog TR_DOWNCASE
+  # rawlog "\n"
   
 
 

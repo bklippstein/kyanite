@@ -160,23 +160,23 @@ end
 
 
 
+if defined? TransparentNil
+  class NilClass
 
-class NilClass
-
-  # Rückgabe: false
-  def capitalized?;                 false;          end  
-  
-  def reduce94;                     nil;            end
-  def reduce94!;                    nil;            end
-  def reduce53;                     nil;            end
-  def reduce53!;                    nil;            end  
-  def downcase2;                    nil;            end    
-  def downcase2!;                   nil;            end    
-  def mysqlize;                     nil;            end  
-  def upcase2;                      nil;            end  
-  def upcase2!;                     nil;            end  
+    # Rückgabe: false
+    def capitalized?;                 false;          end  
+    
+    def reduce94;                     nil;            end
+    def reduce94!;                    nil;            end
+    def reduce53;                     nil;            end
+    def reduce53!;                    nil;            end  
+    def downcase2;                    nil;            end    
+    def downcase2!;                   nil;            end    
+    def mysqlize;                     nil;            end  
+    def upcase2;                      nil;            end  
+    def upcase2!;                     nil;            end  
+  end
 end
-
 
 # -----------------------------------------------------------------------------------------
 # Ausprobieren

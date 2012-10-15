@@ -1,5 +1,5 @@
 # ruby encoding: utf-8
-require 'kyanite/nil'
+require 'transparent_nil'
 require 'kyanite/symbol'
 
 class String
@@ -24,7 +24,7 @@ class String
     
     # einzelnen String oder einzelnes Symbol angegeben -> ohne Separator ausgeben
     if elemente.kind_of?(String)  ||  !elemente.respond_to?(:each_index) 
-      e = elemente.dup
+      e = elemente.dup          
       e = yield e               if block_given?    
       return "#{self}#{options[:pre]}#{e}#{options[:post]}"     
     end
@@ -75,10 +75,11 @@ class String
 
 end
 
-
-class NilClass
-  def list_with(*a);                       nil;            end
-  def sql_regexp_for_kommaliste;           nil;            end
-  def enum_to_array;                       nil;            end
+if defined? TransparentNil
+  class NilClass
+    def list_with(*a);                       nil;            end
+    def sql_regexp_for_kommaliste;           nil;            end
+    def enum_to_array;                       nil;            end
+  end
 end
 

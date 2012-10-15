@@ -14,8 +14,10 @@ class Array
 
 end   
 
-class NilClass 
-  def row_to_nil;           nil;              end    
+if defined? TransparentNil
+  class NilClass 
+    def row_to_nil;           nil;              end    
+  end
 end
 
 # Ein Array2 ist eine spezielle Form von Array, nämlich immer zweidimensional. Siehe auch Matrix2!   

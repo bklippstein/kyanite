@@ -26,11 +26,11 @@ class String
  
 end # class 
  
- 
-class NilClass
-  def mgsub(*a);                       nil;            end
-end
- 
+ if defined? TransparentNil
+  class NilClass
+    def mgsub(*a);                       nil;            end
+  end
+end 
  
  
 # -----------------------------------------------------------------------------------------

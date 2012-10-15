@@ -66,9 +66,9 @@ class String
 
 end
 
-
-class NilClass
-  def shuffle;                      nil;            end
-  def shuffle!;                     nil;            end    
+if defined? TransparentNil
+  class NilClass
+    def shuffle;                      nil;            end
+    def shuffle!;                     nil;            end    
+  end
 end
-
