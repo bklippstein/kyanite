@@ -24,7 +24,7 @@ $hoe = Hoe.spec Kyanite.projectname do
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  extra_deps            << ['transparent_nil', '>= 0.1.3']
+  extra_deps            << ['transparent_nil', '>= 0.1.0']
   extra_deps            << ['activesupport',   '>= 3.2.8']
   extra_deps            << ['facets',          '>= 2.9.3']
   extra_deps            << ['rubytree',        '>= 0.8.3'] 
