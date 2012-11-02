@@ -92,7 +92,7 @@
 #  [Kyanite definitions] {Optimizer}
 #  [Kyanite tests and examples] {TestKyaniteOptimizer}  
 # 
-#  Selection of objects based on scores.
+#  Find objects with min or max score.
 #  Each object is written to the Optimizer by a +push+ command, together with it's score.
 #  +content_max+ and +content_min+ result the object with the highest / lowest score.
 #  The access to the second and third objects is possible by deleting objects with 

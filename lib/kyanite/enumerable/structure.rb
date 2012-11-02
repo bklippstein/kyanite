@@ -7,7 +7,7 @@ end
 
 
 require 'kyanite/general/object'
-require 'kyanite/array/array'
+require 'kyanite/array'
 require 'kyanite/dictionary' 
 
 

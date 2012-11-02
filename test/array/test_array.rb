@@ -6,7 +6,7 @@ if $0 == __FILE__
 end
 require 'drumherum/unit_test'
 require 'kyanite/array'
-require 'kyanite/numeric/numeric'
+require 'kyanite/numeric'
 require 'kyanite/set' 
 
 

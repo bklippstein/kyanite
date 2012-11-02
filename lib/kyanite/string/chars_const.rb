@@ -7,7 +7,7 @@ end
 
 
 require 'hashery' 
-require 'kyanite/string/div'
+
 
 
 

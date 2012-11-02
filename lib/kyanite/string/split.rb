@@ -9,7 +9,7 @@ end
  require 'facets/string/shatter' 
  require 'kyanite/string/cast' 
  require 'kyanite/enumerable' 
- require 'kyanite/array/array'
+ require 'kyanite/array'
  
  
 
