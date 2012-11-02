@@ -1,35 +1,33 @@
 # ruby encoding: utf-8
+
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 require 'kyanite/numeric/integer'
  
-# [ | Kyanite | *Object* | Array | Set | Enumerable | Hash | ]     | Object | *String* | Symbol | Numeric |
-#
-# ---
-#
-# == *String*  
-#
-#
+
 class String
 
-  # ---------------------------------------------------------------------------------------------------------------------------------
-  # :section: Cast
-  # See TestKyaniteStringCast for tests and examples.
-  #  
-
-    
-    
-    # Wandelt einen String in den plausibelsten Identifier um:
-    #   self.strip.to_integer_optional
+  
+  # @!group Cast
+  
+    # Converts a string into the most plausible Identifier
     #
-    # Tests & Beispiele siehe TestKyaniteStringCast#test_to_identifier
+    # See examples and tests {TestKyaniteStringCast#test_to_identifier here}.     
+    # @return [Integer]        
     def to_identifier
       self.strip.to_integer_optional
     end        
         
         
-    # Wandelt einen String in einen Integer, auch dann, wenn die Zahl hinten angehängt wurde.
-    # Im Gegensatz zu to_i wird nil zurückgegeben, wenn keine Zahl drin war. 
+    
+    # Converts a string to an integer, even if the number was appended to anything.
+    # Unlike +to_i+ it returns +nil+ if no integer was found inside the string.    
     # 
-    # Beispiele & Tests siehe TestKyaniteStringCast#test_to_integer      
+    # See examples and tests {TestKyaniteStringCast#test_to_integer here}.      
+    # @return [Integer]     
     def to_integer
         return nil                 unless self =~ /\d/
         firsttry = self.to_i
@@ -38,18 +36,23 @@ class String
     end
 
 
-    # Wandelt einen String in einen Integer.
-    # Im Gegensatz zu to_i wird self zurückgegeben, wenn der String nicht mit einer Zahl beginnt.
-    # Leere Strings werden in NIL umgewandelt. 
-    # 
-    # Beispiele & Tests siehe TestKyaniteStringCast#test_to_integer_optional    
+    
+    # Tries to convert a string to an integer. 
+    # Returns +self+ if the string does not start with a number.
+    # Empty strings are converted to +nil+.
+    #
+    # See examples and tests {TestKyaniteStringCast#test_to_integer_optional here}.   
+    # @return [Integer, String]
     def to_integer_optional
         return nil                  if self.empty?
         return self                 unless (self =~ /^\d/  || self =~ /^-\d/ )
         return self.to_i
     end
     
-
+    
+    # Non-empty strings are returned.
+    # Empty strings are converted to +nil+.
+    # @return [String, Nil]    
     def to_nil
       return self unless self.empty?
       nil
@@ -59,12 +62,14 @@ class String
 
  
     unless defined? HEX_CHARS
+      # @private
       HEX_CHARS = '0123456789abcdef'.freeze
     end
 
     
     # Get a hex representation for a char.
-    # See also String#from_x.     
+    # See also {#from_x from_x}.     
+    # @return [String]       
     def to_x
       hex = ''
       each_byte { |byte|
@@ -76,8 +81,11 @@ class String
       hex
     end
     
+    
+    
     # Get a char for a hex representation.   
-    # See also String#to_x. 
+    # See also {#to_x to_x}.     
+    # @return [String]       
     def from_x
       str, q, first = '', 0, false
       each_byte { |byte|
@@ -100,16 +108,32 @@ class String
 
 end
 
-if defined? TransparentNil
-  class NilClass
-    def to_identifier;                  nil;            end
-    def to_integer;                     nil;            end
-    def to_integer_optional;            nil;            end
-    def to_nil(*a);                     nil;            end  
-    def to_x;                           nil;            end  
-    def from_x;                         nil;            end  
-  end
+
+# @!endgroup
+
+class NilClass
+  def to_identifier;                  nil;            end
+  def to_integer;                     nil;            end
+  def to_integer_optional;            nil;            end
+  def to_nil(*a);                     nil;            end  
+  def to_x;                           nil;            end  
+  def from_x;                         nil;            end  
 end
 
+
+class Integer
+  
+  
+  # +self+, complements {String#to_integer}. 
+  # @return [self]
+  def to_integer;                     self;            end     
+  
+  
+  # +self+, complements {String#to_integer_optional}. 
+  # @return [self] 
+  def to_integer_optional;            self;            end  
+      
+  
+end # class
 
 

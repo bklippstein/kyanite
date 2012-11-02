@@ -1,16 +1,23 @@
-# ruby encoding: utf-8 
+# ruby encoding: utf-8
+
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
 
 
-class String
 
+class String       
+
+# @!group Overlap / Diff
+     
         
-# ---------------------------------------------------------------------------------------------------------------------------------
-# :section: Overlap / Diff
-# See TestKyaniteStringDiff for tests and examples.         
-        
-  # Gibt den gemeinsamen Teil zweier Strings aus (von vorne gezählt).  
+  # Returns the mutual part of two strings. Example:
+  #  "Hello world".overlap("Hello darling") 
+  #  => "Hello"
   #    
-  # Beispiele & Tests siehe TestKyaniteStringDiff#test_overlap    
+  # See more examples and tests {TestKyaniteStringDiff#test_overlap here}.    
+  # @return [String] mutual part
   def overlap(b)
       return ''         if b.nil?
       b = b.to_str
@@ -22,18 +29,22 @@ class String
   end    
 
   
-  # Liefert den Unterschied zwischen zwei Strings zurück.
-  # Im Zweifelsfall immer den längsten String.
-  # Wenn dann immer noch Zweifel, dann self. 
-  #    
-  # Beispiele & Tests siehe TestKyaniteStringDiff#test_diff    
+  # Returns the differencing part of two strings. Example:
+  #  "Hello darling".diff("Hello") 
+  #  => " darling"
+  #      
+  # When in doubt, the longest differencing string.
+  # If there is still doubt, then +self+.
+  #     
+  # See more examples and tests {TestKyaniteStringDiff#test_diff here}.  
+  # @return [String] differencing part  
   def diff(b)
       return self     if b.nil?
       b = b.to_str
       return ''        if self == b        # kein Unterschied
   
     a = self 
-    a,b = b,a     if a.size >= b.size        # a ist jetzt k�rzer oder gleichlang wie b
+    a,b = b,a     if a.size >= b.size        # a ist jetzt k?rzer oder gleichlang wie b
     overlap = a.overlap(b)
     return self if overlap == ''
     return b.split(overlap)[1]
@@ -41,19 +52,24 @@ class String
 
   
   
-  # Liefert zugleich overlap und diff zurück.
-  # Symmetrie: Rechnet man overlap + diff, so erhält man immer den längsten der beiden ursprünglichen Strings.
-  # Waren beide gleichlang, so erhält man self.
+
   # overlapdiff braucht genauso viel Zeit wie diff alleine. 
+  
+  # Returns {#diff diff} and {#overlap overlap} in one array.
+  # Takes as much time as +diff+ alone.
   #
-  # Beispiele & Tests siehe TestKyaniteStringDiff#test_overlapdiff    
+  # Symmetry: If we add +overlap+ + +diff+, we always get the longest of the two original strings.
+  # If both had the same length, we get +self+.
+  #
+  # See examples and tests {TestKyaniteStringDiff#test_overlapdiff here}.  
+  # @return [Array] mutual part, differencing part
   def overlapdiff(b)
       return '', self     if b.nil?
       b = b.to_str
       return self,''        if self == b        # kein Unterschied
   
     a = self 
-    a,b = b,a     if a.size >= b.size        # a ist jetzt k�rzer oder gleichlang wie b
+    a,b = b,a     if a.size >= b.size        # a ist jetzt k?rzer oder gleichlang wie b
     overlap = a.overlap(b)
     return overlap, self if overlap == ''
     return overlap, b.split(overlap)[1]
@@ -64,24 +80,38 @@ class String
 end
 
 
-if defined? TransparentNil
-  class NilClass
 
-    # Rückgabe: Leerer String,
-    # siehe String#overlap
-    def overlap(*a);              '';             end  
-    
-    # Rückgabe: b,
-    # siehe String#diff  
-    def diff(b);                  b;              end  
-    
-    # Rückgabe: ['', b],
-    # siehe String#overlapdiff
-    def overlapdiff(b);           ['', b];        end  
-  end
+class NilClass
+
+  # see {String#overlap}
+  # @return [String] Empty String  
+  def overlap(*a);              '';             end  
+  
+
+  # see {String#diff}  
+  # @return [String] Parameter b
+  def diff(b);                  b;              end  
+  
+
+  # see {String#overlapdiff}  
+  # @return [Array] ['', b] 
+  def overlapdiff(b);           ['', b];        end  
 end
 
 
+# -----------------------------------------------------------------------------------------
+# Ausprobieren
+#
+if $0 == __FILE__ then
+
+puts "Hello darling".diff("Hello") 
+
+
+
+
+
+
+end
 
 
 

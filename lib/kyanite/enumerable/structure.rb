@@ -1,9 +1,10 @@
 # ruby encoding: utf-8
-# ü
+
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init
 end
+
 
 require 'kyanite/general/object'
 require 'kyanite/array/array'
@@ -14,73 +15,63 @@ require 'kyanite/dictionary'
 
 class Object
 
-  # Enthält ein Objekt mehrere Objekte?
-  # String und Range gelten nicht als Collection.
-  # See TestKyaniteEnumerableStructure for tests and examples.
+  # @!macro [new] is_collection
+  #  -- Defined for all objects: Do I contain multiple objects? {String} and {Range} are not considered as collection.
+  # 
+  #  Tests and examples {TestKyaniteEnumerableStructure#test_is_collection here}.
+  
+  # +false+  
+  # @!macro is_collection  
+  # @return [false]
   def is_collection?;                 false;          end
-  
-end
-
-
-module Enumerable
-
-  # Enthält ein Objekt mehrere Objekte?
-  # Rückgabe: true  
-  # String und Range gelten nicht als Collection.
-  # See TestKyaniteEnumerableStructure for tests and examples.
-  def is_collection?;                 true;          end
-  
-end
-
-
-class String 
-
-  # ---------------------------------------------------------------------------------------------------------------------------------
-  # :section: Structure
-  #  
-
-  # Enthält ein Objekt mehrere Objekte?
-  # Rückgabe: false  
-  # String und Range gelten nicht als Collection.
-  # See TestKyaniteEnumerableStructure for tests and examples.
-  def is_collection?;                 false;          end
-  
   
 end
 
 
 class Range 
 
-  # Enthält ein Objekt mehrere Objekte?
-  # Rückgabe: false  
-  # String und Range gelten nicht als Collection.
-  # See TestKyaniteEnumerableStructure for tests and examples.
+  # +false+  
+  # @!macro is_collection  
+  # @return [false]
   def is_collection?;                 false;          end
   
 end
 
 
 
+class String 
+
+  # @!group Miscellaneous
+  # +false+  
+  # @!macro is_collection  
+  # @return [false]
+  def is_collection?;                 false;          end
+  # @!endgroup   
+end
 
 
-
-
-# [ | Kyanite | Object | Array | Set | *Enumerable* | Hash | ]     | *Enumerable* | EnumerableNumerics | EnumerableStrings | EnumerableEnumerables | 
-# ---
-#
-#
-# == *General* *Enumerations*
-# See TestKyaniteEnumerableStructure for tests and examples.
-#
-# 
+  # @!group Structure Reflection
+  
 module Enumerable
 
-  # Liefert die Verteilung der size 
-  # oder die Verteilung der class 
-  # oder die Verteilung eines anderen Merkmals der aufgezählten Elemente.
-  # die Methode gibt es auch als Hash#distribution.  
-  # See TestKyaniteEnumerableStructure  for tests and examples.
-  #
+  # @!macro is_collection
+  # +true+  
+  # @!macro is_collection  
+  # @return [true]
+  def is_collection?;                 true;          end
+  
+end  
+
+
+
+
+
+# @!macro enumerable
+module Enumerable
+
+  # Returns the distribution of +size+, +class+ or any other characteristics of the enumerated elements.
+  # See also {Hash#distribution}. Tests and examples {TestKyaniteEnumerableStructure#test_distribution_class here}.
+  # @return [Array]
   def distribution( mode = :size)
     verteilung = Hash.new
     each do | element |
@@ -96,20 +87,17 @@ module Enumerable
   
   
   
-  
-
-  
-  # Was für Objekte beinhaltet die Collection?
-  # Liefert die Klasse der Contentelemente, oder <tt>Object</tt> wenn es verschiedene sind. 
-  #  
-  # Parameter ist die Genauigkeit, mit der der Inhalt geprüft wird.
-  #  :precision  => 1      nur das erste Element wird geprüft
-  #  :precision  => 2      das erste und das letzte Element werden geprüft   (STANDARD)
-  #  :precision  => :all   alle Elemente werden geprüft
-  #  :ignore_nil => true   NilClass wird nicht aufgeführt                    (STANDARD)
-  #  :ignore_nil => false  NilClass wird mit aufgeführt  
+  # What kind of objects contains the collection?
+  # Returns the class of content elements, or +Object+ if there are several.
   #
-  # See TestKyaniteEnumerableStructure  for tests and examples.
+  # Parameters is the accuracy with which the content is checked.  
+  # [:precision  => 1]      only the first element is checked
+  # [:precision  => 2]      the first and the last elements are checked      (STANDARD)
+  # [:precision  => :all]   every element is checked
+  # [:ignore_nil => true]   NilClass will not be listed                      (STANDARD)
+  # [:ignore_nil => false]  NilClass will be listed  
+  #
+  # Tests and examples {TestKyaniteEnumerableStructure#test_contentclass_mono here}.
   #
   def contentclass( options={} )
     precision  = options[:precision]    || 2

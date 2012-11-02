@@ -1,12 +1,16 @@
 
 # === Files ===
 .gitignore
+.yardopts
 spielwiese.rb
 
 
 # === Directories ===
+log/
 pkg/
-
+doc/
+.yardoc/
+yard-template/
 
 # === Windows Helper ===
 *.bat

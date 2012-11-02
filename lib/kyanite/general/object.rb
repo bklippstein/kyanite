@@ -1,46 +1,39 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
 
 
-# [ | Kyanite | *Object* | Array | Set | Enumerable | Hash | ]     | *Object* | String | Symbol | Numeric |
-# [ ] | *Object* | KKernel | CallerUtils | Undoable | Class | 
-#
-# ---
-#
-#
-# == *For* *All* *Objects*
-# Tests and examples see TestKyaniteObject
-#
-#
+
+# @!macro object
 class Object
  
-    # <tt> false </tt>    
-    #
-    # Tests and examples see TestKyaniteObject    
-    #
+    # Returns +false+
+    # @return [false]
     def blank? 
         false
     end     
 
     
-    # Quelle: Facets http://facets.rubyforge.org/quick/rdoc/core/classes/Kernel.html#M000379
-    #
+
+    # Like +respond_to?+ but returns the result of the call if it does indeed respond.
+    # See {http://rubyworks.github.com/rubyfaux/?doc=http://rubyworks.github.com/facets/docs/facets-2.9.3/core.json#api-module-Kernel/api-method-Kernel-h-respond Facets +Kernel#respond+}.
     def respond(sym, *args)
       return nil if not respond_to?(sym)
       send(sym, *args)
     end    
     
     
-    # Alternative zu Object#dup. Dupliziert auch Unterobjekte. Langsam.
-    # Wird z.B. für Undo-Operationen verwendet, siehe Modul Undoable.
-    # 
+    # Slow but in-depth alternative to +dup+. Also duplicates sub-objects. Is e.g. for undo operations used, see module {Undoable}.
     def deep_copy
       Marshal.load( Marshal.dump( self ) )
     end
 
     
-    # Ist ein Objekt numerisch?
-    #
-    # Tests and examples see TestKyaniteObject    
+    # Is the object numeric?
+    # Tests see {TestKyaniteObject here}.   
     #
     def is_numeric?
       Float self 
@@ -48,30 +41,13 @@ class Object
       false 
     end        
     
-    
-    # <tt> false </tt>    
+    # Returns +false+    
+    # @return [false]  
     def empty? 
         false
     end  
 
-    
-
-    
-    
-    # Liefert nil, wenn die Condition erfüllt ist. Sonst self.
-    #
-    def to_nil(condition = :empty) 
-        return nil         if self.respond(condition.to_s + '?')
-        return self
-    end    
-    
-    
-    # Liefert nil, wenn die Condition nicht erfüllt ist. Sonst self.
-    #
-    def to_nil_unless(condition = :empty) 
-        return nil         unless self.respond(condition.to_s + '?')
-        return self
-    end    
+   
 
 
     # Findet den Namen einer Ruby-Konstanten anhand seines Wertes.
@@ -88,14 +64,14 @@ end
 if defined? TransparentNil
   class NilClass
    
-    # Rückgabe: false
+    # +false+
+    # @return [false]
     def blank?;                         false;          end    
 
-    # Rückgabe: false
+    # +false+    
+    # @return [false]
     def is_numeric?;                    false;          end
     
-    def to_nil;                         nil;            end   
-    def to_nil_unless(*a);              nil;            end   
     def name_of_constant(*a);           nil;            end   
   end
 end

@@ -1,8 +1,14 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 
 module Enumerable
 
- # In-place-Variante von transpose. 
+ # In-place-variant of +transpose+. 
   def transpose!
       self.replace(self.transpose)
   end    
@@ -10,25 +16,19 @@ module Enumerable
 
 end
 
-# [ | Kyanite | Object | Array | Set | *Enumerable* | Hash | ]     | Enumerable | EnumerableNumerics | EnumerableStrings | *EnumerableEnumerables* | 
-# ---
-#
-#
-# == *Enumeration* *Of* *Enumerations*
-# Für zweidimensionale Enumerables bzw. Aufzählungen von Objekten, die wiederum aufzählbar sind.
-# See TestKyaniteEnumerableEnumerables for tests and examples.
-# See ArrayOfEnumerables for an Array with modul EnumerableEnumerables included. 
-#
-#
+
+
+
+
+# @!macro enum_of_enums
 module EnumerableEnumerables
 
-  # Macht das Enumerable rechteckig.
-  # Maßgeblich ist die erste Zeile.
+  # Makes the Enumerable rectangular (= strict two-dimensional). The first row is essential. 
   #
-  # Tests and examples see TestKyaniteEnumerableEnumerables.
+  # See tests and examples {TestKyaniteEnumerableEnumerables#test_rectangle1 here}.
   def rectangle
     qsize = self[0].size   
-    result = []
+    result = ArrayOfEnumerables.new
     self.each do |zeile|
       size_diff = qsize - zeile.size  
       # so lassen oder zuschneiden      
@@ -46,14 +46,8 @@ end
 
 
 
-# [ | Kyanite | Object | *Array* | Set | Enumerable | Hash | ]     | Array |  ArrayOfNumerics  | ArrayOfStrings |  *ArrayOfEnumerables* | Range |  
-# ---
-#
-#
-# == *Array* *Of* *Enumerations*
-# An ArrayOfEnumerables is an Array with modul EnumerableEnumerables included. 
-# See TestKyaniteEnumerableEnumerables for tests and examples.
-#
+
+# @!macro enum_of_enums
 class ArrayOfEnumerables < Array   
   include EnumerableEnumerables
 end
@@ -61,10 +55,14 @@ end
 
 class Array
 
-  # Liefert ein ArrayOfEnumerables (das ist ein Array mit inkludiertem Modul EnumerableEnumerables)
+  # @!group Cast
+  # Returns {ArrayOfEnumerables} (this is an {Array} with modul {EnumerableEnumerables} included)
+  # @return [ArrayOfEnumerables]    
   def to_array_of_enumerables
     ArrayOfEnumerables.new(self)
   end
+  #@!endgroup
+  
 end
 
 

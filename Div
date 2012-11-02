@@ -10,38 +10,12 @@
 * Undoable          Undo für komplexe Objekte
 
 
-== Unit Tests
-Durchlaufende Tests besitzen eine Statusanzeige, wenn man UnitTest statt Test::Unit::TestCase: verwendet.
-
-smart_load_path vereinfacht die require-Statements in den Tests. Usage:
-  if $0 == __FILE__ 
-    require 'kyanite/smart_load_path'
-    smart_load_path   
-  end
-  require 'kyanite/unit_test'
-  require 'my_library'
-Das +require 'my_library'+ lädt die aktuelle Version von +my_library+ im übergeordneten Projektverzeichnis, nicht nur die über gem installierte Version.
 
 
-== Rake Tasks
-Usage: Head of Rakefile
-  projectname = File.dirname(__FILE__).split("/")[-1].strip   # Name des Projekt-Stammverzeichnisses
-  require File.dirname(__FILE__) + "/lib/#{projectname}"      # Hauptdatei der Library
 
-  Kyanite.projectname = projectname
-  Kyanite.github_username = 'bklippstein'
 
-  require 'hoe'
-  require 'rdoc/task'
-  require 'kyanite/rake'
-  
 
-Console:
-  rake rubygems_publish      # release actual version to rubygems
-  rake git_publish           # publish actual version to github
-  rake git_publish_docs      # publish docs to github
-  
-  rake publish               # publish all to github and rubygems, reinstall gem 
+
 
 
 

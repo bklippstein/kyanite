@@ -1,20 +1,18 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
 
-# [ | Kyanite | *Object* | Array | Set | Enumerable | Hash | ]     | *Object* | String | Symbol | Numeric | Class | 
-# [ ] | Object | KKernel | CallerUtils | *Undoable* | Class |
-#
-# ---
-#
-#
-# == *Undo* 
-#
-#
+
+# @!macro undoable
 module Undoable
 
   @@undoable_history = Hash.new
 
-  # Speichert ein Objekt.
-  # Verwendet standardmäßig Object#dup. Für komplexere Objekte muss allerdings Object#deep_copy genutzt werden.
+  # Saves an object. 
+  # @param method [Symbol] method to use. Default is +:dup+. For more complex objects use {Object#deep_copy +:deep_copy+} instead.
   #
   def save(method=:dup)
     return if self == @@undoable_history[self.object_id] # nichts zu tun
@@ -22,23 +20,21 @@ module Undoable
   end
 
   
-  # Rückgriff auf den gespeicherten Zustand eines Objektes.
-  # Der gespeicherte Zustand verbleibt im Speicher.
+  # Loads a saved state of an object, the saved state remains in memory.
   # 
   def load_and_keep
     @@undoable_history[self.object_id]
   end
   
   
-  # Rückgriff auf den gespeicherten Zustand eines Objektes.
-  # Der gespeicherte Zustand wird verworfen. 
+  # Loads a saved state of an object, the saved state will be discarded.
   #   
   def load_and_delete
     @@undoable_history.delete(self.object_id)
   end  
   
   
-  # Verwirft alle gepeicherten Objektzustände.
+  # Discards all saved states of all objects.
   #
   def self.clear
     @@undoable_history.clear

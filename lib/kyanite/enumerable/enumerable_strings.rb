@@ -1,24 +1,20 @@
-# ruby encoding: utf-8 
+# ruby encoding: utf-8
 # ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
 
-# [ | Kyanite | Object | Array | Set | *Enumerable* | Hash | ]     | Enumerable | EnumerableNumerics | *EnumerableStrings* | EnumerableEnumerables | 
-# ---
-#
-#
-# == *Enumeration* *Of* *Strings*
-# See TestKyaniteEnumerableStrings for tests and examples.
-# See ArrayOfStrings for an Array with modul EnumerableStrings included. 
-#
-# 
+
+
+
+# @!macro enum_of_strings
 module EnumerableStrings
 
-
-  # Bsp.: 
+  # Delete every element from the front with is identical with the back -- leave the significant middle part.
+  # Example: 
   #  ['lut', 'lutm', 'lutmi', 'lutmil', 'lutmila', 'lutrika', 'lutrik', 'lutri', 'lutr', 'lut'].palindrom_rumpf  =>
   #  ['lutm', 'lutmi', 'lutmil', 'lutmila', 'lutrika', 'lutrik', 'lutri', 'lutr']
-  # d.h. vorne und hinten wird alles Gleiche weggestrichen.
-  #
-  # Tests and examples see TestKyaniteEnumerableStrings.
   #
   def palindrom_rumpf
     result = self.dup
@@ -38,26 +34,23 @@ end
 
 
 
-# [ | Kyanite | Object | *Array* | Set | Enumerable | Hash | ]     | Array |  ArrayOfNumerics  | *ArrayOfStrings* |  ArrayOfEnumerables | Range |  
-# ---
-#
-#
-# == *Array* *Of* *Strings*
-# An ArrayOfstrings is an Array with modul EnumerableStrings included. 
-# See TestKyaniteEnumerableStrings for tests and examples.
-#
+
+# @!macro enum_of_strings
 class ArrayOfStrings < Array
   include EnumerableStrings
 end
 
-
+  
 
 class Array
 
-  # Liefert ein ArrayOfStrings (das ist ein Array mit inkludiertem Modul EnumerableStrings)
+  # @!group Cast
+  # Returns {ArrayOfStrings} (this is an {Array} with modul {EnumerableStrings} included)
+  # @return [ArrayOfStrings]
   def to_array_of_strings
     ArrayOfStrings.new(self)
   end
+  #@!endgroup
   
 end
 

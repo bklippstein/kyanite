@@ -1,46 +1,63 @@
 # ruby encoding: utf-8
-# ü
+# 
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init
 end
+
 require 'facets/range/combine'
 require 'facets/range/within'
-require 'kyanite/enumerable'             # is_collection? ist für Ranges false
+require 'kyanite/enumerable'             # is_collection? ist false for Ranges
 
-# [ | Kyanite | Object | *Array* | Set | Enumerable | Hash | ]     | Array |  ArrayOfNumerics  | ArrayOfStrings |  ArrayOfEnumerables | *Range* |  
-# ---
+
+
+
+# @!macro range
 #
-#
-# == *Range*
-#
-#
-# Aus {Facets/Range}[http://facets.rubyforge.org/doc/api/core/classes/Range.html] eingefügt:  
-#  umbrella(range)
-#  within?
-#  combine(range)
-#
+# === Added from  {http://rubyworks.github.com/rubyfaux/?doc=http://rubyworks.github.com/facets/docs/facets-2.9.3/core.json#api-class-Range Facets Range}:  
+# [+umbrella(range)+] Returns a two element array of the relationship between two Ranges
+# [+within? (range)+] Is another Range anywhere within this Range?
+# [+combine(range)+]  Combine ranges
 #
 class Range
 
-  # Invertiert den Range, mit dem ein Ausschnitt eines Strings oder eines Arrays bestimmt wird.
-  # Liefert einen Range, mit dem der inverse Teil des Strings ausgewählt werden kann.
-  # Beispiele siehe TestKyaniteRange.
+
+  
+  # Given a range for selecting a section of a {String} or an {Array},
+  # +invert_index+ inverts this range, so that the result 
+  # selects the inverse part of the {String} or {Array}. 
   #
+  # @example 
+  #  # return back 
+  #  (0..5).invert_index
+  #  => (6..-1)
+  #   
+  #  # return front 
+  #  (3..-1).invert_index
+  #  => (0..2)
+  # 
+  #  # return outer
+  #  (2..4).invert_index
+  #  => [0..1,   5..-1]
+  #
+  # Tests and more examples {TestKyaniteRange here}.
+  #
+  #
+  # @return [Range] or [Array] of two Ranges
   def invert_index
   
-    # hinteren Teil ausgeben
+    # back
     if first == 0
       return (1..0)           if last == -1     # leer
       return (last+1..-1)                       # hinterer Teil
 
-    # vorderen Teil ausgeben
+    # front
     else 
       return (0..first-1)     if last == -1     # vorderer Teil
       
     end
     
-    # äußere Teile ausgeben
+    # outer
     return [(first..-1).invert_index, (0..last).invert_index]
   end # def
 
@@ -53,12 +70,15 @@ end # class
 
 if defined? TransparentNil
   class NilClass
-    def invert_index;                         nil;              end     
+    # @!group return nil    
+    def invert_index;                   nil;              end     
     def umbrella(*a);                   nil;              end     
     def combine(*a);                    nil;              end     
     def within?(*a);                    nil;              end     
   end
 end # if defined? TransparentNil
+    
+    
     
 # ==================================================================================
 # Ausprobieren

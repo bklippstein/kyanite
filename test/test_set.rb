@@ -1,18 +1,18 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'transparent_nil'    unless defined? TransparentNil
-require 'kyanite/unit_test'      
+require 'drumherum/unit_test'
+require 'transparent_nil'    unless defined? TransparentNil   
 require 'kyanite/set'   
                  
 
                  
-# Tests für Set, OrderedSet, SortedSet
-# 
+# @!group Set
+
+# @!macro set
 class TestKyaniteSet < UnitTest
 
   

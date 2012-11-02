@@ -1,15 +1,13 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'kyanite/unit_test'                            
+require 'drumherum/unit_test'                         
 require 'kyanite/hash'
 
-# Tests for Hash
-# 
+# @!macro hash
 class TestKyaniteHash < UnitTest
 
   
@@ -21,7 +19,7 @@ class TestKyaniteHash < UnitTest
     h[1] = 10
     assert_equal ({ 1 => 10 }),   h    
 
-    h.delete(1)
+    assert_equal 10,              h.delete(1)
     assert_equal ({}),            h
   end 
   

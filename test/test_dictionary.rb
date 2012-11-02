@@ -1,16 +1,14 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'kyanite/unit_test'                    
+require 'drumherum/unit_test'                
 require 'kyanite/dictionary'
 
 
-# Tests for Dictionary
-# 
+# @!macro dictionary
 class TestKyaniteDictionary < UnitTest
 
     def test_is_collection

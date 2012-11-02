@@ -1,26 +1,34 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
 
-require 'facets/kernel/singleton_class'     # Easy access to an object‘s "special" class, otherwise known as it‘s eigen or meta class.
-require 'facets/class/descendants'          # Methode   descendants 
 
+# @!group Class Utils
 
-# [ | Kyanite | *Object* | Array | Set | Enumerable | Hash | ]     | *Object* | String | Symbol | Numeric | 
-# [ ] | Object | KKernel | CallerUtils | Undoable | *Class* | 
+require 'facets/class/descendants'          # Methode descendants 
+# require 'facets/kernel/singleton_class'     # Easy access to an object‘s "special" class, otherwise known as it‘s eigen or meta class.
+
+# =================================================================================================================
 #
-# ---
+# @!macro class_utils
 #
-# == *Class* *Utils*  
-# See TestKyaniteClassutils for tests and examples.
+# === Added from  {http://rubyworks.github.com/rubyfaux/?doc=http://rubyworks.github.com/facets/docs/facets-2.9.3/core.json#api-class-Class Facets Class}:  
+# [+descendants(generations=-1))+] List all descedents of this class.
 #
 class Class
   
-  # Vergleichsoperator: Alphabetisch. 
+  # Comparison operator (alphabetical)
+  # @return [Integer] 1, 0, -1
   def <=>(other) 
       ( ( self.to_s ) <=> ( other.to_s ) )
   end   
   
   
-  # Unscharfer Vergleich zweier Klassen, z.B. für Tests
+  # Fuzzy comparison of two classes (useful for tests)
+  # @return [Boolean] 
   def =~(other)
     return true   if self == other
     return true   if self.descendants.include?(other)
@@ -28,21 +36,13 @@ class Class
     return false
   end  
 
-  # Die Methode to_class wandelt einen Klassennamen in eine Klasse.
-  # Die Methode gibt es insbesondere für String und Symbol, siehe String#to_class, Symbol#to_class  
-  # Für Class ist sie einfach transparent, d.h. sie liefert self.   
-  # Tests and examples see TestKyaniteClassutils
-  # 
+  # (see String#to_class)
   def to_class 
     self
   end     
 
   
-  # Gegenstück zu to_class: 
-  # Wandelt eine Klasse in einen Klassennamen um, der nur Kleinbuchstaben enthält.
-  # Siehe String#to_classname, Symbol#to_classname
-  # Tests and examples see TestKyaniteClassutils
-  #
+  # (see String#to_classname)
   def to_classname
     self.to_s.demodulize.underscore
   end         
@@ -52,58 +52,32 @@ end # class
 
 
 
-
-  
-class Symbol
-
-  # Wandelt ein Symbol in einen Klassennamen, der nur Kleinbuchstaben enthält. 
-  # Siehe String#to_classname     
-  # Tests and examples see TestKyaniteClassutils
-  #
-  def to_classname 
-      self.to_s.to_classname
-  end
-
-  # Wandelt einen Klassennamen in eine Klasse.
-  # Akzeptiert sowohl CamelCase als auch down_case.
-  # Die Methode gibt es auch für String und Class.
-  # Tests and examples see TestKyaniteClassutils
-  #
-  def to_class 
-      self.to_s.to_class
-  end   
-
-end # class 
-
-
-
-
-  
  
-  
-class String  
-
-  # ---------------------------------------------------------------------------------------------------------------------------------
-  # :section: Class Utils
-  # See TestKyaniteClassutils for tests and examples.
-  #  
 
 
-  # Wandelt einen String in einen Klassennamen, der nur Kleinbuchstaben enthält. 
-  #   'MeinModul::EineKlasse'  =>  'eine_klasse'
+class String
+
+
+
+  # Converts to a class name , the reverse of {String#to_class to_class}.
   #
-  # Tests and examples see TestKyaniteClassutils
+  # classes {Class}, {Symbol}, {String}. The class name will contain only lowercase letters.
+  #   'MyModul::MyClass'  =>  'my_class'
+  #
+  # Tests and examples {TestKyaniteClassutils here}.
+  # @return [String]
   #
   def to_classname
       self.demodulize.underscore
   end
   
   
-
-  # Wandelt einen Klassennamen in eine Klasse.
-  # Akzeptiert sowohl CamelCase als auch down_case.
-  # Die Methode gibt es auch für Symbol und Class.
-  # Tests and examples see TestKyaniteClassutils
+  # Converts to a class, the reverse of {String#to_classname to_classname}
+  #
+  # Defined for classes {Class}, {Symbol}, {String}. Accepts both CamelCase and down_case.
+  #
+  # Tests and examples {TestKyaniteClassutils here}.
+  # @return [Class]
   #
   def to_class
       self.camelize.constantize
@@ -122,6 +96,7 @@ class String
   #   "ActiveRecord::Errors".underscore # => active_record/errors
   # From ActiveSupport, Copyright (c) 2005 David Heinemeier Hansson. See License.txt.  
   #  
+  # @return [String]  
   def underscore
     self.gsub(/::/, '/').
       gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
@@ -144,6 +119,7 @@ class String
   #   "active_record/errors".camelize(:lower) # => "activeRecord::Errors"
   # From ActiveSupport, Copyright (c) 2005 David Heinemeier Hansson. See License.txt.   
   #  
+  # @return [String]  
   def camelize(first_letter_in_uppercase = true)
     if first_letter_in_uppercase
       self.gsub(/\/(.?)/) { "::#{$1.upcase}" }.gsub(/(?:^|_)(.)/) { $1.upcase }
@@ -160,6 +136,7 @@ class String
   #   "Inflections".demodulize                                       # => "Inflections"
   # From ActiveSupport, Copyright (c) 2005 David Heinemeier Hansson. See License.txt.   
   #  
+  # @return [String]  
   def demodulize
     self.gsub(/^.*::/, '')
   end  
@@ -185,6 +162,7 @@ class String
   # unknown.
   # From ActiveSupport, Copyright (c) 2005 David Heinemeier Hansson. See License.txt.   
   #
+  # @return [Class]  
   def constantize
     unless /\A(?:::)?([A-Z]\w*(?:::[A-Z]\w*)*)\z/ =~ self
       raise NameError, "#{self.inspect} is not a valid constant name!"
@@ -193,14 +171,46 @@ class String
     Object.module_eval("::#{$1}", __FILE__, __LINE__)
   end
   
-end # class  
+end # String
 
-if defined? TransparentNil
+
+
+
+
+
+
+# =================================================================================================================
+#
+# @!macro class_utils  
+#
+class Symbol
+
+  # (see String#to_classname)
+  def to_classname 
+      self.to_s.to_classname
+  end
+
+  # (see String#to_class)
+  def to_class 
+      self.to_s.to_class
+  end   
+
+end # Symbol 
+
+
+
+
+
+  # =================================================================================================================
+  # @!macro class_utils
+  #
   class NilClass
 
-    # Rückgabe: Leerer String  
+    # @return [String] empty String 
     def to_classname;             '';                   end  
 
+    # @!group return nil   
+    
     def camelize;                 nil;                  end 
     def constantize;              nil;                  end 
     def demodulize;               nil;                  end 
@@ -208,7 +218,7 @@ if defined? TransparentNil
     def underscore;               nil;                  end 
 
   end
-end
+
 
 
 

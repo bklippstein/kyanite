@@ -1,4 +1,10 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 require 'hashery' # old: 'facets/dictionary'
 unless defined? ENUMERABLE_REQUIRED
   require 'kyanite/enumerable'             # is_collection? 
@@ -7,16 +13,8 @@ end
 
 
 
-# [ | Kyanite | Object | Array | Set | Enumerable | *Hash* | ]     | Hash |  *Dictionary* |
-# ---
-#  
-#
-# == *Tools* *For* *Facets* *Dictionary*
-# A Dictionary is a ordered Hash. 
-# Expands {Facets/Dictionary}[http://facets.rubyforge.org/doc/api/more/classes/Dictionary.html].
-# See TestKyaniteDictionary for tests and examples.
-#
-#
+
+# @!macro dictionary
 class Dictionary < Hashery::Dictionary
 
   def fetch_by_index(index)
@@ -55,9 +53,11 @@ class Dictionary < Hashery::Dictionary
 end
 
 
+
+
 class Hash
 
-  # TODO: effizienter
+  # @return [Dictionary]
   def to_dictionary
     result = Dictionary.new
       self.each do | key, value |
@@ -71,25 +71,23 @@ end
 
 class Array
 
-  # :section: Cast
-  
-  
-  
-  # Liefert ein Dictionary (das ist ein geordneter Hash)
-  #
-  # TODO: effizienter
+  # @!group Cast
+  # Returns {Dictionary} 
+  # @return [Dictionary]  
   def to_dictionary
+    # TODO: effizienter
     result = Dictionary.new
       self.each do | zeile |
         result << zeile
       end
     result
   end
+  # @!endgroup   
   
   #funktioniert nicht
-  def to_dictionary2 # :nodoc:
-    Dictionary.new(self.flatten)
-  end  
+  # def to_dictionary2 # :nodoc:
+    # Dictionary.new(self.flatten)
+  # end  
   
 end
 

@@ -1,8 +1,8 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init
 end
 
 require 'set'
@@ -13,41 +13,34 @@ require 'kyanite/symbol'                 # damit man auch Symbols aufnehmen kann
 require 'kyanite/hash'                   # Korrektur der Methoden hash und eql?
 
 
-# [ | Kyanite | Object | Array | *Set* | Enumerable | Hash | ]     | *Set* | OrderedSet | SortedSet | 
-# ---
-#
-#
-# == *General* *Set*
-# Tests and examples see TestKyaniteSet
-#
-#
-# === Unterschiede der verschiedenen Set-Klassen
-# * Ein {Set}[http://www.ruby-doc.org/core/classes/Set.html] ist ungeordnet.                 
-#   Beispiele:  TestKyaniteSet#test_set
-# * Ein OrderedSet ist geordnet, es behält die ursprüngliche Reihenfolge, wird aber nicht kontinuierlich neu sortiert.
-#   Es sei denn, man sorgt dafür mit Dictionary#order_by      
-#   Beispiele:  TestKyaniteSet#test_ordered_set
-# * Ein {SortedSet}[http://www.ruby-doc.org/core/classes/SortedSet.html] ist geordnet und sortiert. Es behält immer die Sortierung.       
-#   Beispiele:  TestKyaniteSet#test_sorted_set
-#
+
+
+
+
+
+
+
+# @!macro set
 class Set
 
-  # Fügt das Element an das Set an.
+  # Adds the element to the set.
   def push(elt)
     self << elt
   end
   
   
-  # Vergleichsoperator, Standardsortierung: Size
+  # Comparison operator (by size)
+  # @return [Integer] 1, 0, -1
   def <=>(other)
     self.size <=> other.size
   end
   
   # def hash_raw
-    # @hash
+    # hash
   # end
   
-  # Liefert irgendein Element.  
+
+  # @return any element
   def first
     @hash.each do |key, value|
       return key
@@ -55,7 +48,7 @@ class Set
   end #def
   
   
-  # Liefert irgendein anderes Element.  
+  # @return any other element  
   def last
     first = nil
     @hash.each do |key, value|
@@ -71,16 +64,10 @@ class Set
 end
 
 
-# [ | Kyanite | Object | Array | *Set* | Enumerable | Hash | ]     | Set | *OrderedSet* | SortedSet | 
-# ---
-#
-#
-# == *Ordered* *Set*
-# Tests and examples see TestKyaniteSet
-#
-# Ein OrderedSet ist geordnet, es behält die ursprüngliche Reihenfolge, wird aber nicht kontinuierlich neu sortiert.
-# Es sei denn, man sorgt dafür mit Dictionary#order_by  
-#
+
+# =================================================================================================================
+# @!macro set
+# 
 class OrderedSet < Set
 
   def initialize(enum = nil, &block) # :yields: o
@@ -94,30 +81,32 @@ class OrderedSet < Set
   end
   
   
-  # Liefert das n-te Element.
+  # @return n-th Element
   def [](index)
     @hash.order[index]
   end
   
-  
-  def zugrundeliegendes_dictionary # :nodoc:
+  # @private  
+  def zugrundeliegendes_dictionary 
     @hash
   end
+
   
-  # Liefert ein entsprechendes Array.
-  # Diese Methode ist schnell. Es muss nichts umgeformt werden. Andere Methoden können also gerne auf to_a basieren. 
+  # This method is fast. Nothing needs to be converted. 
+  # @return [Array]
   def to_a 
     @hash.order
   end  
   
-
+  
+  # @return [Boolean]
   def ==(other)
     silence_warnings do   
       self.to_a.to_set == other.to_a.to_set
     end
   end  
 
-  # Wie Array#index
+  # like Array#index
   def index(object)
     self.to_a.index(object)
   end
@@ -131,10 +120,12 @@ class OrderedSet < Set
     @hash.order_by( &block )
   end
   
+  # @return first element  
   def first
     self[0]
   end
   
+  # @return last element  
   def last
     self[-1]
   end    
@@ -144,37 +135,35 @@ class OrderedSet < Set
 end # class
   
   
-# [ | Kyanite | Object | | Array | *Set* | Enumerable | Hash ]     | Set | OrderedSet | *SortedSet* | 
-# ---
-#
-#
-# == *Sorted* *Set*
-# Tests and examples see TestKyaniteSet
-#
-# Ein {SortedSet}[http://www.ruby-doc.org/core/classes/SortedSet.html] ist geordnet und sortiert. Es behält immer die Sortierung.       
-# Beispiele:  TestKyaniteSet#test_sorted_set
-#
+
+# =================================================================================================================
+# @!macro set
+# 
 class SortedSet 
 
-  # Liefert das n-te Element.
-  # ineffizient!!
+  # @return n-th Element
+  # n-th Element. inefficient!!
   def [](index)
     self.to_a[index]
   end
   
+  # @return first element    
   def first
     self[0]
   end
   
+  # @return last element    
   def last
     self[-1]
   end  
   
   # das war mal auskommentiert, wird aber von nat_lang gebraucht
-  def unshift(e) # :nodoc:
+  # @private
+  def unshift(e) 
     self << e
   end
   
+  # @return self   
   def to_sorted_set
     self
   end    
@@ -183,32 +172,36 @@ end # class
 
 
 
-
+# ===========================================================================================================================
+#
   
 class Array
 
-  # Liefert ein OrderedSet, das dem Array entspricht. 
-  # Übersicht über die verschiedenen Set-Klassen siehe Set.
-  # Tests siehe TestKyaniteSet#test_ordered_set    
+  # @!group Cast  
+  
+  # Returns {OrderedSet}, tests and examples {TestKyaniteSet#test_ordered_set here}.
+  # @return [OrderedSet]
   def to_ordered_set
     OrderedSet.new(self)
   end
   
-  # Liefert ein SortedSet, das dem Array entspricht. 
-  # Übersicht über die verschiedenen Set-Klassen siehe Set.  
-  # Tests siehe TestKyaniteSet#test_sorted_set
+  
+  # Returns {SortedSet}, tests and examples {TestKyaniteSet#test_sorted_set here}.
+  # @return [SortedSet]  
   def to_sorted_set
     SortedSet.new(self)
   end      
   
+  # @!endgroup  
   
 end # class
   
   
 class Object
 
-  # Liefert ein Set mit einem Element
-  #
+
+  # Returns {Set} with one element
+  # @return [Set] with one element
   def to_set; Set.new([self]); end
   
 end

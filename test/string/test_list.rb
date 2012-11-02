@@ -1,11 +1,10 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'kyanite/unit_test'
+require 'drumherum/unit_test'
 require 'kyanite/dictionary'  
 require 'kyanite/string/list'
 require 'kyanite/string/chars'
@@ -13,7 +12,7 @@ WA_ABBREV         = :abbrev      unless defined?(WA_ABBREV)
 
 
 # Tests for String
-#
+# @!macro string
 class TestKyaniteStringList < UnitTest
     
 

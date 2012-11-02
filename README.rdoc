@@ -1,0 +1,44 @@
+= Kyanite
+http://bklippstein.github.com/kyanite/frames.html
+
+Welcome to Kyanite. It's a general toolbox like Facets or ActiveSupport.
+
+== Features
+[{String}] Support for special letters like german umlauts. Reduce UTF8 strings to ASCII or less. Compare Strings. Parse nested brackets. Database Helpers. 
+[{Class}] Tools for reflection. Convert {Class} <=> {String} <=> {Symbol}.
+[{Numeric} {Integer} {Float}] General tools.
+[{Range}] Invert selection of an Array or String.
+[{Array}] General tools. Mean values. Sum, product, parallel.
+[{Set}] General tools. New class {OrderedSet} as alternative to {SortedSet}.
+[{Hash} {Dictionary} {Tree::TreeNode Tree}] General tools.
+[{Optimizer}] Find objects with min or max score.
+[{Undoable}] Save and restore objects.
+[{Object} {CallerUtils}] Repeats a block until the time is up. Silence Ruby warnings. Deep copy. Examine the call stack.
+
+
+== Usage
+  require 'kyanite'              # require all
+  require 'kyanite/basics'       # require basic Kyanite behavior and features  
+  require 'kyanite/string'       # require all String related stuff
+  require 'kyanite/string/diff'  # require all String#diff related stuff
+  
+If you use {http://bklippstein.github.com/transparent_nil/frames.html transparent_nil}, require it first:
+  require 'transparent_nil'              
+  require 'kyanite'            
+  
+
+== More Info
+* *Documentation*: {http://bklippstein.github.com/kyanite/frames.html github.com/kyanite}
+* *Source* *code*: {https://github.com/bklippstein/kyanite github.com/bklippstein}
+* *License*: {http://creativecommons.org/licenses/by-sa/3.0/de/deed.en cc-by-sa Creative Commons Attribution-Share Alike 3.0 Germany}
+* *Autor*: {mailto:klippstein@klippstein.com Björn Klippstein}
+
+
+== Disclaimer
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

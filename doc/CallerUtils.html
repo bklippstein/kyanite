@@ -1,406 +1,497 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: CallerUtils
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>class CallerUtils - Kyanite 0.6.1</title>
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "./";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
-    <a href="./table_of_contents.html#classes">Classes</a>
-    <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/kyanite/general/callerutils.rb
-  </ul>
-</nav>
-
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo;
     
-  </div>
-
-  <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <span class="title">CallerUtils</span>
   
-  <p class="link"><a href="Object.html">Object</a>
-  
-</nav>
 
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+      <div id="project-header">
+  
+</div>      
+    </div>
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+    <div id="body">    
+      <iframe id="search_frame"></iframe>
+      <div id="content"><h1>Class: CallerUtils
+  
+  
+  
+</h1>
 
-  <ul class="link-list">
+<dl class="box">
+  
+    <div class="row">
+      <dt class="r1">Inherits</dt>
+      <dd class="r1">
+        <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+        
+          <ul class="fullTree">
+            <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+            
+              <li class="next">CallerUtils</li>
+            
+          </ul>
+          <a href="#" class="inheritanceTree">show all</a>
+        
+      </dd>
+    </div>
     
-    <li><a href="#method-c-mycaller">::mycaller</a>
+  
+  
     
-    <li><a href="#method-c-mycaller_maindir">::mycaller_maindir</a>
+  
     
-  </ul>
-</nav>
+  
+  
+  
+    <div class="row">      
+    <dt class="r2 last">Defined in</dt>
+    <dd class="r2 last">lib/kyanite/general/callerutils.rb</dd>
+    </div>     
+   
+</dl>
+<div class="clear"></div>
 
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Div.html">Div</a>
-  
-    <li class="file"><a href="./History_txt.html">History</a>
-  
-    <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./README_txt.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Tree.html">Tree</a>
-  
-    <li><a href="./Tree/TreeNode.html">Tree::TreeNode</a>
-  
-    <li><a href="./Array.html">Array</a>
-  
-    <li><a href="./Array2.html">Array2</a>
-  
-    <li><a href="./ArrayOfEnumerables.html">ArrayOfEnumerables</a>
-  
-    <li><a href="./ArrayOfNumerics.html">ArrayOfNumerics</a>
-  
-    <li><a href="./ArrayOfStrings.html">ArrayOfStrings</a>
-  
-    <li><a href="./CallTracker.html">CallTracker</a>
-  
-    <li><a href="./CallerUtils.html">CallerUtils</a>
-  
-    <li><a href="./Class.html">Class</a>
-  
-    <li><a href="./Dictionary.html">Dictionary</a>
-  
-    <li><a href="./Enumerable.html">Enumerable</a>
-  
-    <li><a href="./EnumerableEnumerables.html">EnumerableEnumerables</a>
-  
-    <li><a href="./EnumerableNumerics.html">EnumerableNumerics</a>
-  
-    <li><a href="./EnumerableStrings.html">EnumerableStrings</a>
-  
-    <li><a href="./FalseClass.html">FalseClass</a>
-  
-    <li><a href="./Float.html">Float</a>
-  
-    <li><a href="./Hash.html">Hash</a>
-  
-    <li><a href="./Integer.html">Integer</a>
-  
-    <li><a href="./KKernel.html">KKernel</a>
-  
-    <li><a href="./Kyanite.html">Kyanite</a>
-  
-    <li><a href="./Matrix2.html">Matrix2</a>
-  
-    <li><a href="./NilClass.html">NilClass</a>
-  
-    <li><a href="./Numeric.html">Numeric</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-    <li><a href="./Optimizer.html">Optimizer</a>
-  
-    <li><a href="./OrderedSet.html">OrderedSet</a>
-  
-    <li><a href="./Range.html">Range</a>
-  
-    <li><a href="./Set.html">Set</a>
-  
-    <li><a href="./SortedSet.html">SortedSet</a>
-  
-    <li><a href="./String.html">String</a>
-  
-    <li><a href="./Symbol.html">Symbol</a>
-  
-    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
-  
-    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
-  
-    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
-  
-    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
-  
-    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
-  
-    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
-  
-    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
-  
-    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
-  
-    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
-  
-    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
-  
-    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
-  
-    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
-  
-    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
-  
-    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
-  
-    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
-  
-    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
-  
-    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
-  
-    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
-  
-    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
-  
-    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
-  
-    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
-  
-    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
-  
-    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
-  
-    <li><a href="./TrueClass.html">TrueClass</a>
-  
-    <li><a href="./Undoable.html">Undoable</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class CallerUtils</h1>
-
-  <div id="description" class="description">
-    <dl class="rdoc-list label-list"><dt> | <a href="Kyanite.html">Kyanite</a> | <strong><a href="Object.html">Object</a></strong> | <a href="Array.html">Array</a> | <a href="Set.html">Set</a> | <a href="Enumerable.html">Enumerable</a> | <a href="Hash.html">Hash</a> | 
+<div class="docstring">
+  <div class="discussion">
+    
+<h3>CallerUtils</h3>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>Kyanite definitions
 <dd>
-<p>| <strong><a href="Object.html">Object</a></strong> | <a
-href="String.html">String</a> | <a href="Symbol.html">Symbol</a> | <a
-href="Numeric.html">Numeric</a> |</p>
-</dd><dt> 
+<p><span class='object_link'><a href="" title="CallerUtils (class)">CallerUtils</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Kyanite tests and examples
+<dd></dd> </div><div class=rdoc-dl-row> <dt>Usage
 <dd>
-<p>| <a href="Object.html">Object</a> | <a href="KKernel.html">KKernel</a> |
-<strong><a href="CallerUtils.html">CallerUtils</a></strong> | <a
-href="Undoable.html">Undoable</a> | <a href="Class.html">Class</a> |</p>
-</dd></dl>
-<hr style="height: 1px">
+<p><tt>require 'kyanite/general/callerutils'</tt></p>
+</dd> </div></dl>
 
-<h2 id="label-Tools+for+Kernel%23caller"><strong>Tools</strong> <strong>for</strong> Kernel#caller</h2>
 
-  </div><!-- description -->
+  </div>
+</div>
+<div class="tags">
+  
 
+</div>
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mycaller-class_method" title="mycaller (class method)">+ (String, Integer) <strong>mycaller</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Examines the call stack, returns the size of the stack, or the last caller.</p>
+</div></span>
+    
   
   
   
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
-
-    
-      <div id="method-c-mycaller" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mycaller</span><span
-            class="method-args">(options={})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Untersucht den Call-Stack. Liefert die Größe des Stacks oder den letzten
-Eintrag.</p>
-
-<p>Options:</p>
-
-<pre>:skip    Ignoriere caller, die das angegebene Fragment enthalten   (String oder Array)
-:mode    Welche Art von Ergebnis soll geliefert werden? 
-         :caller (Standard) liefert den Caller, 
-         :size liefert die Größe das Call-Stacks</pre>
-
-<p>Beispiel:</p>
-
-<pre class="ruby"><span class="ruby-constant">CallerUtils</span>.<span class="ruby-identifier">mycaller</span>(:<span class="ruby-identifier">skip</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'perception'</span>, <span class="ruby-string">'ruby\gems'</span>, <span class="ruby-string">'ruby/gems'</span>, <span class="ruby-string">'test/unit'</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;R:/_Eigene_Projekte_unter_SVN/kyanite/lib/kyanite/general/callerutils.rb:100&quot;</span>
-</pre>
-          
-
-          
-          <div class="method-source-code" id="mycaller-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/callerutils.rb, line 27</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mycaller</span>(<span class="ruby-identifier">options</span>={})
-    <span class="ruby-identifier">skip</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:skip</span>] <span class="ruby-operator">||</span> []
-    <span class="ruby-identifier">skip</span> = [<span class="ruby-identifier">skip</span>]   <span class="ruby-keyword">if</span> <span class="ruby-identifier">skip</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
-    <span class="ruby-identifier">mode</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:mode</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:caller</span>
-    <span class="ruby-identifier">result</span> = <span class="ruby-keyword">nil</span>     
-    <span class="ruby-identifier">size</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">size</span>  
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">skip</span>.<span class="ruby-identifier">empty?</span>
-      <span class="ruby-keyword">return</span> <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>]  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:caller</span>
-      <span class="ruby-keyword">return</span> <span class="ruby-identifier">size</span>       <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:size</span>
-    <span class="ruby-keyword">end</span>
-    <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>, <span class="ruby-identifier">i</span> <span class="ruby-operator">|</span>
-<span class="ruby-comment">#puts &quot;caller=#{c}&quot;</span>
-<span class="ruby-comment">#puts &quot;skip=#{skip.inspect_pp}&quot;</span>
-      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">skip</span>)
-<span class="ruby-comment">#puts &quot;ok! \n&quot;</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:caller</span>
-        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">c</span>
-      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:size</span>
-        <span class="ruby-identifier">result</span> = (<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">i</span>)
-      <span class="ruby-keyword">end</span> <span class="ruby-comment"># if mode           </span>
-      <span class="ruby-keyword">break</span>
-    <span class="ruby-keyword">end</span> <span class="ruby-comment"># each caller</span>
-    <span class="ruby-comment"># puts &quot;mycaller=#{result}&quot;  </span>
-    <span class="ruby-identifier">result</span>
-  <span class="ruby-keyword">end</span></pre>
-          </div><!-- mycaller-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mycaller-method -->
-
-    
-      <div id="method-c-mycaller_maindir" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mycaller_maindir</span><span
-            class="method-args">(mycaller)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Ermittelt das Hauptverzeichnis eines Callers auf heuristischem Wege. Der
-Name des Hauptverzeichnisses entspricht meist dem Namen der Applikation
-oder Library.</p>
-
-<p>Beispiel:</p>
-
-<pre class="ruby"><span class="ruby-identifier">my_caller</span>  = <span class="ruby-constant">CallerUtils</span>.<span class="ruby-identifier">mycaller</span>(:<span class="ruby-identifier">skip</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'perception'</span>, <span class="ruby-string">'ruby\gems'</span>, <span class="ruby-string">'ruby/gems'</span>, <span class="ruby-string">'test/unit'</span>]) 
-<span class="ruby-constant">CallerUtils</span>.<span class="ruby-identifier">mycaller_maindir</span>(<span class="ruby-identifier">my_caller</span>)           
-=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;R:/_Eigene_Projekte_unter_SVN/kyanite&quot;</span>
-</pre>
-          
-
-          
-          <div class="method-source-code" id="mycaller_maindir-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/callerutils.rb, line 63</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mycaller_maindir</span>(<span class="ruby-identifier">mycaller</span>)
-    <span class="ruby-identifier">dir_caller</span> =<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">mycaller</span>)
-    <span class="ruby-identifier">array_caller</span> = <span class="ruby-identifier">dir_caller</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'/'</span>)
-    <span class="ruby-identifier">array_caller</span> = <span class="ruby-identifier">dir_caller</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\\&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">array_caller</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-<span class="ruby-comment">#require 'pp'</span>
-<span class="ruby-comment">#pp array_caller</span>
-    <span class="ruby-identifier">indicatorfiles</span> = <span class="ruby-node">%W{Init Boot History License Manifest Rakefile README ReadMe Readme Setup}</span>
-    <span class="ruby-identifier">check</span> = []
-    (<span class="ruby-operator">-</span><span class="ruby-identifier">array_caller</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">upto</span>(<span class="ruby-value">-1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lev</span><span class="ruby-operator">|</span>
-      <span class="ruby-identifier">indicatorfiles</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">|</span>
-        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-identifier">lev</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'..'</span>
-        <span class="ruby-identifier">check</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/#{f}.rb&quot;</span>
-        <span class="ruby-identifier">check</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/#{f}.txt&quot;</span>
-        <span class="ruby-identifier">check</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/#{f}&quot;</span>
-        <span class="ruby-identifier">check</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/#{f.downcase}.rb&quot;</span>
-        <span class="ruby-identifier">check</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/#{f.downcase}.txt&quot;</span>
-        <span class="ruby-identifier">check</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">array_caller</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lev</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/#{f.downcase}&quot;</span>          
-      <span class="ruby-keyword">end</span>
-    <span class="ruby-keyword">end</span>  
-      <span class="ruby-comment">#return check</span>
-      <span class="ruby-identifier">maindir</span> = <span class="ruby-string">''</span>
-      <span class="ruby-identifier">check</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">try</span> <span class="ruby-operator">|</span>
-        <span class="ruby-comment"># puts &quot;try #{try}&quot;</span>
-        <span class="ruby-identifier">maindir</span> = <span class="ruby-identifier">try</span>
-        <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">try</span>)
-      <span class="ruby-keyword">end</span>
-      <span class="ruby-comment"># puts &quot;mycaller_maindir=#{File.dirname(maindir) }&quot;</span>
-      <span class="ruby-keyword">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">maindir</span>) 
-    <span class="ruby-keyword">end</span></pre>
-          </div><!-- mycaller_maindir-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mycaller_maindir-method -->
-
-    
-    </section><!-- public-class-method-details -->
   
-  </section><!-- 5Buntitled-5D -->
+  
+  
+  
+</li>
 
-</div><!-- documentation -->
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mycaller_maindir-class_method" title="mycaller_maindir (class method)">+ (String) <strong>mycaller_maindir</strong>(mycaller) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Determines the root directory of a caller on heuristic way.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
 
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="mycaller-class_method">
+  
+    + (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>mycaller</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Examines the call stack, returns the size of the stack, or the last caller.
+Example:</p>
+
+<pre class="code ruby"><code>CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit']) 
+=&gt; &quot;C:/Ruby-Projekte/kyanite/lib/kyanite/general/callerutils.rb:110:in `&lt;main&gt;'&quot;
+
+CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit'], :mode=&gt; :size) 
+=&gt; 1</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:skip</span>
+          <span class="type">(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Ignore caller that contain the specified fragment</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:mode</span>
+          <span class="type">(<tt><span class='object_link'><a href="Symbol.html" title="Symbol (class)">Symbol</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>What kind of result is to be returned? <tt>:caller</tt> (default) returns
+the caller, <tt>:size</tt> returns the size of the call stack.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/callerutils.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_mycaller'>mycaller</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_skip'>skip</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:skip</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_skip'>skip</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_skip'>skip</span><span class='rbracket'>]</span>   <span class='kw'>if</span> <span class='id identifier rubyid_skip'>skip</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_mode'>mode</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:mode</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='symbol'>:caller</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='kw'>nil</span>     
+  <span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='id identifier rubyid_caller'>caller</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>  
+  <span class='kw'>if</span> <span class='id identifier rubyid_skip'>skip</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_caller'>caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>  <span class='kw'>if</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>==</span> <span class='symbol'>:caller</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_size'>size</span>       <span class='kw'>if</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>==</span> <span class='symbol'>:size</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_caller'>caller</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>|</span>
+<span class='comment'>#puts &quot;caller=#{c}&quot;
+</span><span class='comment'>#puts &quot;skip=#{skip.inspect_pp}&quot;
+</span>    <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_skip'>skip</span><span class='rparen'>)</span>
+<span class='comment'>#puts &quot;ok! \n&quot;
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>==</span> <span class='symbol'>:caller</span>
+      <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_c'>c</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>==</span> <span class='symbol'>:size</span>
+      <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span> <span class='op'>-</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span>
+    <span class='kw'>end</span> <span class='comment'># if mode           
+</span>    <span class='kw'>break</span>
+  <span class='kw'>end</span> <span class='comment'># each caller
+</span>  <span class='comment'># puts &quot;mycaller=#{result}&quot;  
+</span>  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mycaller_maindir-class_method">
+  
+    + (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>mycaller_maindir</strong>(mycaller) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines the root directory of a caller on heuristic way. The name of the
+main directory is usually the name of the application or library. Example:</p>
+
+<pre class="code ruby"><code>my_caller  = CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit']) 
+CallerUtils.mycaller_maindir(my_caller)           
+=&gt; &quot;C:/Ruby-Projekte/kyanite&quot;</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/callerutils.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_mycaller_maindir'>mycaller_maindir</span><span class='lparen'>(</span><span class='id identifier rubyid_mycaller'>mycaller</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dir_caller'>dir_caller</span> <span class='op'>=</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='id identifier rubyid_mycaller'>mycaller</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_array_caller'>array_caller</span> <span class='op'>=</span> <span class='id identifier rubyid_dir_caller'>dir_caller</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_array_caller'>array_caller</span> <span class='op'>=</span> <span class='id identifier rubyid_dir_caller'>dir_caller</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\\</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>1</span>
+<span class='comment'>#require 'pp'
+</span><span class='comment'>#pp array_caller
+</span><span class='id identifier rubyid_indicatorfiles'>indicatorfiles</span> <span class='op'>=</span> <span class='words_beg'>%W{</span><span class='tstring_content'>Init</span><span class='words_sep'> </span><span class='tstring_content'>Boot</span><span class='words_sep'> </span><span class='tstring_content'>History</span><span class='words_sep'> </span><span class='tstring_content'>License</span><span class='words_sep'> </span><span class='tstring_content'>Manifest</span><span class='words_sep'> </span><span class='tstring_content'>Rakefile</span><span class='words_sep'> </span><span class='tstring_content'>README</span><span class='words_sep'> </span><span class='tstring_content'>ReadMe</span><span class='words_sep'> </span><span class='tstring_content'>Readme</span><span class='words_sep'> </span><span class='tstring_content'>Setup</span><span class='words_sep'>}</span>
+<span class='id identifier rubyid_check'>check</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='lparen'>(</span><span class='op'>-</span><span class='id identifier rubyid_array_caller'>array_caller</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_upto'>upto</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_lev'>lev</span><span class='op'>|</span>
+  <span class='id identifier rubyid_indicatorfiles'>indicatorfiles</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_f'>f</span> <span class='op'>|</span>
+    <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='id identifier rubyid_lev'>lev</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>..</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='rbrace'>}</span><span class='tstring_content'>.rb</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='rbrace'>}</span><span class='tstring_content'>.txt</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbrace'>}</span><span class='tstring_content'>.rb</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbrace'>}</span><span class='tstring_content'>.txt</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_check'>check</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_array_caller'>array_caller</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_lev'>lev</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>          
+  <span class='kw'>end</span>
+<span class='kw'>end</span>  
+  <span class='comment'>#return check
+</span>  <span class='id identifier rubyid_maindir'>maindir</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_check'>check</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_try'>try</span> <span class='op'>|</span>
+    <span class='comment'># puts &quot;try #{try}&quot;
+</span>    <span class='id identifier rubyid_maindir'>maindir</span> <span class='op'>=</span> <span class='id identifier rubyid_try'>try</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='id identifier rubyid_try'>try</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='comment'># puts &quot;mycaller_maindir=#{File.dirname(maindir) }&quot;
+</span>  <span class='kw'>return</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='id identifier rubyid_maindir'>maindir</span><span class='rparen'>)</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    </div>   
+
+    <div id="footer">      
+      <div id="project-footer">
+</div>      
+      Generated on Sat Nov  3 00:07:30 2012 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
+        title="Klippstein Template for Ruby YARD" 
+        target="_parent">
+        yard_klippstein_template
+        </a>  
+
+
+
+    </div>     
+    
+  </body>
+</html>

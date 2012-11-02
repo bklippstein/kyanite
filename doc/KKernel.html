@@ -1,414 +1,350 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: KKernel
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>module KKernel - Kyanite 0.6.1</title>
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "./";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
-    <a href="./table_of_contents.html#classes">Classes</a>
-    <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/kyanite/general/kernel.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (K)</a> &raquo;
     
     
+    <span class="title">KKernel</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+      <div id="project-header">
+  
+</div>      
+    </div>
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+    <div id="body">    
+      <iframe id="search_frame"></iframe>
+      <div id="content"><h1>Module: KKernel
+  
+  
+  
+</h1>
 
-  <ul class="link-list">
+<dl class="box">
+  
+  
     
-    <li><a href="#method-i-repeat_n_seconds">#repeat_n_seconds</a>
+  
     
-    <li><a href="#method-i-silence_warnings">#silence_warnings</a>
+  
+  
+    <div class="row">      
+    <dt class="r1">Included in</dt>
+    <dd class="r1"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></dd>
+    </div>      
     
-    <li><a href="#method-i-smart_load_path">#smart_load_path</a>
+  
+  
+    <div class="row">      
+    <dt class="r2 last">Defined in</dt>
+    <dd class="r2 last">lib/kyanite/general/kernel.rb</dd>
+    </div>     
+   
+</dl>
+<div class="clear"></div>
+
+<div class="docstring">
+  <div class="discussion">
     
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Div.html">Div</a>
-  
-    <li class="file"><a href="./History_txt.html">History</a>
-  
-    <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./README_txt.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Tree.html">Tree</a>
-  
-    <li><a href="./Tree/TreeNode.html">Tree::TreeNode</a>
-  
-    <li><a href="./Array.html">Array</a>
-  
-    <li><a href="./Array2.html">Array2</a>
-  
-    <li><a href="./ArrayOfEnumerables.html">ArrayOfEnumerables</a>
-  
-    <li><a href="./ArrayOfNumerics.html">ArrayOfNumerics</a>
-  
-    <li><a href="./ArrayOfStrings.html">ArrayOfStrings</a>
-  
-    <li><a href="./CallTracker.html">CallTracker</a>
-  
-    <li><a href="./CallerUtils.html">CallerUtils</a>
-  
-    <li><a href="./Class.html">Class</a>
-  
-    <li><a href="./Dictionary.html">Dictionary</a>
-  
-    <li><a href="./Enumerable.html">Enumerable</a>
-  
-    <li><a href="./EnumerableEnumerables.html">EnumerableEnumerables</a>
-  
-    <li><a href="./EnumerableNumerics.html">EnumerableNumerics</a>
-  
-    <li><a href="./EnumerableStrings.html">EnumerableStrings</a>
-  
-    <li><a href="./FalseClass.html">FalseClass</a>
-  
-    <li><a href="./Float.html">Float</a>
-  
-    <li><a href="./Hash.html">Hash</a>
-  
-    <li><a href="./Integer.html">Integer</a>
-  
-    <li><a href="./KKernel.html">KKernel</a>
-  
-    <li><a href="./Kyanite.html">Kyanite</a>
-  
-    <li><a href="./Matrix2.html">Matrix2</a>
-  
-    <li><a href="./NilClass.html">NilClass</a>
-  
-    <li><a href="./Numeric.html">Numeric</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-    <li><a href="./Optimizer.html">Optimizer</a>
-  
-    <li><a href="./OrderedSet.html">OrderedSet</a>
-  
-    <li><a href="./Range.html">Range</a>
-  
-    <li><a href="./Set.html">Set</a>
-  
-    <li><a href="./SortedSet.html">SortedSet</a>
-  
-    <li><a href="./String.html">String</a>
-  
-    <li><a href="./Symbol.html">Symbol</a>
-  
-    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
-  
-    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
-  
-    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
-  
-    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
-  
-    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
-  
-    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
-  
-    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
-  
-    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
-  
-    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
-  
-    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
-  
-    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
-  
-    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
-  
-    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
-  
-    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
-  
-    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
-  
-    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
-  
-    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
-  
-    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
-  
-    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
-  
-    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
-  
-    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
-  
-    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
-  
-    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
-  
-    <li><a href="./TrueClass.html">TrueClass</a>
-  
-    <li><a href="./Undoable.html">Undoable</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="module">module KKernel</h1>
-
-  <div id="description" class="description">
-    <dl class="rdoc-list label-list"><dt> | <a href="Kyanite.html">Kyanite</a> | <strong><a href="Object.html">Object</a></strong> | <a href="Array.html">Array</a> | <a href="Set.html">Set</a> | <a href="Enumerable.html">Enumerable</a> | <a href="Hash.html">Hash</a> | 
+<h3>Object Additions</h3>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>Kyanite definitions
 <dd>
-<p>| <strong><a href="Object.html">Object</a></strong> | <a
-href="String.html">String</a> | <a href="Symbol.html">Symbol</a> | <a
-href="Numeric.html">Numeric</a> |</p>
-</dd><dt> 
+<p><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span>, <span class='object_link'><a href="" title="KKernel (module)">KKernel</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Kyanite tests and examples
 <dd>
-<p>| <a href="Object.html">Object</a> | <strong><a
-href="KKernel.html">KKernel</a></strong> | <a
-href="CallerUtils.html">CallerUtils</a> | <a
-href="Undoable.html">Undoable</a> | <a href="Class.html">Class</a> |</p>
-</dd></dl>
-<hr style="height: 1px">
+<p><span class='object_link'><a href="TestKyaniteObject.html" title="TestKyaniteObject (class)">TestKyaniteObject</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Usage
+<dd>
+<p><tt>require 'kyanite/basics'</tt></p>
+</dd> </div></dl>
 
-<h2 id="label-General+Tools"><strong>General</strong> <strong>Tools</strong></h2>
 
-  </div><!-- description -->
+  </div>
+</div>
+<div class="tags">
+  
 
+</div>
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#repeat_n_seconds-instance_method" title="#repeat_n_seconds (instance method)">- (Object) <strong>repeat_n_seconds</strong>(n = 1, &amp;block) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Repeats a block until the time is up.</p>
+</div></span>
+    
   
   
   
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-repeat_n_seconds" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">repeat_n_seconds</span><span
-            class="method-args">( n=1 ) { |block| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Wiederholt einen Block so lange, bis die Zeit abgelaufen ist. Liefert die
-Anzahl der Durchläufe, die in dieser Zeit möglich waren. Alle Exceptions
-werden abgefangen (=&gt; fehlerhafte Blöcke scheinen schneller zu laufen)</p>
-          
-
-          
-          <div class="method-source-code" id="repeat_n_seconds-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/kernel.rb, line 30</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">repeat_n_seconds</span>( <span class="ruby-identifier">n</span>=<span class="ruby-value">1</span>, &amp;<span class="ruby-identifier">block</span> )
-  <span class="ruby-identifier">timer</span> = <span class="ruby-constant">Timer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">n</span>) 
-  <span class="ruby-keyword">begin</span>
-    <span class="ruby-identifier">timer</span>.<span class="ruby-identifier">start</span>
-      <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>
-      <span class="ruby-keyword">until</span> <span class="ruby-keyword">false</span>
-        <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">block</span>
-      <span class="ruby-keyword">end</span>
-    <span class="ruby-identifier">timer</span>.<span class="ruby-identifier">stop</span>
-  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">TimeoutError</span> 
-    <span class="ruby-keyword">return</span> <span class="ruby-identifier">count</span>      
-  <span class="ruby-keyword">rescue</span> 
-    <span class="ruby-keyword">return</span> <span class="ruby-identifier">count</span>  
-  <span class="ruby-keyword">rescue</span> 
-    <span class="ruby-keyword">return</span> <span class="ruby-identifier">count</span>             
-  <span class="ruby-keyword">end</span> <span class="ruby-comment"># begin </span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- repeat_n_seconds-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- repeat_n_seconds-method -->
-
-    
-      <div id="method-i-silence_warnings" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">silence_warnings</span><span
-            class="method-args">() { || ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Stellt für den nachfolgenden Block die Ruby-Warnungen ab. Nützlich, um z.B.
-Konstanten zu überschreiben. Quelle: Rails <a
-href="http://api.rubyonrails.org/classes/Kernel.html#M001639">api.rubyonrails.org/classes/Kernel.html#M001639</a></p>
-          
-
-          
-          <div class="method-source-code" id="silence_warnings-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/kernel.rb, line 55</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">silence_warnings</span>
-     <span class="ruby-identifier">old_verbose</span>, <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">$VERBOSE</span>, <span class="ruby-keyword">nil</span>
-     <span class="ruby-keyword">yield</span>
-  <span class="ruby-keyword">ensure</span>
-     <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">old_verbose</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- silence_warnings-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- silence_warnings-method -->
-
-    
-      <div id="method-i-smart_load_path" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">smart_load_path</span><span
-            class="method-args">(__file__ = nil)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Vereinfacht die require-Statements in den Tests bei der Entwicklung von
-Libraries.</p>
-
-<p>Beim lokalen Aufruf eines einzelnen Tests wird die lokale Version der
-Library verwendet, nicht die installierte gem. Verwendung:</p>
-
-<pre class="ruby"><span class="ruby-keyword">if</span> <span class="ruby-identifier">$0</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">__FILE__</span> 
-  <span class="ruby-identifier">require</span> <span class="ruby-string">'kyanite/smart_load_path'</span>
-  <span class="ruby-identifier">smart_load_path</span>   
-<span class="ruby-keyword">end</span>
-<span class="ruby-identifier">require</span> <span class="ruby-string">'mygemproject'</span>
-</pre>
-          
-
-          
-          <div class="method-source-code" id="smart_load_path-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/kernel.rb, line 72</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">smart_load_path</span>(<span class="ruby-identifier">__file__</span> = <span class="ruby-keyword">nil</span>)
-  <span class="ruby-identifier">__file__</span> = <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">__file__</span>
-  <span class="ruby-identifier">dir_caller</span> =<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">__file__</span>)
   
-  <span class="ruby-comment">#puts &quot;smart_load_path &quot; + dir_caller    </span>
   
-  <span class="ruby-identifier">patharray</span> = <span class="ruby-identifier">dir_caller</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'/'</span>)
-  <span class="ruby-identifier">patharray</span> = <span class="ruby-identifier">dir_caller</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\\&quot;</span>)       <span class="ruby-keyword">if</span> <span class="ruby-identifier">patharray</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>  
-  <span class="ruby-comment"># libpath = File.join(patharray)   </span>
-  <span class="ruby-identifier">patharray</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">break</span>   <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">patharray</span>, <span class="ruby-string">'lib'</span>) ) 
-    <span class="ruby-identifier">patharray</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'..'</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">newpath</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">patharray</span>,<span class="ruby-string">'lib'</span>)  
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$:</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">newpath</span>)
-    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">$:</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">newpath</span>)  
-    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">end</span>
   
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- smart_load_path-source -->
-          
-        </div>
+  
+</li>
 
-        
-
-        
-      </div><!-- smart_load_path-method -->
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#silence_warnings-instance_method" title="#silence_warnings (instance method)">- (Object) <strong>silence_warnings</strong> </a>
+    
 
     
-    </section><!-- public-instance-method-details -->
+  </span>
   
-  </section><!-- 5Buntitled-5D -->
+    <span class="summary_desc"><div class='inline'>
+<p>Silence all Ruby warnings for the following block.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
 
-</div><!-- documentation -->
+      
+    </ul>
+  
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
 
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="repeat_n_seconds-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>repeat_n_seconds</strong>(n = 1, &amp;block) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Repeats a block until the time is up.  Returns the number of passes. All
+Exceptions are caught (=&gt; bad blocks seem to run faster). Example (using
+<span class='object_link'><a href="Numeric.html" title="Numeric (class)">Numeric</a></span>):</p>
+
+<pre class="code ruby"><code><span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_seconds'>seconds</span> <span class='kw'>do</span>
+ <span class='id identifier rubyid_puts'>puts</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+<span class='kw'>end</span></code></pre>
+
+<p>Example (using <span class='object_link'><a href="" title="KKernel (module)">KKernel</a></span>):</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_repeat_n_seconds'>repeat_n_seconds</span> <span class='int'>3</span> <span class='kw'>do</span>
+ <span class='id identifier rubyid_puts'>puts</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+<span class='kw'>end</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/kernel.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_repeat_n_seconds'>repeat_n_seconds</span><span class='lparen'>(</span> <span class='id identifier rubyid_n'>n</span><span class='op'>=</span><span class='int'>1</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_timer'>timer</span> <span class='op'>=</span> <span class='const'>Timer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span> 
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_timer'>timer</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span>
+      <span class='id identifier rubyid_count'>count</span> <span class='op'>=</span> <span class='int'>0</span>
+      <span class='kw'>until</span> <span class='kw'>false</span>
+        <span class='id identifier rubyid_count'>count</span> <span class='op'>+=</span> <span class='int'>1</span>
+        <span class='kw'>yield</span> <span class='id identifier rubyid_block'>block</span> <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+      <span class='kw'>end</span>
+    <span class='id identifier rubyid_timer'>timer</span><span class='period'>.</span><span class='id identifier rubyid_stop'>stop</span>
+  <span class='kw'>rescue</span> <span class='const'>TimeoutError</span> 
+    <span class='kw'>return</span> <span class='id identifier rubyid_count'>count</span>      
+  <span class='kw'>rescue</span> 
+    <span class='kw'>return</span> <span class='id identifier rubyid_count'>count</span>  
+  <span class='kw'>rescue</span> 
+    <span class='kw'>return</span> <span class='id identifier rubyid_count'>count</span>             
+  <span class='kw'>end</span> <span class='comment'># begin 
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="silence_warnings-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>silence_warnings</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Silence all Ruby warnings for the following block. Useful to override
+constants. Example:</p>
+
+<pre class="code ruby"><code><span class='const'>TEST</span> <span class='op'>=</span> <span class='int'>1</span>
+<span class='id identifier rubyid_silence_warnings'>silence_warnings</span> <span class='kw'>do</span>
+ <span class='const'>TEST</span> <span class='op'>=</span> <span class='int'>2</span>
+<span class='kw'>end</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/kernel.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_silence_warnings'>silence_warnings</span>
+     <span class='id identifier rubyid_old_verbose'>old_verbose</span><span class='comma'>,</span> <span class='gvar'>$VERBOSE</span> <span class='op'>=</span> <span class='gvar'>$VERBOSE</span><span class='comma'>,</span> <span class='kw'>nil</span>
+     <span class='kw'>yield</span>
+  <span class='kw'>ensure</span>
+     <span class='gvar'>$VERBOSE</span> <span class='op'>=</span> <span class='id identifier rubyid_old_verbose'>old_verbose</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    </div>   
+
+    <div id="footer">      
+      <div id="project-footer">
+</div>      
+      Generated on Sat Nov  3 00:07:28 2012 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
+        title="Klippstein Template for Ruby YARD" 
+        target="_parent">
+        yard_klippstein_template
+        </a>  
+
+
+
+    </div>     
+    
+  </body>
+</html>

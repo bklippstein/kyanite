@@ -1,18 +1,17 @@
 # ruby encoding: utf-8
-# ü
+#
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'kyanite/unit_test'                                                  
+require 'drumherum/unit_test'                                              
 require 'kyanite/tree'
 require 'kyanite/symbol'
 
 
 
 
-# Tests for Tree::TreeNode
+# @!macro tree
 class TestKyaniteTree < UnitTest
 
   def setup
@@ -55,15 +54,13 @@ class TestKyaniteTree < UnitTest
     ttroot_hash = {}
     ttroot_hash[:de] = ttroot
 
-    @tokenizer_tree_root = ttroot_hash    
-    
- 
+    @tokenizer_tree_root = ttroot_hash
   end
   
   
 
 
-  def pest_allkeys
+  def test_allkeys
   
     assert_equal [   :singlechar,
                      :ta_item,

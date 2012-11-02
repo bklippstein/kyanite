@@ -1,21 +1,27 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 class String
 
 # ---------------------------------------------------------------------------------------------------------------------------------
-# :section: Nested
+# @!group Nested
 # See TestKyaniteStringNested for tests and examples.   
 #
   
   
-  # Gibt die passende gegenteilige Klammer zurück
-  # '('.anti          ->  ')'
-  # '{'.anti          ->  '}'
-  # ']'.anti          ->  '['
-  # '<hallo>'.anti    ->  '</hallo>'
-  # '</hallo>'.anti   ->  '<hallo>'
+  # Returns the matching opposite bracket. Examples:
+  #  '('.anti          ->  ')'
+  #  '{'.anti          ->  '}'
+  #  ']'.anti          ->  '['
+  #  '<hallo>'.anti    ->  '</hallo>'
+  #  '</hallo>'.anti   ->  '<hallo>'
   #
-  # See TestKyaniteStringNested for tests and examples.  
-  #  
+  # See tests and examples {TestKyaniteStringNested#test_010_anti here}.  
+  # @return [String] opposite bracket 
   def anti
     if self.size == 1
       return self.tr('([{<)]}>',')]}>([{<')
@@ -31,11 +37,12 @@ class String
   
   
   
-  # Findet das nächste zueinander passende Klammerpaar ab Position start.
-  # Liefert die Positionen der Klammern als Range.
-  # Bsp.: 'Hallo(welt)wort'.index_bracket  ->  5..10
-  #
-  # See TestKyaniteStringNested for tests and examples.   
+  # Returns the positions of the next bracket pair. Example:
+  #  'Hello(welt)wort'.index_bracket  ->  5..10
+  # See tests and examples {TestKyaniteStringNested#test_020_index_bracket here}.    
+  # @return [Range] Positions of brackets
+  # @param start [Integer] Search from this starting position
+  # @param pattern [RegExp, String] Search only this type of bracket 
   #  
   def index_bracket( pattern=nil, start=0, last_found = nil )
     return nil if self.empty?
@@ -73,10 +80,20 @@ class String
   end
   
   
-  # Wendet den Block auf eine hierarchisch definierte Auswahl des Strings an.
+  # Applies the block to a hierarchically defined substring of the string.
   #
-  # See TestKyaniteStringNested for tests and examples.  
-  #  
+  # See tests and examples {TestKyaniteStringNested#test_030_mask_ungeklammert here}.    
+  # @return [String] 
+  # @param options [Hash] 
+  # @option options [Integer] :level_start
+  # @option options [Integer] :level_end
+  # @option options [Integer] :level_akt
+  # @option options [RegExp, String] :pattern
+  # @option options [Boolean] :skip_empty
+  # @option options [Boolean] :param_level
+  # @option options [Boolean] :with_brackets
+  # @param block [Block] 
+  #    
   def mask( options={}, &block )
   
     # vorbereiten
@@ -189,10 +206,10 @@ class String
   end # def
 
 
-  # Liefert die Verschachtelungstiefe.
-  #
-  # See TestKyaniteStringNested for tests and examples.  
-  #    
+
+  # Returns the depth of nesting (number of nesting levels). 
+  # @return [Integer] Depth of nesting 
+  # @param pattern [RegExp, String] Search only this type of bracket  
   def nestinglevel(pattern=/[{<(\[]/)
     result = 0
     self.mask( :level_start => 0,
@@ -237,7 +254,7 @@ end
 
 if $0 == __FILE__ 
 
-  require File.join(File.dirname(__FILE__), '..', '..', '..', 'test', 'string', 'test_nested' )   
+  
 
 end # if
 

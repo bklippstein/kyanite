@@ -1,27 +1,29 @@
 # ruby encoding: utf-8
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init
 end
 
 require 'rubytree'
-require 'transparent_nil'  
+require 'transparent_nil'  unless defined? TransparentNil
 
 
-module Tree #:nodoc: 
+module Tree 
 
-  # [ | *Kyanite* | Object | Array | Set | Enumerable | Hash | ]     | Kyanite | TrueClass | FalseClass | NilClass | *Div* | 
-  # [ ] | Div | <b>Tree::TreeNode</b> | Optimizer | 
-  # ---
-  #
-  # == Ergänzungen zu rubytree
-  # See TestKyaniteTree for tests and examples.
-  #
+
+  
+
+  
+    # @!macro tree
   class TreeNode
-    attr_reader :childrenHash
+  
+    # @private
+    attr_reader :children_hash
    
+    # @!group Additions for rubytree    
     
-    # kann jetzt auch mit Symbolen umgehen
+    # now handles symbols in the tree as well
+    # @return [String]      
     def to_s
       ":#{@name}"
       # "Node Name: #{@name}" +
@@ -32,7 +34,8 @@ module Tree #:nodoc:
     end  
     
     
-    # funktioniert jetzt  
+    # now it works
+    # @return [void]    
     def print_tree(level = 0, breite = 8)
 
       if is_root? 
@@ -56,8 +59,8 @@ module Tree #:nodoc:
     end    
     
     
-    # anders als [] wird der gesamte Baum durchsucht
-    # Liefert den ersten Treffer 
+    # As opposed to [] the entire tree is searched.
+    # Returns the first hit. 
     def find( node_name )
       return self               if self.name == node_name
       result = self[node_name]
@@ -72,18 +75,20 @@ module Tree #:nodoc:
     end
     
     
-    # Funktioniert nicht
-    # Liefert ein Array aller untergeordneten Child-Keys. 
-    # Es wird der gesamte Baum durchsucht.
-    # def all_child_keys
-      # result = @childrenHash.keys || []
-        # children do |c| 
-        # puts "durchsuche #{c}"
-          # next if c.childrenHash.empty?
-          # result += c.all_child_keys
-        # end      
-      # result
-    # end
+
+    # Returns an array of all child keys.
+    # The whole tree is searched.
+    # @return [Array]
+    #
+    def all_child_keys
+      result = @children_hash.keys || []
+        children do |c| 
+        #puts "durchsuche #{c}"
+          next if c.children_hash.empty?
+          result += c.all_child_keys
+        end      
+      result
+    end
     
     
     

@@ -1,30 +1,31 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 require 'kyanite/string/include'
 
 
 
-# [ | Kyanite | *Object* | Array | Set | Enumerable | Hash | ]     | *Object* | String | Symbol | Numeric |  
-# [ ] | Object | KKernel | *CallerUtils* | Undoable | Class |
-#
-# ---
-#
-#
-# == *Tools* *for* Kernel#caller
-#
+
+# @!macro caller_utils
 class CallerUtils
 
-  # Untersucht den Call-Stack. Liefert die Größe des Stacks oder den letzten Eintrag.
+  # Examines the call stack, returns the size of the stack, or the last caller.
+  # @param options [Hash] Options
+  # @option options [String, Array] :skip Ignore caller that contain the specified fragment 
+  # @option options [Symbol] :mode What kind of result is to be returned? +:caller+ (default) returns the caller, +:size+ returns the size of the call stack.
   #
-  # Options: 
-  #   :skip    Ignoriere caller, die das angegebene Fragment enthalten   (String oder Array)
-  #   :mode    Welche Art von Ergebnis soll geliefert werden? 
-  #            :caller (Standard) liefert den Caller, 
-  #            :size liefert die Größe das Call-Stacks
+  # Example:
+  #  CallerUtils.mycaller(:skip => ['ruby\gems', 'ruby/gems', 'test/unit']) 
+  #  => "C:/Ruby-Projekte/kyanite/lib/kyanite/general/callerutils.rb:110:in `<main>'"
   #
-  # Beispiel:        
-  #  CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'test/unit'])
-  #  => "R:/_Eigene_Projekte_unter_SVN/kyanite/lib/kyanite/general/callerutils.rb:100"
-  #       
+  #  CallerUtils.mycaller(:skip => ['ruby\gems', 'ruby/gems', 'test/unit'], :mode=> :size) 
+  #  => 1
+  #     
+  # @return [String, Integer]
   def self.mycaller(options={})
     skip = options[:skip] || []
     skip = [skip]   if skip.kind_of?(String)
@@ -53,14 +54,14 @@ class CallerUtils
 
 
   
-  # Ermittelt das Hauptverzeichnis eines Callers auf heuristischem Wege.
-  # Der Name des Hauptverzeichnisses entspricht meist dem Namen der Applikation oder Library.
-  #
-  # Beispiel:
-  #   my_caller  = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'test/unit']) 
+
+  # Determines the root directory of a caller on heuristic way. The name of the main directory is usually the name of the application or library.
+  # Example:
+  #   my_caller  = CallerUtils.mycaller(:skip => ['ruby\gems', 'ruby/gems', 'test/unit']) 
   #   CallerUtils.mycaller_maindir(my_caller)           
-  #   => "R:/_Eigene_Projekte_unter_SVN/kyanite"
+  #   => "C:/Ruby-Projekte/kyanite"
   #
+  # @return [String]  
   def self.mycaller_maindir(mycaller)
     dir_caller =File.dirname(mycaller)
     array_caller = dir_caller.split('/')
@@ -109,10 +110,11 @@ if $0 == __FILE__
            
            
            
-        require 'pp'
-        my_caller  = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'test/unit']) 
-        my_maindir = CallerUtils.mycaller_maindir(my_caller)            if my_caller
-        pp my_maindir
+
+my_caller  = CallerUtils.mycaller(:skip => ['ruby\gems', 'ruby/gems', 'test/unit']) 
+#puts my_caller  
+puts CallerUtils.mycaller_maindir(my_caller)            if my_caller
+
 
 
 

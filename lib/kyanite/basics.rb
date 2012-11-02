@@ -6,9 +6,7 @@
 # innerhalb von Verzeichnissen
 #
 
-# require 'kyanite/array'   
-  require 'kyanite/array/array'           # aber nicht array2 und matrix2 
-  
+  require 'kyanite/array'    
 # require 'kyanite/general'    
 # require 'kyanite/general/callerutils'
   require 'kyanite/general/classutils'  
@@ -19,16 +17,14 @@
 # require 'kyanite/general/undoable'       
    
   require 'kyanite/numeric'    
-# require 'kyanite/operation'              # nur manuell
   
 # require 'kyanite/string'     
 # require 'kyanite/string/cast'
 # require 'kyanite/string/chars'
 # require 'kyanite/string/diff'
-# require 'kyanite/string/div'
   require 'kyanite/string/include'
 # require 'kyanite/string/list'
-  require 'kyanite/string/mgsub'
+  require 'kyanite/string/misc'
 # require 'kyanite/string/nested'
 # require 'kyanite/string/random'
 # require 'kyanite/string/split'
@@ -48,7 +44,7 @@
 # require 'kyanite/set'  
   require 'kyanite/symbol'  
 # require 'kyanite/tree'  
-# require 'kyanite/unit_test'         # nur für Tests
+
          
 # ----------------------------------------------------------------
 # Außerhalb

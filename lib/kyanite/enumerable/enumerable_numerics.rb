@@ -1,24 +1,26 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
 
-# [ | Kyanite | Object | Array | Set | *Enumerable* | Hash | ]     | Enumerable | *EnumerableNumerics* | EnumerableStrings | EnumerableEnumerables | 
-# ---
-#
-#
-# == *Enumeration* *Of* *Numerics*
-# See TestKyaniteEnumerableNumerics for tests and examples.
-# See ArrayOfNumerics for an Array with modul EnumerableNumerics included. 
-#
-#
+
+
+
+
+# @!macro enum_of_numerics
 module EnumerableNumerics
 
   
 # ======================================================================================
-# :section: Mittelwerte
+# @!group Mean Values
 #  
 
-  # Arithmetrischer Mittelwert
-  # Tests and examples see TestKyaniteEnumerableNumerics.
-  #    
+  # Arithmetic mean
+  #
+  # Tests and examples {TestKyaniteEnumerableNumerics here}.
+  # @return [Float]   
   def mean
     self.inject(0.0) { |sum, i | sum += i } / self.length.to_f 
   end
@@ -26,15 +28,14 @@ module EnumerableNumerics
   alias average          mean
   alias mean_arithmetric mean
  
-  # Harmonischer Mittelwert
+
+  # Harmonic mean
   #
-  # Normalerweise ist der harmonische Mittelwert nur für positive Zahlen sinnvoll definiert.
-  # Mit der Option <tt>:allow_negative => true </tt>kann man aber auch negative Zahlen mit einbeziehen.
-  # Dann wird der harmonische Mittelwert aller positiven Elemente mit dem 
-  # harmonische Mittelwert aller negativen Elemente verrechnet (als gewichtetes arithmetisches Mittel).
-  #
-  # Tests and examples see TestKyaniteEnumerableNumerics.
-  #    
+  # Usually, the harmonic mean is defined only for positive numbers.
+  # The option <tt>:allow_negative => true </tt> can also include negative numbers in the calculation.
+  # Then the result will be a weighted arithmetic mean of the harmonic mean of all positive elements
+  # and the harmonic mean of all negative elements.
+  # @return [Float]  
   def mean_harmonic( options={} )
     return 0              if self.empty?  
     return self.first     if self.size == 1
@@ -45,8 +46,8 @@ module EnumerableNumerics
       return self.size / summe
       
     else
-      positives = []
-      negatives = []
+      positives = ArrayOfNumerics.new
+      negatives = ArrayOfNumerics.new
       self.each do |e|
         if e >= 0
           positives << e
@@ -70,7 +71,9 @@ module EnumerableNumerics
   end #def 
   
  
-  # Geometrischer Mittelwert 
+
+  # Geometric mean
+  # @return [Float]    
   def mean_geometric
     self.prd ** ( 1.0/self.size ) 
   end  
@@ -78,32 +81,34 @@ module EnumerableNumerics
 
   
 # ======================================================================================
-# :section: Summe, Produkt, Parallelschaltung
+# @!group Sum, Product, Parallel
 #    
   
   
-  # Summe
+  # Sum
   #
-  # Methode darf nicht sum heißen, kollidiert sonst schnell mit ActiveRecord.
-  # Tests and examples see TestKyaniteEnumerableNumerics.
-  #  
+  # Tests and examples {TestKyaniteEnumerableNumerics here}.
+  # @return [Numeric]    
   def summation
+    # Methode darf nicht sum heißen, kollidiert sonst schnell mit ActiveRecord.  
     self.inject(0.0) { |sum, i | sum += i }  
   end  
   
   
-  # Produkt
-  # Methode darf nicht product heißen, die gibt es nämlich schon.
-  # Tests and examples see TestKyaniteEnumerableNumerics.
-  #    
+  # Product
+  #
+  # Tests and examples {TestKyaniteEnumerableNumerics here}.
+  # @return [Numeric]    
   def prd
+    # Methode darf nicht product heißen, die gibt es nämlich schon.  
     self.inject(1.0) { |p, i | p *= i }  
   end    
   
-  
-  # Ergebnis entspricht der Parallelschaltung von Widerständen.
-  # Tests and examples see TestKyaniteEnumerableNumerics.
-  #    
+  # Parallel
+  #
+  # Result is equal to the total resistance of resistors in parallel circuits.
+  # Tests and examples {TestKyaniteEnumerableNumerics here}.
+  # @return [Float]    
   def parallel
     mean_harmonic / size  
   end
@@ -114,14 +119,10 @@ end #class
 
 
 
-# [ | Kyanite | Object | *Array* | Set | Enumerable | Hash | ]     | Array |  *ArrayOfNumerics*  | ArrayOfStrings |  ArrayOfEnumerables | Range | 
-# ---
-#
-#
-# == *Array* *Of* *Numerics*
-# An ArrayOfNumerics is an Array with modul EnumerableNumerics included. 
-# See TestKyaniteEnumerableNumerics for tests and examples.
-#
+
+
+
+# @!macro enum_of_numerics
 class ArrayOfNumerics < Array 
   include EnumerableNumerics
 end
@@ -130,10 +131,13 @@ end
 
 class Array
 
-  # Liefert ein ArrayOfNumerics (das ist ein Array mit inkludiertem Modul EnumerableNumerics)
+  # @!group Cast
+  # Returns {ArrayOfNumerics} (this is an {Array} with modul {EnumerableNumerics} included)
+  # @return [ArrayOfNumerics]  
   def to_array_of_numerics
     ArrayOfNumerics.new(self)
   end
+  #@!endgroup
   
 end
 
@@ -157,9 +161,7 @@ end
 # Ausprobieren
 #
 if $0 == __FILE__ 
-  class Array
-    include EnumerableNumerics
-  end  
+
 
 
 

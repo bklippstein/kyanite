@@ -1,15 +1,28 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 require 'transparent_nil'
 require 'kyanite/symbol'
 
 class String
 
-# ---------------------------------------------------------------------------------------------------------------------------------
-# :section: List / Database
-# See TestKyaniteStringList for tests and examples.     
+
+# @!group Database-Helper 
   
   
-  # Listet Text auf. Beispiele siehe TestKyaniteStringList
+  # Generates WHERE clause from {Array}.
+  #  
+  # Example:
+  #  array = ['Anna','Birte','Charlie']
+  #  "kisses_from = ".list_with(array)
+  #  => "kisses_from = 'Anna' OR kisses_from = 'Birte' OR kisses_from = 'Charlie'"
+  #
+  # See tests and more examples {TestKyaniteStringList here}.
+  # @return [String]
   def list_with(  elemente, options = {}, &block )
   
     options = { :pre    => %q{'},
@@ -54,9 +67,9 @@ class String
 
 
   
-  # Gibt eine SQL-RegExp zurück, mit der man in Postgres kommaseparierte Listen duchsuchen kann.  
-  # Anwendung: Model Merkmal, has_many :dienste_req
-  # 
+  # Returns SQL-RegExp for searching in Postgres comma-separated list.
+  # @return [String]
+  #
   def sql_regexp_for_kommaliste
      '[, ]'  + self  + '[, ]'          + '|' +       # match mittendrin
      '^'     + self  + '[, ]'          + '|' +       # match am Anfang
@@ -65,7 +78,8 @@ class String
   end 
   
   
-  # macht aus einer MySQL-Enum-Angabe ein Array
+  # Converts MySQL-Enum to {Array}.
+  # @return [Array]
   #
   def enum_to_array
     self[5..-2].gsub("'",'').split(',').collect {|i| [i,i] }
@@ -81,5 +95,21 @@ if defined? TransparentNil
     def sql_regexp_for_kommaliste;           nil;            end
     def enum_to_array;                       nil;            end
   end
+end
+
+
+# -----------------------------------------------------------------------------------------
+# Ausprobieren
+#
+if $0 == __FILE__ then
+
+require 'kyanite/string/chars'
+    array = ['Anna','Birte','Charlie']
+    puts "kisses_from = ".list_with(array)  
+
+
+
+
+
 end
 

@@ -1,4 +1,10 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
 require 'active_support/core_ext/hash/slice'          # Slice a hash to include only the given keys. 
 require 'active_support/core_ext/hash/reverse_merge'  # Merges the caller into +other_hash+. 
 require 'kyanite/enumerable'                          # is_collection?
@@ -11,72 +17,56 @@ require 'kyanite/enumerable'                          # is_collection?
 
 
 
-# [ | Kyanite | Object | Array | Set | Enumerable | *Hash* | ]     | *Hash* |  Dictionary |
-# ---
-#  
-#
-# == *Tools* *For* *Hash*
-# See TestKyaniteHash for tests and examples.
-#
-# === Generelle Anmerkungen zu Hashes
-# Definiert man in irgendeinem Objekt die Methode <tt>==(other)</tt>, so muss man auch die Methode +hash+ neu definieren! 
-#
-# Rubys +delete+ und +delete_if+ verändern den Hash! Siehe TestHash#test_delete
-#
-#
+
+
+# @!macro hash
 class Hash
 
 
-  if RUBY_VERSION < "1.9"
-  
-    # Credit: Paul Murur http://mucur.name/posts/when-is-a-set-not-a-set
-    # Create a hash based on the keys and values.
-    def hash
-      keys.hash + values.hash + (default ? default.hash : 0)
-    end
-
-    # Credit: Paul Murur http://mucur.name/posts/when-is-a-set-not-a-set
-    # To determine whether two hashes are the same, compare their hashes.
-    def eql?(other)
-      hash == other.hash
-    end
-    
-  end # Ruby Version
-
-
- 
-  # Entfernt alle Key-Value-Paare mit <b>nil-Keys</b> in-place.
-  # Tests: TestHash#test_delete
+  # Deletes all key-value pairs with <b>nil-keys</b> in-place.
+  # @return [Hash] in-place modificated
   def compact_keys!
       delete_if {|key, value| key.nil? }
   end
   
   
-  # Entfernt alle alle Key-Value-Paare mit <b>nil-Values</b> in-place.
-  # Tests: TestHash#test_compact
+  # Deletes all key-value pairs with <b>nil-values</b> in-place.
+  # @return [Hash] in-place modificated 
   def compact_values!
       delete_if {|key, value| value.nil? }
   end    
 
   
-  # Entfernt das Key-Value-Paar mit einem bestimmten Key in-place. 
-  # Rückgabe ist der modifizierte Hash (im Gegensatz zur +delete+-Methode, die das entfernte Key-Value-Paar zurückgibt! ).
+  # Deletes the key-value pair with a <b>given key</b> in-place. 
+  # Returns the modificated hash (in contrast to Rubys +delete+ method that returns the deleted key-value pair! ).
+  # @return [Hash] in-place modificated 
   def delete_key(key)
     delete_if { |k,v| k == key }
   end        
   
-  # Entfernt alle Key-Value-Paare mit einem bestimmten Value in-place.
-  #     
+  # Deletes all key-value pairs with a <b>given value</b> in-place. 
+  # Returns the modificated hash (in contrast to Rubys +delete+ method that returns the deleted key-value pair! ).
+  # @return [Hash] in-place modificated 
   def delete_value(value)
     delete_if { |k,v| v == value }
   end
     
-    
-  # erzwingt ein Array der Länge 1, wenn sowohl Einzelwerte als auch Arrays erlaubt sind. 
-  # Beispiel:
-  #   inputoptions = options.arrayize(:skip, :debug)  
+  
+  # Forces some options in a methods options hash to be an array. 
+  # Useful if both individual values ​​and arrays are allowed as an input option.
+  #
+  # Example:
+  #  options = { :skip => 1, :debug => true, :test => false }
+  #  puts options 
+  #  => {:skip=>1, :debug=>true, :test=>false}
+  #
+  #  options.arrayize!(:skip, :debug)
+  #  puts options 
+  #  => {:skip=>[1], :debug=>[true], :test=>false}
   # 
-  def arrayize(*keys)
+  # @return [Hash]
+  # @param keys [Key, Array of keys] Keys to process 
+  def arrayize!(*keys)
     keys.each do |k|
       if self[k]  &&  !self[k].respond_to?(:first) 
         self[k] =  [self[k]]
@@ -87,7 +77,7 @@ class Hash
   end
   
   
-  # Greift auf den Hash mit nicht-ganz-passenden Schlüsseln zu
+  # Accesses the hash with keys that do not match exactly
   #
   def fuzzyget(key, level = 3)
     try = self[key]
@@ -99,12 +89,9 @@ class Hash
   end    
 
   
-  # Liefert die Verteilung der size 
-  # oder die Verteilung der class 
-  # oder die Verteilung eines anderen Merkmals der aufgezählten Elemente.
-  # Siehe auch Enumerable#distribution.  
-  # Die Keys des Hash werden ignoriert.
-  #
+  # Returns the distribution of +size+, +class+ or any other characteristic of the enumerated elements.
+  # The keys of the hash will be ignored. See also {Enumerable#distribution}, examples there.
+  # @return [Array]
   def distribution( mode = :size)
     verteilung = Hash.new
     each do | key, element |
@@ -119,8 +106,8 @@ class Hash
   end  
   
   
-  # liefert irgendein Value  
-  #
+
+  # @return any value
   def first
     self.each do |key, value|
       return value
@@ -128,8 +115,7 @@ class Hash
   end #def
   
   
-  # liefert irgendein anderes Value  
-  #
+  # @return any other value
   def last
     first = nil
     self.each do |key, value|
@@ -143,7 +129,21 @@ class Hash
   end #def 
  
 
-   
+  # if RUBY_VERSION < "1.9"
+  
+    # Credit: Paul Murur http://mucur.name/posts/when-is-a-set-not-a-set
+    # Create a hash based on the keys and values.
+    # def hash
+      # keys.hash + values.hash + (default ? default.hash : 0)
+    # end
+
+    # Credit: Paul Murur http://mucur.name/posts/when-is-a-set-not-a-set
+    # To determine whether two hashes are the same, compare their hashes.
+    # def eql?(other)
+      # hash == other.hash
+    # end
+    
+  # end # Ruby Version   
     
 
 end #class   
@@ -167,9 +167,14 @@ end
 #
 if $0 == __FILE__ 
 
-  test = {:b => 2, :a => 1,  :c => 3}
-  see test.first
-  see test.last
+  require 'perception'
+  
+  options = { :skip => 1, :debug => true, :test => false }
+  puts options
+  options.arrayize!(:skip) 
+  puts options
+
+
   
   
 

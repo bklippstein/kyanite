@@ -1,2681 +1,4186 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: NilClass
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>class NilClass - Kyanite 0.6.1</title>
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "./";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
-    <a href="./table_of_contents.html#classes">Classes</a>
-    <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (N)</a> &raquo;
+    
+    
+    <span class="title">NilClass</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+      <div id="project-header">
+  
+</div>      
+    </div>
+    
+    <div id="body">    
+      <iframe id="search_frame"></iframe>
+      <div id="content"><h1>Class: NilClass
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <div class="row">
+      <dt class="r1">Inherits</dt>
+      <dd class="r1">
+        <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+        
+          <ul class="fullTree">
+            <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+            
+              <li class="next">NilClass</li>
+            
+          </ul>
+          <a href="#" class="inheritanceTree">show all</a>
+        
+      </dd>
+    </div>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <div class="row">      
+    <dt class="r2 last">Defined in</dt>
+    <dd class="r2 last">lib/kyanite/string/cast.rb<span class="defines">,<br />
+  lib/kyanite/set.rb,<br /> lib/kyanite/hash.rb,<br /> lib/kyanite/range.rb,<br /> lib/kyanite/array.rb,<br /> lib/kyanite/dictionary.rb,<br /> lib/kyanite/string/misc.rb,<br /> lib/kyanite/string/list.rb,<br /> lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/general/object.rb,<br /> lib/kyanite/numeric/integer.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/enumerable/enumerable_numerics.rb,<br /> lib/kyanite/enumerable/enumerable_enumerables.rb</span>
+</dd>
+    </div>     
+   
+</dl>
+<div class="clear"></div>
+
+<div class="docstring">
+  <div class="discussion">
+    
+<h113></h113>
+
+<h3>Class Utils</h3>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>Kyanite definitions
+<dd>
+<p><span class='object_link'><a href="Class.html" title="Class (class)">Class</a></span>, <span class='object_link'><a href="Symbol.html" title="Symbol (class)">Symbol</a></span>, <span class='object_link'><a href="String.html" title="String (class)">String</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Kyanite tests and examples
+<dd>
+<p><span class='object_link'><a href="TestKyaniteClassutils.html" title="TestKyaniteClassutils (class)">TestKyaniteClassutils</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Usage
+<dd>
+<p><tt>require 'kyanite/general/classutils'</tt></p>
+</dd> </div></dl>
 
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
+  </div>
+</div>
+<div class="tags">
+  
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
+</div>
 
 
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/kyanite/array/array.rb
-    <li>lib/kyanite/array/array2.rb
-    <li>lib/kyanite/dictionary.rb
-    <li>lib/kyanite/enumerable/enumerable_enumerables.rb
-    <li>lib/kyanite/enumerable/enumerable_numerics.rb
-    <li>lib/kyanite/general/classutils.rb
-    <li>lib/kyanite/general/object.rb
-    <li>lib/kyanite/hash.rb
-    <li>lib/kyanite/numeric/integer.rb
-    <li>lib/kyanite/numeric/numeric.rb
-    <li>lib/kyanite/operation/regexp.rb
-    <li>lib/kyanite/range.rb
-    <li>lib/kyanite/set.rb
-    <li>lib/kyanite/string/cast.rb
-    <li>lib/kyanite/string/chars.rb
-    <li>lib/kyanite/string/diff.rb
-    <li>lib/kyanite/string/div.rb
-    <li>lib/kyanite/string/include.rb
-    <li>lib/kyanite/string/list.rb
-    <li>lib/kyanite/string/mgsub.rb
-    <li>lib/kyanite/string/nested.rb
-    <li>lib/kyanite/string/random.rb
-    <li>lib/kyanite/string/split.rb
-  </ul>
-</nav>
 
+  
+    <h2>
+      return nil
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#camelize-instance_method" title="#camelize (instance method)">- (Object) <strong>camelize</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#combine-instance_method" title="#combine (instance method)">- (Object) <strong>combine</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#constantize-instance_method" title="#constantize (instance method)">- (Object) <strong>constantize</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#demodulize-instance_method" title="#demodulize (instance method)">- (Object) <strong>demodulize</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invert_index-instance_method" title="#invert_index (instance method)">- (Object) <strong>invert_index</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_class-instance_method" title="#to_class (instance method)">- (Object) <strong>to_class</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#umbrella-instance_method" title="#umbrella (instance method)">- (Object) <strong>umbrella</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#underscore-instance_method" title="#underscore (instance method)">- (Object) <strong>underscore</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#within%3F-instance_method" title="#within? (instance method)">- (Boolean) <strong>within?</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Miscellaneous
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_words-instance_method" title="#count_words (instance method)">- (Object) <strong>count_words</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>0.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include%3F-instance_method" title="#include? (instance method)">- (Boolean) <strong>include?</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: false redundante Definition!.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mgsub-instance_method" title="#mgsub (instance method)">- (Object) <strong>mgsub</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Database-Helper
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enum_to_array-instance_method" title="#enum_to_array (instance method)">- (Object) <strong>enum_to_array</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list_with-instance_method" title="#list_with (instance method)">- (Object) <strong>list_with</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sql_regexp_for_kommaliste-instance_method" title="#sql_regexp_for_kommaliste (instance method)">- (Object) <strong>sql_regexp_for_kommaliste</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Overlap / Diff
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>see <span class='object_link'><a href="String.html#diff-instance_method" title="String#diff (method)">String#diff</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>see <span class='object_link'><a href="String.html#overlap-instance_method" title="String#overlap (method)">String#overlap</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>see <span class='object_link'><a href="String.html#overlapdiff-instance_method" title="String#overlapdiff (method)">String#overlapdiff</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Upcase and Downcase with support for special letters like german umlauts
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#capitalized%3F-instance_method" title="#capitalized? (instance method)">- (Boolean) <strong>capitalized?</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: false.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#downcase2-instance_method" title="#downcase2 (instance method)">- (Object) <strong>downcase2</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#downcase2%21-instance_method" title="#downcase2! (instance method)">- (Object) <strong>downcase2!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mysqlize-instance_method" title="#mysqlize (instance method)">- (Object) <strong>mysqlize</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reduce53-instance_method" title="#reduce53 (instance method)">- (Object) <strong>reduce53</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reduce53%21-instance_method" title="#reduce53! (instance method)">- (Object) <strong>reduce53!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reduce94-instance_method" title="#reduce94 (instance method)">- (Object) <strong>reduce94</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reduce94%21-instance_method" title="#reduce94! (instance method)">- (Object) <strong>reduce94!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#upcase2-instance_method" title="#upcase2 (instance method)">- (Object) <strong>upcase2</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#upcase2%21-instance_method" title="#upcase2! (instance method)">- (Object) <strong>upcase2!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Nested
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#anti-instance_method" title="#anti (instance method)">- (Object) <strong>anti</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index_bracket-instance_method" title="#index_bracket (instance method)">- (Object) <strong>index_bracket</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mask-instance_method" title="#mask (instance method)">- (Object) <strong>mask</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nestinglevel-instance_method" title="#nestinglevel (instance method)">- (Object) <strong>nestinglevel</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: 0.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Random
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle-instance_method" title="#shuffle (instance method)">- (Object) <strong>shuffle</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle%21-instance_method" title="#shuffle! (instance method)">- (Object) <strong>shuffle!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Class Utils
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_classname-instance_method" title="#to_classname (instance method)">- (String) <strong>to_classname</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Empty String.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arrayize-instance_method" title="#arrayize (instance method)">- (Object) <strong>arrayize</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#average-instance_method" title="#average (instance method)">- (Object) <strong>average</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#avg-instance_method" title="#avg (instance method)">- (Object) <strong>avg</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#blank%3F-instance_method" title="#blank? (instance method)">- (false) <strong>blank?</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p><tt>false</tt>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compact_keys%21-instance_method" title="#compact_keys! (instance method)">- (Object) <strong>compact_keys!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compact_values%21-instance_method" title="#compact_values! (instance method)">- (Object) <strong>compact_values!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cut-instance_method" title="#cut (instance method)">- (Object) <strong>cut</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: Leerer String, siehe String#split.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_key-instance_method" title="#delete_key (instance method)">- (Object) <strong>delete_key</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_value-instance_method" title="#delete_value (instance method)">- (Object) <strong>delete_value</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extract-instance_method" title="#extract (instance method)">- (Object) <strong>extract</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch_by_index-instance_method" title="#fetch_by_index (instance method)">- (Object) <strong>fetch_by_index</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_x-instance_method" title="#from_x (instance method)">- (Object) <strong>from_x</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fuzzyget-instance_method" title="#fuzzyget (instance method)">- (Object) <strong>fuzzyget</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_numeric%3F-instance_method" title="#is_numeric? (instance method)">- (false) <strong>is_numeric?</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p><tt>false</tt>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mean-instance_method" title="#mean (instance method)">- (Object) <strong>mean</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mean_arithmetric-instance_method" title="#mean_arithmetric (instance method)">- (Object) <strong>mean_arithmetric</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mean_geometric-instance_method" title="#mean_geometric (instance method)">- (Object) <strong>mean_geometric</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mean_harmonic-instance_method" title="#mean_harmonic (instance method)">- (Object) <strong>mean_harmonic</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name_of_constant-instance_method" title="#name_of_constant (instance method)">- (Object) <strong>name_of_constant</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nchar-instance_method" title="#nchar (instance method)">- (Object) <strong>nchar</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parallel-instance_method" title="#parallel (instance method)">- (Object) <strong>parallel</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#prd-instance_method" title="#prd (instance method)">- (Object) <strong>prd</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rectangle-instance_method" title="#rectangle (instance method)">- (Object) <strong>rectangle</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shift_complement-instance_method" title="#shift_complement (instance method)">- (Object) <strong>shift_complement</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split_by_index-instance_method" title="#split_by_index (instance method)">- (Object) <strong>split_by_index</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split_numeric-instance_method" title="#split_numeric (instance method)">- (Object) <strong>split_numeric</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sum-instance_method" title="#sum (instance method)">- (Object) <strong>sum</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#summation-instance_method" title="#summation (instance method)">- (Object) <strong>summation</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_dictionary-instance_method" title="#to_dictionary (instance method)">- (Object) <strong>to_dictionary</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: Leeres Dictionary.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_identifier-instance_method" title="#to_identifier (instance method)">- (Object) <strong>to_identifier</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_integer-instance_method" title="#to_integer (instance method)">- (Object) <strong>to_integer</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_integer_optional-instance_method" title="#to_integer_optional (instance method)">- (Object) <strong>to_integer_optional</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_nil-instance_method" title="#to_nil (instance method)">- (Object) <strong>to_nil</strong>(*a) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_ordered_set-instance_method" title="#to_ordered_set (instance method)">- (Object) <strong>to_ordered_set</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: Leeres OrderedSet.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_set-instance_method" title="#to_set (instance method)">- (Object) <strong>to_set</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: Leeres Set.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_sorted_set-instance_method" title="#to_sorted_set (instance method)">- (Object) <strong>to_sorted_set</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rückgabe: Leeres SortedSet.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_time-instance_method" title="#to_time (instance method)">- (Object) <strong>to_time</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_x-instance_method" title="#to_x (instance method)">- (Object) <strong>to_x</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transpose-instance_method" title="#transpose (instance method)">- (Object) <strong>transpose</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transpose%21-instance_method" title="#transpose! (instance method)">- (Object) <strong>transpose!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#without_versioninfo-instance_method" title="#without_versioninfo (instance method)">- (Object) <strong>without_versioninfo</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="anti-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>anti</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/nested.rb', line 243</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_anti'>anti</span><span class='semicolon'>;</span>                       <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="arrayize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>arrayize</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/hash.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_arrayize'>arrayize</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>           <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="average-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>average</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 147</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_average'>average</span><span class='semicolon'>;</span>                                  <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="avg-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>avg</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 148</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_avg'>avg</span><span class='semicolon'>;</span>                                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="blank?-instance_method">
+  
+    - (<tt>false</tt>) <strong>blank?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><tt>false</tt></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/object.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_blank?'>blank?</span><span class='semicolon'>;</span>                         <span class='kw'>false</span><span class='semicolon'>;</span>          <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="camelize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>camelize</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/classutils.rb', line 214</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_camelize'>camelize</span><span class='semicolon'>;</span>                 <span class='kw'>nil</span><span class='semicolon'>;</span>                  <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="capitalized?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>capitalized?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: false</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+194</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 194</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_capitalized?'>capitalized?</span><span class='semicolon'>;</span>                 <span class='kw'>false</span><span class='semicolon'>;</span>          <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="combine-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>combine</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/range.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_combine'>combine</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                    <span class='kw'>nil</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compact_keys!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>compact_keys!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/hash.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compact_keys!'>compact_keys!</span><span class='semicolon'>;</span>          <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compact_values!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>compact_values!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+154</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/hash.rb', line 154</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compact_values!'>compact_values!</span><span class='semicolon'>;</span>        <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="constantize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>constantize</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+215</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/classutils.rb', line 215</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_constantize'>constantize</span><span class='semicolon'>;</span>              <span class='kw'>nil</span><span class='semicolon'>;</span>                  <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="count_words-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>count_words</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>0</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/misc.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_count_words'>count_words</span><span class='semicolon'>;</span>                   <span class='int'>0</span><span class='semicolon'>;</span>          <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cut-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cut</strong>(*a) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: Leerer String, siehe String#split</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/split.rb', line 149</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cut'>cut</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='semicolon'>;</span>             <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_key-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete_key</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/hash.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_key'>delete_key</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>         <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_value-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete_value</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/hash.rb', line 156</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_value'>delete_value</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>       <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="demodulize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>demodulize</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/classutils.rb', line 216</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_demodulize'>demodulize</span><span class='semicolon'>;</span>               <span class='kw'>nil</span><span class='semicolon'>;</span>                  <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="diff-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>diff</strong>(b) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>see <span class='object_link'><a href="String.html#diff-instance_method" title="String#diff (method)">String#diff</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Parameter b</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/diff.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_diff'>diff</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span><span class='semicolon'>;</span>                  <span class='id identifier rubyid_b'>b</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="downcase2-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>downcase2</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 200</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_downcase2'>downcase2</span><span class='semicolon'>;</span>                    <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="downcase2!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>downcase2!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 201</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_downcase2!'>downcase2!</span><span class='semicolon'>;</span>                   <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enum_to_array-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>enum_to_array</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/list.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_enum_to_array'>enum_to_array</span><span class='semicolon'>;</span>                       <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>extract</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/split.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract'>extract</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                        <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch_by_index-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fetch_by_index</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/dictionary.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch_by_index'>fetch_by_index</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                 <span class='kw'>nil</span><span class='semicolon'>;</span>                <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="from_x-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>from_x</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/cast.rb', line 120</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_from_x'>from_x</span><span class='semicolon'>;</span>                         <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fuzzyget-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fuzzyget</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/hash.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fuzzyget'>fuzzyget</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>           <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="include?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>include?</strong>(*a) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: false redundante Definition!</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/include.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                   <span class='kw'>false</span><span class='semicolon'>;</span>          <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index_bracket-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>index_bracket</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+244</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/nested.rb', line 244</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index_bracket'>index_bracket</span><span class='semicolon'>;</span>              <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invert_index-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>invert_index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/range.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_invert_index'>invert_index</span><span class='semicolon'>;</span>                   <span class='kw'>nil</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_numeric?-instance_method">
+  
+    - (<tt>false</tt>) <strong>is_numeric?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><tt>false</tt></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/object.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_is_numeric?'>is_numeric?</span><span class='semicolon'>;</span>                    <span class='kw'>false</span><span class='semicolon'>;</span>          <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list_with-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>list_with</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/list.rb', line 94</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list_with'>list_with</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                       <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mask-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mask</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+245</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/nested.rb', line 245</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mask'>mask</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                   <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mean-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mean</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 149</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mean'>mean</span><span class='semicolon'>;</span>                                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mean_arithmetric-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mean_arithmetric</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 150</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mean_arithmetric'>mean_arithmetric</span><span class='semicolon'>;</span>                         <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mean_geometric-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mean_geometric</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mean_geometric'>mean_geometric</span><span class='semicolon'>;</span>                           <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mean_harmonic-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mean_harmonic</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mean_harmonic'>mean_harmonic</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                        <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mgsub-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mgsub</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/misc.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mgsub'>mgsub</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>        <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mysqlize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mysqlize</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+202</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 202</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mysqlize'>mysqlize</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name_of_constant-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>name_of_constant</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/object.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name_of_constant'>name_of_constant</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>           <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nchar-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>nchar</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/split.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_nchar'>nchar</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                          <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nestinglevel-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>nestinglevel</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: 0</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/nested.rb', line 241</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_nestinglevel'>nestinglevel</span><span class='semicolon'>;</span>               <span class='int'>0</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="overlap-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>overlap</strong>(*a) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>see <span class='object_link'><a href="String.html#overlap-instance_method" title="String#overlap (method)">String#overlap</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Empty String</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/diff.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_overlap'>overlap</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>              <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='semicolon'>;</span>             <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="overlapdiff-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>overlapdiff</strong>(b) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>see <span class='object_link'><a href="String.html#overlapdiff-instance_method" title="String#overlapdiff (method)">String#overlapdiff</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><dl class="rdoc-list"><div class=rdoc-dl-row> <dt>”, b
+<dd></dd> </div></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/diff.rb', line 98</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_overlapdiff'>overlapdiff</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span><span class='semicolon'>;</span>           <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='rbracket'>]</span><span class='semicolon'>;</span>        <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parallel-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parallel</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parallel'>parallel</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                             <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="prd-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>prd</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+154</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 154</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_prd'>prd</span><span class='semicolon'>;</span>                                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rectangle-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>rectangle</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_enumerables.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='semicolon'>;</span>                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reduce53-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reduce53</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+198</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 198</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reduce53'>reduce53</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reduce53!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reduce53!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reduce53!'>reduce53!</span><span class='semicolon'>;</span>                    <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reduce94-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reduce94</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+196</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 196</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reduce94'>reduce94</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reduce94!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reduce94!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 197</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reduce94!'>reduce94!</span><span class='semicolon'>;</span>                    <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shift_complement-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>shift_complement</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shift_complement'>shift_complement</span><span class='semicolon'>;</span>               <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shuffle-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>shuffle</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/random.rb', line 129</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shuffle'>shuffle</span><span class='semicolon'>;</span>                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shuffle!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>shuffle!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/random.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shuffle!'>shuffle!</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="split_by_index-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>split_by_index</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/split.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_split_by_index'>split_by_index</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                 <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="split_numeric-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>split_numeric</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+154</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/split.rb', line 154</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_split_numeric'>split_numeric</span><span class='semicolon'>;</span>                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sql_regexp_for_kommaliste-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sql_regexp_for_kommaliste</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/list.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sql_regexp_for_kommaliste'>sql_regexp_for_kommaliste</span><span class='semicolon'>;</span>           <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sum-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sum</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sum'>sum</span><span class='semicolon'>;</span>                                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="summation-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>summation</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 156</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_summation'>summation</span><span class='semicolon'>;</span>                                <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_class-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_class</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/classutils.rb', line 217</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_class'>to_class</span><span class='semicolon'>;</span>                 <span class='kw'>nil</span><span class='semicolon'>;</span>                  <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_classname-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_classname</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Empty String</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>empty String</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/classutils.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_classname'>to_classname</span><span class='semicolon'>;</span>             <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='semicolon'>;</span>                   <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_dictionary-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_dictionary</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: Leeres Dictionary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/dictionary.rb', line 99</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_dictionary'>to_dictionary</span><span class='semicolon'>;</span>                      <span class='const'>Dictionary</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='semicolon'>;</span>     <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_identifier-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_identifier</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+115</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/cast.rb', line 115</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_identifier'>to_identifier</span><span class='semicolon'>;</span>                  <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_integer-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_integer</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/cast.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_integer'>to_integer</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_integer_optional-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_integer_optional</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/cast.rb', line 117</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_integer_optional'>to_integer_optional</span><span class='semicolon'>;</span>            <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_nil-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_nil</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/cast.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_nil'>to_nil</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_ordered_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_ordered_set</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: Leeres OrderedSet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+220</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/set.rb', line 220</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_ordered_set'>to_ordered_set</span><span class='semicolon'>;</span>                 <span class='const'>OrderedSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='semicolon'>;</span>       <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_set</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: Leeres Set</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/set.rb', line 214</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_set'>to_set</span><span class='semicolon'>;</span>                         <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_sorted_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_sorted_set</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rückgabe: Leeres SortedSet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/set.rb', line 217</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_sorted_set'>to_sorted_set</span><span class='semicolon'>;</span>                  <span class='const'>SortedSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='semicolon'>;</span>        <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_time-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_time</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/numeric/integer.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_time'>to_time</span><span class='semicolon'>;</span>                        <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_x-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_x</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/cast.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_x'>to_x</span><span class='semicolon'>;</span>                           <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transpose-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>transpose</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_enumerables.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_transpose'>transpose</span><span class='semicolon'>;</span>                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transpose!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>transpose!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_enumerables.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_transpose!'>transpose!</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="umbrella-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>umbrella</strong>(*a) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/range.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_umbrella'>umbrella</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                   <span class='kw'>nil</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="underscore-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>underscore</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+218</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/general/classutils.rb', line 218</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_underscore'>underscore</span><span class='semicolon'>;</span>               <span class='kw'>nil</span><span class='semicolon'>;</span>                  <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="upcase2-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>upcase2</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+203</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 203</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_upcase2'>upcase2</span><span class='semicolon'>;</span>                      <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="upcase2!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>upcase2!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_upcase2!'>upcase2!</span><span class='semicolon'>;</span>                     <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="within?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>within?</strong>(*a) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/range.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_within?'>within?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='semicolon'>;</span>                    <span class='kw'>nil</span><span class='semicolon'>;</span>              <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="without_versioninfo-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>without_versioninfo</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/split.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_without_versioninfo'>without_versioninfo</span><span class='semicolon'>;</span>                <span class='kw'>nil</span><span class='semicolon'>;</span>            <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
   </div>
 
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link"><a href="Object.html">Object</a>
-  
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-anti">#anti</a>
-    
-    <li><a href="#method-i-arrayize">#arrayize</a>
-    
-    <li><a href="#method-i-average">#average</a>
-    
-    <li><a href="#method-i-avg">#avg</a>
-    
-    <li><a href="#method-i-blank-3F">#blank?</a>
-    
-    <li><a href="#method-i-camelize">#camelize</a>
-    
-    <li><a href="#method-i-capitalized-3F">#capitalized?</a>
-    
-    <li><a href="#method-i-combine">#combine</a>
-    
-    <li><a href="#method-i-compact_keys-21">#compact_keys!</a>
-    
-    <li><a href="#method-i-compact_values-21">#compact_values!</a>
-    
-    <li><a href="#method-i-constantize">#constantize</a>
-    
-    <li><a href="#method-i-count_words">#count_words</a>
-    
-    <li><a href="#method-i-cut">#cut</a>
-    
-    <li><a href="#method-i-delete_key">#delete_key</a>
-    
-    <li><a href="#method-i-delete_value">#delete_value</a>
-    
-    <li><a href="#method-i-demodulize">#demodulize</a>
-    
-    <li><a href="#method-i-diff">#diff</a>
-    
-    <li><a href="#method-i-downcase2">#downcase2</a>
-    
-    <li><a href="#method-i-downcase2-21">#downcase2!</a>
-    
-    <li><a href="#method-i-enum_to_array">#enum_to_array</a>
-    
-    <li><a href="#method-i-extract">#extract</a>
-    
-    <li><a href="#method-i-fetch_by_index">#fetch_by_index</a>
-    
-    <li><a href="#method-i-from_x">#from_x</a>
-    
-    <li><a href="#method-i-fuzzyget">#fuzzyget</a>
-    
-    <li><a href="#method-i-include-3F">#include?</a>
-    
-    <li><a href="#method-i-index_bracket">#index_bracket</a>
-    
-    <li><a href="#method-i-invert_index">#invert_index</a>
-    
-    <li><a href="#method-i-is_numeric-3F">#is_numeric?</a>
-    
-    <li><a href="#method-i-list_with">#list_with</a>
-    
-    <li><a href="#method-i-mask">#mask</a>
-    
-    <li><a href="#method-i-mean">#mean</a>
-    
-    <li><a href="#method-i-mean_arithmetric">#mean_arithmetric</a>
-    
-    <li><a href="#method-i-mean_geometric">#mean_geometric</a>
-    
-    <li><a href="#method-i-mean_harmonic">#mean_harmonic</a>
-    
-    <li><a href="#method-i-mgsub">#mgsub</a>
-    
-    <li><a href="#method-i-mysqlize">#mysqlize</a>
-    
-    <li><a href="#method-i-name_of_constant">#name_of_constant</a>
-    
-    <li><a href="#method-i-nchar">#nchar</a>
-    
-    <li><a href="#method-i-nestinglevel">#nestinglevel</a>
-    
-    <li><a href="#method-i-overlap">#overlap</a>
-    
-    <li><a href="#method-i-overlapdiff">#overlapdiff</a>
-    
-    <li><a href="#method-i-parallel">#parallel</a>
-    
-    <li><a href="#method-i-prd">#prd</a>
-    
-    <li><a href="#method-i-rectangle">#rectangle</a>
-    
-    <li><a href="#method-i-reduce53">#reduce53</a>
-    
-    <li><a href="#method-i-reduce53-21">#reduce53!</a>
-    
-    <li><a href="#method-i-reduce94">#reduce94</a>
-    
-    <li><a href="#method-i-reduce94-21">#reduce94!</a>
-    
-    <li><a href="#method-i-row_to_nil">#row_to_nil</a>
-    
-    <li><a href="#method-i-shift_complement">#shift_complement</a>
-    
-    <li><a href="#method-i-show_regexp">#show_regexp</a>
-    
-    <li><a href="#method-i-shuffle">#shuffle</a>
-    
-    <li><a href="#method-i-shuffle-21">#shuffle!</a>
-    
-    <li><a href="#method-i-split_by_index">#split_by_index</a>
-    
-    <li><a href="#method-i-split_numeric">#split_numeric</a>
-    
-    <li><a href="#method-i-sql_regexp_for_kommaliste">#sql_regexp_for_kommaliste</a>
-    
-    <li><a href="#method-i-substract">#substract</a>
-    
-    <li><a href="#method-i-sum">#sum</a>
-    
-    <li><a href="#method-i-summation">#summation</a>
-    
-    <li><a href="#method-i-to_class">#to_class</a>
-    
-    <li><a href="#method-i-to_classname">#to_classname</a>
-    
-    <li><a href="#method-i-to_dictionary">#to_dictionary</a>
-    
-    <li><a href="#method-i-to_identifier">#to_identifier</a>
-    
-    <li><a href="#method-i-to_integer">#to_integer</a>
-    
-    <li><a href="#method-i-to_integer_optional">#to_integer_optional</a>
-    
-    <li><a href="#method-i-to_nil">#to_nil</a>
-    
-    <li><a href="#method-i-to_nil_unless">#to_nil_unless</a>
-    
-    <li><a href="#method-i-to_ordered_set">#to_ordered_set</a>
-    
-    <li><a href="#method-i-to_set">#to_set</a>
-    
-    <li><a href="#method-i-to_sorted_set">#to_sorted_set</a>
-    
-    <li><a href="#method-i-to_time">#to_time</a>
-    
-    <li><a href="#method-i-to_x">#to_x</a>
-    
-    <li><a href="#method-i-transpose">#transpose</a>
-    
-    <li><a href="#method-i-transpose-21">#transpose!</a>
-    
-    <li><a href="#method-i-umbrella">#umbrella</a>
-    
-    <li><a href="#method-i-underscore">#underscore</a>
-    
-    <li><a href="#method-i-upcase2">#upcase2</a>
-    
-    <li><a href="#method-i-upcase2-21">#upcase2!</a>
-    
-    <li><a href="#method-i-within-3F">#within?</a>
-    
-    <li><a href="#method-i-without_versioninfo">#without_versioninfo</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Div.html">Div</a>
-  
-    <li class="file"><a href="./History_txt.html">History</a>
-  
-    <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./README_txt.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Tree.html">Tree</a>
-  
-    <li><a href="./Tree/TreeNode.html">Tree::TreeNode</a>
-  
-    <li><a href="./Array.html">Array</a>
-  
-    <li><a href="./Array2.html">Array2</a>
-  
-    <li><a href="./ArrayOfEnumerables.html">ArrayOfEnumerables</a>
-  
-    <li><a href="./ArrayOfNumerics.html">ArrayOfNumerics</a>
-  
-    <li><a href="./ArrayOfStrings.html">ArrayOfStrings</a>
-  
-    <li><a href="./CallTracker.html">CallTracker</a>
-  
-    <li><a href="./CallerUtils.html">CallerUtils</a>
-  
-    <li><a href="./Class.html">Class</a>
-  
-    <li><a href="./Dictionary.html">Dictionary</a>
-  
-    <li><a href="./Enumerable.html">Enumerable</a>
-  
-    <li><a href="./EnumerableEnumerables.html">EnumerableEnumerables</a>
-  
-    <li><a href="./EnumerableNumerics.html">EnumerableNumerics</a>
-  
-    <li><a href="./EnumerableStrings.html">EnumerableStrings</a>
-  
-    <li><a href="./FalseClass.html">FalseClass</a>
-  
-    <li><a href="./Float.html">Float</a>
-  
-    <li><a href="./Hash.html">Hash</a>
-  
-    <li><a href="./Integer.html">Integer</a>
-  
-    <li><a href="./KKernel.html">KKernel</a>
-  
-    <li><a href="./Kyanite.html">Kyanite</a>
-  
-    <li><a href="./Matrix2.html">Matrix2</a>
-  
-    <li><a href="./NilClass.html">NilClass</a>
-  
-    <li><a href="./Numeric.html">Numeric</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-    <li><a href="./Optimizer.html">Optimizer</a>
-  
-    <li><a href="./OrderedSet.html">OrderedSet</a>
-  
-    <li><a href="./Range.html">Range</a>
-  
-    <li><a href="./Set.html">Set</a>
-  
-    <li><a href="./SortedSet.html">SortedSet</a>
-  
-    <li><a href="./String.html">String</a>
-  
-    <li><a href="./Symbol.html">Symbol</a>
-  
-    <li><a href="./TestKyaniteArray.html">TestKyaniteArray</a>
-  
-    <li><a href="./TestKyaniteClassutils.html">TestKyaniteClassutils</a>
-  
-    <li><a href="./TestKyaniteDictionary.html">TestKyaniteDictionary</a>
-  
-    <li><a href="./TestKyaniteEnumerableEnumerables.html">TestKyaniteEnumerableEnumerables</a>
-  
-    <li><a href="./TestKyaniteEnumerableNumerics.html">TestKyaniteEnumerableNumerics</a>
-  
-    <li><a href="./TestKyaniteEnumerableStrings.html">TestKyaniteEnumerableStrings</a>
-  
-    <li><a href="./TestKyaniteEnumerableStructure.html">TestKyaniteEnumerableStructure</a>
-  
-    <li><a href="./TestKyaniteHash.html">TestKyaniteHash</a>
-  
-    <li><a href="./TestKyaniteMatrix2.html">TestKyaniteMatrix2</a>
-  
-    <li><a href="./TestKyaniteNumeric.html">TestKyaniteNumeric</a>
-  
-    <li><a href="./TestKyaniteObject.html">TestKyaniteObject</a>
-  
-    <li><a href="./TestKyaniteOptimizer.html">TestKyaniteOptimizer</a>
-  
-    <li><a href="./TestKyaniteRange.html">TestKyaniteRange</a>
-  
-    <li><a href="./TestKyaniteSet.html">TestKyaniteSet</a>
-  
-    <li><a href="./TestKyaniteStringCast.html">TestKyaniteStringCast</a>
-  
-    <li><a href="./TestKyaniteStringChars.html">TestKyaniteStringChars</a>
-  
-    <li><a href="./TestKyaniteStringDiff.html">TestKyaniteStringDiff</a>
-  
-    <li><a href="./TestKyaniteStringList.html">TestKyaniteStringList</a>
-  
-    <li><a href="./TestKyaniteStringMgsub.html">TestKyaniteStringMgsub</a>
-  
-    <li><a href="./TestKyaniteStringNested.html">TestKyaniteStringNested</a>
-  
-    <li><a href="./TestKyaniteStringSplit.html">TestKyaniteStringSplit</a>
-  
-    <li><a href="./TestKyaniteTree.html">TestKyaniteTree</a>
-  
-    <li><a href="./TestKyaniteTrueFalse.html">TestKyaniteTrueFalse</a>
-  
-    <li><a href="./TrueClass.html">TrueClass</a>
-  
-    <li><a href="./Undoable.html">Undoable</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class NilClass</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-anti" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">anti</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="anti-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/nested.rb, line 225</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">anti</span>;                       <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- anti-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- anti-method -->
-
-    
-      <div id="method-i-arrayize" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">arrayize</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="arrayize-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/hash.rb, line 156</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">arrayize</span>(*<span class="ruby-identifier">a</span>);           <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- arrayize-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- arrayize-method -->
-
-    
-      <div id="method-i-average" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">average</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="average-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 142</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">average</span>;                                  <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- average-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- average-method -->
-
-    
-      <div id="method-i-avg" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">avg</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="avg-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 143</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">avg</span>;                                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- avg-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- avg-method -->
-
-    
-      <div id="method-i-blank-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">blank?</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: false</p>
-          
-
-          
-          <div class="method-source-code" id="blank-3F-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/object.rb, line 91</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">blank?</span>;                         <span class="ruby-keyword">false</span>;          <span class="ruby-keyword">end</span></pre>
-          </div><!-- blank-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- blank-3F-method -->
-
-    
-      <div id="method-i-camelize" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">camelize</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="camelize-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/classutils.rb, line 203</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">camelize</span>;                 <span class="ruby-keyword">nil</span>;                  <span class="ruby-keyword">end</span></pre>
-          </div><!-- camelize-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- camelize-method -->
-
-    
-      <div id="method-i-capitalized-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">capitalized?</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: false</p>
-          
-
-          
-          <div class="method-source-code" id="capitalized-3F-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 166</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">capitalized?</span>;                 <span class="ruby-keyword">false</span>;          <span class="ruby-keyword">end</span></pre>
-          </div><!-- capitalized-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- capitalized-3F-method -->
-
-    
-      <div id="method-i-combine" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">combine</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="combine-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/range.rb, line 57</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">combine</span>(*<span class="ruby-identifier">a</span>);                    <span class="ruby-keyword">nil</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- combine-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- combine-method -->
-
-    
-      <div id="method-i-compact_keys-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">compact_keys!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="compact_keys-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/hash.rb, line 152</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">compact_keys!</span>;          <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- compact_keys-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- compact_keys-21-method -->
-
-    
-      <div id="method-i-compact_values-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">compact_values!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="compact_values-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/hash.rb, line 153</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">compact_values!</span>;        <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- compact_values-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- compact_values-21-method -->
-
-    
-      <div id="method-i-constantize" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">constantize</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="constantize-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/classutils.rb, line 204</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">constantize</span>;              <span class="ruby-keyword">nil</span>;                  <span class="ruby-keyword">end</span></pre>
-          </div><!-- constantize-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- constantize-method -->
-
-    
-      <div id="method-i-count_words" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">count_words</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: 0</p>
-          
-
-          
-          <div class="method-source-code" id="count_words-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/div.rb, line 24</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">count_words</span>;                   <span class="ruby-value">0</span>;          <span class="ruby-keyword">end</span></pre>
-          </div><!-- count_words-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- count_words-method -->
-
-    
-      <div id="method-i-cut" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">cut</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leerer <a href="String.html">String</a>, siehe String#split</p>
-          
-
-          
-          <div class="method-source-code" id="cut-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/split.rb, line 136</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">cut</span>(*<span class="ruby-identifier">a</span>);                            <span class="ruby-string">''</span>;             <span class="ruby-keyword">end</span></pre>
-          </div><!-- cut-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- cut-method -->
-
-    
-      <div id="method-i-delete_key" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">delete_key</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="delete_key-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/hash.rb, line 154</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_key</span>(*<span class="ruby-identifier">a</span>);         <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- delete_key-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- delete_key-method -->
-
-    
-      <div id="method-i-delete_value" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">delete_value</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="delete_value-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/hash.rb, line 155</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_value</span>(*<span class="ruby-identifier">a</span>);       <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- delete_value-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- delete_value-method -->
-
-    
-      <div id="method-i-demodulize" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">demodulize</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="demodulize-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/classutils.rb, line 205</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">demodulize</span>;               <span class="ruby-keyword">nil</span>;                  <span class="ruby-keyword">end</span></pre>
-          </div><!-- demodulize-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- demodulize-method -->
-
-    
-      <div id="method-i-diff" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">diff</span><span
-            class="method-args">(b)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: b, siehe <a href="String.html#method-i-diff">String#diff</a></p>
-          
-
-          
-          <div class="method-source-code" id="diff-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/diff.rb, line 75</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">b</span>);                  <span class="ruby-identifier">b</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- diff-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- diff-method -->
-
-    
-      <div id="method-i-downcase2" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">downcase2</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="downcase2-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 172</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">downcase2</span>;                    <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- downcase2-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- downcase2-method -->
-
-    
-      <div id="method-i-downcase2-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">downcase2!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="downcase2-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 173</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">downcase2!</span>;                   <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- downcase2-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- downcase2-21-method -->
-
-    
-      <div id="method-i-enum_to_array" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">enum_to_array</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="enum_to_array-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/list.rb, line 81</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">enum_to_array</span>;                       <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- enum_to_array-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- enum_to_array-method -->
-
-    
-      <div id="method-i-extract" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">extract</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="extract-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/split.rb, line 140</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract</span>(*<span class="ruby-identifier">a</span>);                        <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- extract-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- extract-method -->
-
-    
-      <div id="method-i-fetch_by_index" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">fetch_by_index</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="fetch_by_index-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/dictionary.rb, line 102</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch_by_index</span>(*<span class="ruby-identifier">a</span>);                 <span class="ruby-keyword">nil</span>;                <span class="ruby-keyword">end</span></pre>
-          </div><!-- fetch_by_index-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- fetch_by_index-method -->
-
-    
-      <div id="method-i-from_x" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">from_x</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="from_x-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/cast.rb, line 109</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">from_x</span>;                         <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- from_x-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- from_x-method -->
-
-    
-      <div id="method-i-fuzzyget" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">fuzzyget</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="fuzzyget-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/hash.rb, line 157</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">fuzzyget</span>(*<span class="ruby-identifier">a</span>);           <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- fuzzyget-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- fuzzyget-method -->
-
-    
-      <div id="method-i-include-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">include?</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: false redundante Definition!</p>
-          
-
-          
-          <div class="method-source-code" id="include-3F-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/include.rb, line 33</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">include?</span>(*<span class="ruby-identifier">a</span>);                   <span class="ruby-keyword">false</span>;          <span class="ruby-keyword">end</span></pre>
-          </div><!-- include-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- include-3F-method -->
-
-    
-      <div id="method-i-index_bracket" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">index_bracket</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="index_bracket-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/nested.rb, line 226</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">index_bracket</span>;              <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- index_bracket-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- index_bracket-method -->
-
-    
-      <div id="method-i-invert_index" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">invert_index</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="invert_index-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/range.rb, line 55</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">invert_index</span>;                         <span class="ruby-keyword">nil</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- invert_index-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- invert_index-method -->
-
-    
-      <div id="method-i-is_numeric-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">is_numeric?</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: false</p>
-          
-
-          
-          <div class="method-source-code" id="is_numeric-3F-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/object.rb, line 94</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_numeric?</span>;                    <span class="ruby-keyword">false</span>;          <span class="ruby-keyword">end</span></pre>
-          </div><!-- is_numeric-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- is_numeric-3F-method -->
-
-    
-      <div id="method-i-list_with" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">list_with</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="list_with-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/list.rb, line 79</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_with</span>(*<span class="ruby-identifier">a</span>);                       <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- list_with-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- list_with-method -->
-
-    
-      <div id="method-i-mask" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mask</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mask-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/nested.rb, line 227</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mask</span>(*<span class="ruby-identifier">a</span>);                   <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mask-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mask-method -->
-
-    
-      <div id="method-i-mean" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mean</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mean-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 144</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mean</span>;                                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mean-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mean-method -->
-
-    
-      <div id="method-i-mean_arithmetric" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mean_arithmetric</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mean_arithmetric-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 145</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mean_arithmetric</span>;                         <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mean_arithmetric-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mean_arithmetric-method -->
-
-    
-      <div id="method-i-mean_geometric" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mean_geometric</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mean_geometric-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 146</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mean_geometric</span>;                           <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mean_geometric-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mean_geometric-method -->
-
-    
-      <div id="method-i-mean_harmonic" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mean_harmonic</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mean_harmonic-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 147</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mean_harmonic</span>(*<span class="ruby-identifier">a</span>);                        <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mean_harmonic-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mean_harmonic-method -->
-
-    
-      <div id="method-i-mgsub" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mgsub</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mgsub-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/mgsub.rb, line 30</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mgsub</span>(*<span class="ruby-identifier">a</span>);                       <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mgsub-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mgsub-method -->
-
-    
-      <div id="method-i-mysqlize" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mysqlize</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="mysqlize-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 174</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mysqlize</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- mysqlize-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- mysqlize-method -->
-
-    
-      <div id="method-i-name_of_constant" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">name_of_constant</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="name_of_constant-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/object.rb, line 98</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">name_of_constant</span>(*<span class="ruby-identifier">a</span>);           <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- name_of_constant-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- name_of_constant-method -->
-
-    
-      <div id="method-i-nchar" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">nchar</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+</div>
+    </div>   
 
-        <div class="method-description">
-          
-          
-          
+    <div id="footer">      
+      <div id="project-footer">
+</div>      
+      Generated on Sat Nov  3 00:07:29 2012 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
+        title="Klippstein Template for Ruby YARD" 
+        target="_parent">
+        yard_klippstein_template
+        </a>  
 
-          
-          <div class="method-source-code" id="nchar-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/split.rb, line 138</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">nchar</span>(*<span class="ruby-identifier">a</span>);                          <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- nchar-source -->
-          
-        </div>
 
-        
 
-        
-      </div><!-- nchar-method -->
-
-    
-      <div id="method-i-nestinglevel" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">nestinglevel</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: 0</p>
-          
-
-          
-          <div class="method-source-code" id="nestinglevel-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/nested.rb, line 223</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">nestinglevel</span>;               <span class="ruby-value">0</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- nestinglevel-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- nestinglevel-method -->
-
-    
-      <div id="method-i-overlap" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">overlap</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leerer <a href="String.html">String</a>, siehe <a
-href="String.html#method-i-overlap">String#overlap</a></p>
-          
-
-          
-          <div class="method-source-code" id="overlap-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/diff.rb, line 71</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">overlap</span>(*<span class="ruby-identifier">a</span>);              <span class="ruby-string">''</span>;             <span class="ruby-keyword">end</span></pre>
-          </div><!-- overlap-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- overlap-method -->
-
-    
-      <div id="method-i-overlapdiff" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">overlapdiff</span><span
-            class="method-args">(b)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: [”, b], siehe <a
-href="String.html#method-i-overlapdiff">String#overlapdiff</a></p>
-          
-
-          
-          <div class="method-source-code" id="overlapdiff-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/diff.rb, line 79</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">overlapdiff</span>(<span class="ruby-identifier">b</span>);           [<span class="ruby-string">''</span>, <span class="ruby-identifier">b</span>];        <span class="ruby-keyword">end</span></pre>
-          </div><!-- overlapdiff-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- overlapdiff-method -->
-
-    
-      <div id="method-i-parallel" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">parallel</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="parallel-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 148</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">parallel</span>(*<span class="ruby-identifier">a</span>);                             <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- parallel-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- parallel-method -->
-
-    
-      <div id="method-i-prd" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">prd</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="prd-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 149</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">prd</span>;                                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- prd-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- prd-method -->
-
-    
-      <div id="method-i-rectangle" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">rectangle</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="rectangle-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_enumerables.rb, line 74</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">rectangle</span>;                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- rectangle-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- rectangle-method -->
-
-    
-      <div id="method-i-reduce53" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">reduce53</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="reduce53-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 170</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">reduce53</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- reduce53-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- reduce53-method -->
-
-    
-      <div id="method-i-reduce53-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">reduce53!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="reduce53-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 171</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">reduce53!</span>;                    <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- reduce53-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- reduce53-21-method -->
-
-    
-      <div id="method-i-reduce94" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">reduce94</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="reduce94-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 168</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">reduce94</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- reduce94-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- reduce94-method -->
-
-    
-      <div id="method-i-reduce94-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">reduce94!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="reduce94-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 169</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">reduce94!</span>;                    <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- reduce94-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- reduce94-21-method -->
-
-    
-      <div id="method-i-row_to_nil" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">row_to_nil</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="row_to_nil-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array2.rb, line 18</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">row_to_nil</span>;           <span class="ruby-keyword">nil</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- row_to_nil-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- row_to_nil-method -->
-
-    
-      <div id="method-i-shift_complement" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">shift_complement</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="shift_complement-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/array/array.rb, line 117</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">shift_complement</span>;               <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- shift_complement-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- shift_complement-method -->
-
-    
-      <div id="method-i-show_regexp" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">show_regexp</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="show_regexp-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/operation/regexp.rb, line 23</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">show_regexp</span>(*<span class="ruby-identifier">a</span>);                          <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- show_regexp-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- show_regexp-method -->
-
-    
-      <div id="method-i-shuffle" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">shuffle</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="shuffle-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/random.rb, line 70</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">shuffle</span>;                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- shuffle-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- shuffle-method -->
-
-    
-      <div id="method-i-shuffle-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">shuffle!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="shuffle-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/random.rb, line 71</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">shuffle!</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- shuffle-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- shuffle-21-method -->
-
-    
-      <div id="method-i-split_by_index" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">split_by_index</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="split_by_index-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/split.rb, line 139</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">split_by_index</span>(*<span class="ruby-identifier">a</span>);                 <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- split_by_index-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- split_by_index-method -->
-
-    
-      <div id="method-i-split_numeric" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">split_numeric</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="split_numeric-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/split.rb, line 141</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">split_numeric</span>;                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- split_numeric-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- split_numeric-method -->
-
-    
-      <div id="method-i-sql_regexp_for_kommaliste" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">sql_regexp_for_kommaliste</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="sql_regexp_for_kommaliste-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/list.rb, line 80</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">sql_regexp_for_kommaliste</span>;           <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- sql_regexp_for_kommaliste-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- sql_regexp_for_kommaliste-method -->
-
-    
-      <div id="method-i-substract" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">substract</span><span
-            class="method-args">(other)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="substract-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/numeric/numeric.rb, line 51</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">substract</span>(<span class="ruby-identifier">other</span>); <span class="ruby-keyword">nil</span>; <span class="ruby-keyword">end</span></pre>
-          </div><!-- substract-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- substract-method -->
-
-    
-      <div id="method-i-sum" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">sum</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="sum-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 150</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">sum</span>;                                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- sum-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- sum-method -->
-
-    
-      <div id="method-i-summation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">summation</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="summation-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_numerics.rb, line 151</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">summation</span>;                                <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- summation-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- summation-method -->
-
-    
-      <div id="method-i-to_class" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_class</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_class-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/classutils.rb, line 206</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_class</span>;                 <span class="ruby-keyword">nil</span>;                  <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_class-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_class-method -->
-
-    
-      <div id="method-i-to_classname" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_classname</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leerer <a href="String.html">String</a></p>
-          
-
-          
-          <div class="method-source-code" id="to_classname-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/classutils.rb, line 201</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_classname</span>;             <span class="ruby-string">''</span>;                   <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_classname-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_classname-method -->
-
-    
-      <div id="method-i-to_dictionary" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_dictionary</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leeres <a href="Dictionary.html">Dictionary</a></p>
-          
-
-          
-          <div class="method-source-code" id="to_dictionary-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/dictionary.rb, line 100</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_dictionary</span>;                      <span class="ruby-constant">Dictionary</span>.<span class="ruby-identifier">new</span>;     <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_dictionary-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_dictionary-method -->
-
-    
-      <div id="method-i-to_identifier" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_identifier</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_identifier-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/cast.rb, line 104</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_identifier</span>;                  <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_identifier-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_identifier-method -->
-
-    
-      <div id="method-i-to_integer" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_integer</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_integer-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/cast.rb, line 105</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_integer</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_integer-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_integer-method -->
-
-    
-      <div id="method-i-to_integer_optional" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_integer_optional</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_integer_optional-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/cast.rb, line 106</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_integer_optional</span>;            <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_integer_optional-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_integer_optional-method -->
-
-    
-      <div id="method-i-to_nil" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_nil</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_nil-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/object.rb, line 96</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_nil</span>;                         <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_nil-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_nil-method -->
-
-    
-      <div id="method-i-to_nil_unless" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_nil_unless</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_nil_unless-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/object.rb, line 97</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_nil_unless</span>(*<span class="ruby-identifier">a</span>);              <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_nil_unless-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_nil_unless-method -->
-
-    
-      <div id="method-i-to_ordered_set" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_ordered_set</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leeres <a href="OrderedSet.html">OrderedSet</a></p>
-          
-
-          
-          <div class="method-source-code" id="to_ordered_set-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 226</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_ordered_set</span>;                 <span class="ruby-constant">OrderedSet</span>.<span class="ruby-identifier">new</span>;       <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_ordered_set-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_ordered_set-method -->
-
-    
-      <div id="method-i-to_set" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_set</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leeres <a href="Set.html">Set</a></p>
-          
-
-          
-          <div class="method-source-code" id="to_set-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 220</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_set</span>;                         <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_set-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_set-method -->
-
-    
-      <div id="method-i-to_sorted_set" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_sorted_set</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Rückgabe: Leeres <a href="SortedSet.html">SortedSet</a></p>
-          
-
-          
-          <div class="method-source-code" id="to_sorted_set-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/set.rb, line 223</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_sorted_set</span>;                  <span class="ruby-constant">SortedSet</span>.<span class="ruby-identifier">new</span>;        <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_sorted_set-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_sorted_set-method -->
-
-    
-      <div id="method-i-to_time" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_time</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_time-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/numeric/integer.rb, line 36</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_time</span>;                        <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_time-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_time-method -->
-
-    
-      <div id="method-i-to_x" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_x</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_x-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/cast.rb, line 108</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_x</span>;                           <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_x-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_x-method -->
-
-    
-      <div id="method-i-transpose" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">transpose</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="transpose-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_enumerables.rb, line 73</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">transpose</span>;                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- transpose-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- transpose-method -->
-
-    
-      <div id="method-i-transpose-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">transpose!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="transpose-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/enumerable/enumerable_enumerables.rb, line 72</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">transpose!</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- transpose-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- transpose-21-method -->
-
-    
-      <div id="method-i-umbrella" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">umbrella</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="umbrella-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/range.rb, line 56</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">umbrella</span>(*<span class="ruby-identifier">a</span>);                   <span class="ruby-keyword">nil</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- umbrella-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- umbrella-method -->
-
-    
-      <div id="method-i-underscore" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">underscore</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="underscore-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/general/classutils.rb, line 207</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">underscore</span>;               <span class="ruby-keyword">nil</span>;                  <span class="ruby-keyword">end</span></pre>
-          </div><!-- underscore-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- underscore-method -->
-
-    
-      <div id="method-i-upcase2" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">upcase2</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="upcase2-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 175</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">upcase2</span>;                      <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- upcase2-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- upcase2-method -->
-
-    
-      <div id="method-i-upcase2-21" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">upcase2!</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="upcase2-21-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/chars.rb, line 176</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">upcase2!</span>;                     <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- upcase2-21-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- upcase2-21-method -->
-
-    
-      <div id="method-i-within-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">within?</span><span
-            class="method-args">(*a)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="within-3F-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/range.rb, line 58</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">within?</span>(*<span class="ruby-identifier">a</span>);                    <span class="ruby-keyword">nil</span>;              <span class="ruby-keyword">end</span></pre>
-          </div><!-- within-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- within-3F-method -->
-
-    
-      <div id="method-i-without_versioninfo" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">without_versioninfo</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="without_versioninfo-source">
-            <pre><span class="ruby-comment"># File lib/kyanite/string/split.rb, line 142</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">without_versioninfo</span>;          <span class="ruby-keyword">nil</span>;            <span class="ruby-keyword">end</span></pre>
-          </div><!-- without_versioninfo-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- without_versioninfo-method -->
-
+    </div>     
     
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
-
-</div><!-- documentation -->
-
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
-
+  </body>
+</html>

@@ -1,20 +1,18 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'kyanite/unit_test'
+require 'drumherum/unit_test'
 require 'kyanite/enumerable/structure'
-require 'kyanite/dictionary'
+#require 'kyanite/dictionary'
 require 'kyanite/set'
-require 'kyanite/hash'
+#require 'kyanite/hash'
 
 
 
-# Tests für Enumerable
-# 
+# @!macro enumerable
 class TestKyaniteEnumerableStructure < UnitTest
 
  def test_is_collection

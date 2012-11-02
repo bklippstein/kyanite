@@ -1,24 +1,36 @@
 # ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+end
+
  
+
+
+
+# @!macro optimizer
+# ==== Example
+#   require 'kyanite/optimizer' 
+#   test = Optimizer.new
+#   test.push  1,  'hello'
+#   test.push  5,  'item'
+#   test.push  6,  'maximum23'
+#   test.push -1,  'minimum'
+#   test.push -1,  'another minimum'  
+#   test.content_max
+#   >= "maximum23"
+#   test.content_min
+#   >= "minimum"
+# More tests and examples {TestKyaniteOptimizer here}. 
 #
-# [ | *Kyanite* | Object | Array | Set | Enumerable | Hash | ]     | Kyanite | TrueClass | FalseClass | NilClass | *Div* | 
-# [ ] | Div | Tree::TreeNode | *Optimizer* | 
-# ---
-#
-# == *Optimizer* 
-# Auswahl von Objekten auf Basis von Scores. See TestKyaniteOptimizer for Tests and examples.
-#
-# Jedes Objekt wird per +push+ in den Optimizer geschrieben. Dabei wird auch sein Score übergeben.
-# +content_max+ bzw. +content_min+ liefern das Objekt mit dem höchsten / niedrigsten Score. 
-# +delete_max+ bzw. +delete_min+ löschen das Objekt mit den höchsten / niedrigsten Score. Dadurch ist auch der Zugriff auf die zweiten und dritten Objekte möglich. 
-#
+class Optimizer < Hash
+
 # Drei Stufen für Marshall sind denkbar:
 # * kein Marshal
 # * Marshal.load(Marshal.dump) beim Schreiben. Dadurch sind Schreibzugriffe teuer, Lesezugriffe aber billig
 # * Marshal.dump beim Schreiben, Marshal.load beim Lesen. Dadurch sind Lese- und Schreibzugriffe teuer, 
 #   die im Optimizer gespeicherten Objekte sind aber abgeschottet und geschützt.
-#
-class Optimizer < Hash
 
 #@@marshal = true
 
@@ -27,24 +39,25 @@ class Optimizer < Hash
   # end
   
   
-  # Liefert den Wert des höchsten Scores.
+
+  # @return [Numeric] Value of maximum score
   def score_max
     return nil  if size == 0  
     keys.max
   end
   
   
-  # Liefert den Wert des niedrigsten Scores.  
+  # @return [Numeric] Value of minimum score
   def score_min
     return nil  if size == 0  
     keys.min
   end  
   
   
-  # Liefert den Content mit dem höchsten Score. Mit
-  # [] content_max(0)      erhält man den ersten Content mit maximalem Score, mit
-  # [] content_max(-1)     den letzten Content mit maximalem Score und mit 
-  # [] content_max(0..-1)  alle Contents mit maximalem Score (dann als Array).
+  # Returns the content with maximum score. 
+  #  content_max(0)      # returns the first content with maximum score
+  #  content_max(-1)     # returns the last content with maximum score  
+  #  content_max(0..-1)  # returns all contents with maximum score (as Array)
   #
   def content_max(range=0..0)
     return nil  if size == 0
@@ -61,7 +74,11 @@ class Optimizer < Hash
   end
   
   
-  # siehe #content_max
+  # Returns the content with minimum score. 
+  #  content_min(0)      # returns the first content with minimum score
+  #  content_min(-1)     # returns the last content with minimum score  
+  #  content_min(0..-1)  # returns all contents with minimum score (as Array)
+  #
   def content_min(range=0..0)
     return nil  if size == 0
     range = (range..range) if range.kind_of?(Fixnum)    
@@ -77,7 +94,7 @@ class Optimizer < Hash
   end 
   
   
-  # Beladen des Optimizers mit Objekten.
+  # Load the optimizer with objects.
   def push( score, content, options={} )
     if self.has_key?(score) 
       self[score] << Marshal.dump(content) 
@@ -87,7 +104,7 @@ class Optimizer < Hash
   end
   
   
-  # Löscht alle Objekte in der Mitte.
+  # Deletes all objects in the middle.
   def cleanup
     return false if size <= 2
     keys.sort[1..-2].each do | key | 
@@ -97,14 +114,14 @@ class Optimizer < Hash
   end
   
   
-  # Löscht das Objekt mit dem niedrigsten Score.   
+  # Deletes the object with the lowest score. 
   def delete_min
     return false if size <= 1
     self.delete(keys.min)
     true
   end  
   
-  # Löscht das Objekt mit dem höchsten Score.     
+  # Deletes the object with the highest score.    
   def delete_max
     return false if size <= 1
     self.delete(keys.max)

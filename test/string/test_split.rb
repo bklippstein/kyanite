@@ -1,17 +1,16 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
-require 'kyanite/unit_test'
+require 'drumherum/unit_test'
 require 'kyanite/string/split'
 
 
 
 # Tests for String
-#
+# @!macro string
 class TestKyaniteStringSplit < UnitTest
     
   def test_nchar
@@ -105,6 +104,12 @@ class TestKyaniteStringSplit < UnitTest
   	assert_equal '', nil.cut(0)
   	assert_equal '', nil.cut(5)
   end  
+  
+  
+  def test_extract
+  	string = '<select id="hello"><option value="0">none</option></select>'
+  	assert_equal 'hello', string.extract(  /select.*?id="/  ,  '"'  )
+  end    
   
   
   def test_fixsize

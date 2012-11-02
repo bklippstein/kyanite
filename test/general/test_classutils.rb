@@ -1,26 +1,26 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', '..', 'smart_load_path.rb' )
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
-
+require 'drumherum/unit_test'
 require 'transparent_nil'    unless defined? TransparentNil
-require 'kyanite/unit_test'
 require 'kyanite/general/classutils'
 
-
-class DummyClass1 # :nodoc:
+# @private
+class DummyClass1 
 end
-module DummyModule # :nodoc:
+# @private
+module DummyModule 
   class DummyClass2 # :nodoc:
   end
 end
 
 
+# @!group Class Utils
 
-# Tests for String, Symbol, Class
-#
+# @!macro class_utils
 class TestKyaniteClassutils < UnitTest
 
   def test_to_class
