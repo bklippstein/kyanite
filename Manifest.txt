@@ -1,5 +1,4 @@
 console.rb
-Div
 History.rdoc
 License.rdoc
 Manifest.txt

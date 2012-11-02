@@ -22,11 +22,14 @@ $hoe = Hoe.spec Drumherum.project_name do
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  extra_deps            << ['drumherum',  '>= 0.1.19']  
-  extra_deps            << ['transparent_nil', '>= 0.1.7']
-  extra_deps            << ['activesupport',   '>= 3.2.8']
-  extra_deps            << ['facets',          '>= 2.9.3']
-  extra_deps            << ['rubytree',        '>= 0.8.3'] 
+  extra_deps            << ['drumherum',                '>= 0.1.19']  
+  extra_deps            << ['transparent_nil',          '>= 0.1.7']
+  extra_deps            << ['activesupport',            '>= 3.2.8']
+  extra_deps            << ['facets',                   '>= 2.9.3']
+  extra_deps            << ['rubytree',                 '>= 0.8.3'] 
+  extra_deps            << ['yard',                     '>= 0.8.3'] 
+  extra_deps            << ['yard_klippstein_template', '>= 0.0.37'] 
+  extra_deps            << ['hashery',                  '>= 2.0.1'] 
   remote_rdoc_dir = '' # Release to root only one project  
   urls                  = [[Drumherum.url_docs], [Drumherum.url_source]]
                     
