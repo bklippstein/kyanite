@@ -26,6 +26,16 @@ class Symbol
     end
     
     # like String method with same name
+    # @return [Array]    
+    def *(n)
+      result = []
+      n.times do
+        result << self
+      end # do
+      return result
+    end #def    
+    
+    # like String method with same name
     # @return [Boolean]    
     # def <=>(other)
       # self.to_s <=> other.to_s

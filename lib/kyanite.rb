@@ -140,6 +140,7 @@
 
 # @!macro [new] undoable 
 #  === Undoable Module
+#  Save and restore objects. Great for try-and-error-algorithms.
 #  [Kyanite definitions] {Undoable}
 #  [Kyanite tests and examples]    
 #  [Usage] +require 'kyanite/general/undoable'+  

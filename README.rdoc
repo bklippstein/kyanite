@@ -12,7 +12,7 @@ Welcome to Kyanite. It's a general toolbox like Facets or ActiveSupport.
 [{Set}] General tools. New class {OrderedSet} as alternative to {SortedSet}.
 [{Hash} {Dictionary} {Tree::TreeNode Tree}] General tools.
 [{Optimizer}] Find objects with min or max score.
-[{Undoable}] Save and restore objects.
+[{Undoable}] Save and restore objects. Great for try-and-error-algorithms.
 [{Object} {CallerUtils}] Repeats a block until the time is up. Silence Ruby warnings. Deep copy. Examine the call stack.
 
 
