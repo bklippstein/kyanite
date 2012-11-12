@@ -476,6 +476,29 @@ characteristics of the enumerated elements.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#to_s_utf8-instance_method" title="#to_s_utf8 (instance method)">- (String) <strong>to_s_utf8</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>reverse of <span class='object_link'><a href="String.html#to_array_of_codepoints-instance_method" title="String#to_array_of_codepoints (method)">String#to_array_of_codepoints</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#transpose%21-instance_method" title="#transpose! (instance method)">- (Object) <strong>transpose!</strong> </a>
     
 
@@ -670,6 +693,9 @@ objects? <span class='object_link'><a href="String.html" title="String (class)">
 <dl class="rdoc-list"><div class=rdoc-dl-row> <dt>:pos
 <dd>
 <p>The index is rephrased as a positive integer</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:detect_last
+<dd>
+<p>The index is rephrased as a positive integer, but the last index is -1</p>
 </dd> </div><div class=rdoc-dl-row> <dt>:neg
 <dd>
 <p>The index is rephrased as a negative integer</p>
@@ -705,15 +731,6 @@ objects? <span class='object_link'><a href="String.html" title="String (class)">
       <pre class="lines">
 
 
-66
-67
-68
-69
-70
-71
-72
-73
-74
 75
 76
 77
@@ -728,10 +745,29 @@ objects? <span class='object_link'><a href="String.html" title="String (class)">
 86
 87
 88
-89</pre>
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rephrase_index'>rephrase_index</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_style'>style</span><span class='op'>=</span><span class='symbol'>:inv</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_i'>i</span>    <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;</span>  <span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
@@ -754,7 +790,17 @@ objects? <span class='object_link'><a href="String.html" title="String (class)">
 </span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>-</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
         <span class='kw'>else</span>        <span class='comment'># neg bleibt
 </span>          <span class='id identifier rubyid_i'>i</span>
-        <span class='kw'>end</span>    
+        <span class='kw'>end</span>   
+  <span class='kw'>when</span> <span class='symbol'>:detect_last</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;=</span> <span class='int'>0</span>   <span class='comment'># pos bleibt eigentlich
+</span>          <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>==</span> <span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+            <span class='op'>-</span><span class='int'>1</span>      <span class='comment'># nur der Letzte wird -1 genannt
+</span>          <span class='kw'>else</span>
+            <span class='id identifier rubyid_i'>i</span>
+          <span class='kw'>end</span>
+        <span class='kw'>else</span>        <span class='comment'># neg &gt;&gt; pos
+</span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>              
   <span class='kw'>end</span> <span class='comment'>#case
 </span><span class='kw'>end</span></pre>
     </td>
@@ -796,16 +842,16 @@ recursions. Example:</p>
       <pre class="lines">
 
 
-45
-46
-47
-48
-49
-50
-51</pre>
+53
+54
+55
+56
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shift_complement'>shift_complement</span>
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>2</span>
@@ -1103,6 +1149,60 @@ included)</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="to_s_utf8-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s_utf8</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>reverse of <span class='object_link'><a href="String.html#to_array_of_codepoints-instance_method" title="String#to_array_of_codepoints (method)">String#to_array_of_codepoints</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s_utf8'>to_s_utf8</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="to_sorted_set-instance_method">
   
     - (<tt><span class='object_link'><a href="SortedSet.html" title="SortedSet (class)">SortedSet</a></span></tt>) <strong>to_sorted_set</strong> 
@@ -1192,7 +1292,7 @@ included)</p>
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Fri Nov  9 13:26:51 2012 by
+      Generated on Mon Nov 12 11:37:11 2012 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 

@@ -16,9 +16,10 @@ class TestKyaniteArray < UnitTest
   def test_rephrase_index
     test = [ :a, :b, :c, :d]
     0.upto(3) do | i |
-      i_inv = test.rephrase_index(i)
-      i_neg = test.rephrase_index(i, :neg)
-      i_pos = test.rephrase_index(i, :pos)
+      i_inv =  test.rephrase_index(i)
+      i_neg =  test.rephrase_index(i, :neg)
+      i_pos =  test.rephrase_index(i, :pos)
+      i_last = test.rephrase_index(i, :detect_last)
       # print "\n#{test[i]}   #{i}   #{i_inv}"
       
       assert_not_equal  i,      i_inv    
@@ -28,12 +29,14 @@ class TestKyaniteArray < UnitTest
       assert_equal test[i],   test[i_inv]
       assert_equal test[i],   test[i_pos]
       assert_equal test[i],   test[i_neg]
+      assert_equal test[i],   test[i_last]
     end # do
     
     -4.upto(-1) do | i |
       i_inv = test.rephrase_index(i)
       i_neg = test.rephrase_index(i, :neg)
       i_pos = test.rephrase_index(i, :pos)
+      i_last = test.rephrase_index(i, :detect_last)      
       # print "\n#{test[i]}   #{i}   #{i_inv}"
       
       assert_not_equal  i,      i_inv    
@@ -43,12 +46,14 @@ class TestKyaniteArray < UnitTest
       assert_equal test[i],   test[i_inv]
       assert_equal test[i],   test[i_pos]
       assert_equal test[i],   test[i_neg]
+      assert_equal test[i],   test[i_last]      
     end # do    
     
     [4, 5, -5, -6].each do |i|
       i_inv = test.rephrase_index(i)
       i_neg = test.rephrase_index(i, :neg)
       i_pos = test.rephrase_index(i, :pos)
+      i_last = test.rephrase_index(i, :detect_last)      
       # print "\nx   #{i}   #{i_inv}"  
       assert_equal      i,      i_neg         
       assert_equal      i,      i_pos         
@@ -56,6 +61,7 @@ class TestKyaniteArray < UnitTest
       assert_equal test[i],   test[i_inv]
       assert_equal test[i],   test[i_pos]
       assert_equal test[i],   test[i_neg]    
+      assert_equal test[i],   test[i_last]      
     end
     
   end

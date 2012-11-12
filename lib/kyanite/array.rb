@@ -31,6 +31,14 @@ require 'kyanite/symbol'                # size
 # [+to_h(arrayed=nil)+]             Converts a two-element associative array into a hash. 
 # 
 class Array    
+
+
+  # reverse of {String#to_array_of_codepoints}
+  # @return [String]
+  #  
+  def to_s_utf8
+    self.pack("U*").encode('utf-8')
+  end
  
   
   # Cuts the front portion, and returns the rest.
@@ -55,9 +63,10 @@ class Array
   
   
   # Rephrases the index of an Array pos / neg / inv.
-  # [:pos]     The index is rephrased as a positive integer
-  # [:neg]     The index is rephrased as a negative integer 
-  # [:inv]     if it was positive, then it will get negative, and vice versa
+  # [:pos]            The index is rephrased as a positive integer
+  # [:detect_last]    The index is rephrased as a positive integer, but the last index is -1
+  # [:neg]            The index is rephrased as a negative integer 
+  # [:inv]            if it was positive, then it will get negative, and vice versa
   # 
   # @return [Integer]
   #
@@ -84,7 +93,17 @@ class Array
             (i - size)
           else        # neg bleibt
             i
-          end    
+          end   
+    when :detect_last
+          if i >= 0   # pos bleibt eigentlich
+            if (i == size-1)
+              -1      # nur der Letzte wird -1 genannt
+            else
+              i
+            end
+          else        # neg >> pos
+            (i + size)
+          end              
     end #case
   end #def
   
@@ -113,7 +132,18 @@ end
 
 
 
+# ---------------------------------------------------------
+# Ausprobüeren 
+#
+if $0 == __FILE__ 
 
+  test = [ :a, :b, :c, :d]
+  0.upto(3) do | i |  
+    puts test.rephrase_index(i, :detect_last)
+  end
+  puts
+
+end
 
     
     

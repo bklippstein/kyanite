@@ -14,6 +14,14 @@ class String
   
   # @!group Cast
   
+    # reverse of {Array#to_s_utf8}
+    # @return [Array]
+    #
+    def to_array_of_codepoints
+      self.codepoints.to_a
+    end  
+  
+  
     # Converts a string into the most plausible Identifier
     #
     # See examples and tests {TestKyaniteStringCast#test_to_identifier here}.     
