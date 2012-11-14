@@ -105,7 +105,7 @@
     <div class="row">      
     <dt class="r2 last">Defined in</dt>
     <dd class="r2 last">lib/kyanite/string/misc.rb<span class="defines">,<br />
-  lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/list.rb,<br /> lib/kyanite/string/cast.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/enumerable/structure.rb</span>
+  lib/kyanite/string/cast.rb,<br /> lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/list.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/enumerable/structure.rb</span>
 </dd>
     </div>     
    
@@ -147,265 +147,6 @@ scan, but includes the matches.</p>
 
 
 
-  
-    <h2>
-      Miscellaneous
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#count_words-instance_method" title="#count_words (instance method)">- (Integer) <strong>count_words</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Counts the number of words.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#include%3F-instance_method" title="#include? (instance method)">- (Boolean) <strong>include?</strong>(input) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Now also accepts an Array as input parameter.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#is_collection%3F-instance_method" title="#is_collection? (instance method)">- (false) <strong>is_collection?</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p><tt>false</tt>   -- Defined for all objects: Do I contain multiple objects?
-<span class='object_link'><a href="" title="String (class)">String</a></span> and <span class='object_link'><a href="Range.html" title="Range (class)">Range</a></span> are not considered as collection.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#mgsub-instance_method" title="#mgsub (instance method)">- (String) <strong>mgsub</strong>(search_and_replace_pairs) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>String substitution like <tt>gsub</tt>, but replaces multible patterns in
-one turn.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
-      Overlap / Diff
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the differencing part of two strings.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(b) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the mutual part of two strings.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <span class='object_link'><a href="#diff-instance_method" title="String#diff (method)">diff</a></span> and <span class='object_link'><a href="#overlap-instance_method" title="String#overlap (method)">overlap</a></span> in one array.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
-      Database-Helper
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#enum_to_array-instance_method" title="#enum_to_array (instance method)">- (Array) <strong>enum_to_array</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Converts MySQL-Enum to <span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#list_with-instance_method" title="#list_with (instance method)">- (String) <strong>list_with</strong>(elemente, options = {}, &amp;block) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Generates WHERE clause from <span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#sql_regexp_for_kommaliste-instance_method" title="#sql_regexp_for_kommaliste (instance method)">- (String) <strong>sql_regexp_for_kommaliste</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns SQL-RegExp for searching in Postgres comma-separated list.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
   
     <h2>
       Cast
@@ -564,6 +305,265 @@ anything.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Get a hex representation for a char.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Overlap / Diff
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the differencing part of two strings.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the mutual part of two strings.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="#diff-instance_method" title="String#diff (method)">diff</a></span> and <span class='object_link'><a href="#overlap-instance_method" title="String#overlap (method)">overlap</a></span> in one array.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Miscellaneous
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_words-instance_method" title="#count_words (instance method)">- (Integer) <strong>count_words</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Counts the number of words.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include%3F-instance_method" title="#include? (instance method)">- (Boolean) <strong>include?</strong>(input) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Now also accepts an Array as input parameter.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_collection%3F-instance_method" title="#is_collection? (instance method)">- (false) <strong>is_collection?</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p><tt>false</tt>   -- Defined for all objects: Do I contain multiple objects?
+<span class='object_link'><a href="" title="String (class)">String</a></span> and <span class='object_link'><a href="Range.html" title="Range (class)">Range</a></span> are not considered as collection.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mgsub-instance_method" title="#mgsub (instance method)">- (String) <strong>mgsub</strong>(search_and_replace_pairs) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>String substitution like <tt>gsub</tt>, but replaces multible patterns in
+one turn.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Database-Helper
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enum_to_array-instance_method" title="#enum_to_array (instance method)">- (Array) <strong>enum_to_array</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts MySQL-Enum to <span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list_with-instance_method" title="#list_with (instance method)">- (String) <strong>list_with</strong>(elemente, options = {}, &amp;block) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates WHERE clause from <span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sql_regexp_for_kommaliste-instance_method" title="#sql_regexp_for_kommaliste (instance method)">- (String) <strong>sql_regexp_for_kommaliste</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns SQL-RegExp for searching in Postgres comma-separated list.</p>
 </div></span>
     
   
@@ -1049,6 +1049,84 @@ umlauts.</p>
     </ul>
   
     <h2>
+      Random
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#random-class_method" title="random (class method)">+ (String) <strong>random</strong>(type = :en, size = 16) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates a random string.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle-instance_method" title="#shuffle (instance method)">- (String) <strong>shuffle</strong>(separator = //) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reorder string in random order.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle%21-instance_method" title="#shuffle! (instance method)">- (String) <strong>shuffle!</strong>(separator = //) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In-place-variant of <span class='object_link'><a href="#shuffle-instance_method" title="String#shuffle (method)"><tt>shuffle</tt></a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Nested
       <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
@@ -1135,84 +1213,6 @@ umlauts.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Returns the depth of nesting (number of nesting levels).</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
-      Random
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#random-class_method" title="random (class method)">+ (String) <strong>random</strong>(type = :en, size = 16) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Generates a random string.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#shuffle-instance_method" title="#shuffle (instance method)">- (String) <strong>shuffle</strong>(separator = //) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Reorder string in random order.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#shuffle%21-instance_method" title="#shuffle! (instance method)">- (String) <strong>shuffle!</strong>(separator = //) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>In-place-variant of <span class='object_link'><a href="#shuffle-instance_method" title="String#shuffle (method)"><tt>shuffle</tt></a></span>.</p>
 </div></span>
     
   
@@ -5282,7 +5282,7 @@ periods.    See tests and examples
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Wed Nov 14 09:30:19 2012 by
+      Generated on Wed Nov 14 09:48:53 2012 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 
