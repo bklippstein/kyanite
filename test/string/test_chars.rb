@@ -138,17 +138,17 @@ ENDOFSTRING
   
   
   
-  # def test_mysqlize
-    # test0 = 'aaoouuß'  
-    # test1 = 'aäoöuüss'
-    # test2 = 'AÄOÖUÜSS'
-    # test3 = 'AAOOUUß'   
+  def test_mysqlize
+    test0 = 'aaoouuß'  
+    test1 = 'aäoöuüss'
+    test2 = 'AÄOÖUÜSS'
+    test3 = 'AAOOUUß'   
   
-    # assert_equal test0,   test0.mysqlize
-    # assert_equal test0,   test1.mysqlize
-    # assert_equal test0,   test2.mysqlize
-    # assert_equal test0,   test3.mysqlize
-  # end   
+    assert_equal test0,   test0.mysqlize
+    assert_equal test0,   test1.mysqlize
+    assert_equal test0,   test2.mysqlize
+    assert_equal test0,   test3.mysqlize
+  end   
   
   
 

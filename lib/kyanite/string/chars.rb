@@ -7,24 +7,14 @@ end
 
 
 require 'kyanite/string/chars_const'
+require 'kyanite/string/misc'
 
  
 
 
 class String
 
-  unless defined? MYSQL_REPLACES
-    MYSQL_REPLACES =  [                 
-                                        [/ä/,    'a'], 
-                                        [/ö/,    'o'],  
-                                        [/ü/,    'u'],        
-                                        [/Ä/,    'a'], 
-                                        [/Ö/,    'o'],  
-                                        [/Ü/,    'u'],      
-                                        [/ss/,   'ß'],      
-                                        [/SS/,   'ß']     
-                      ]  
-  end   
+  
 
     # ---------------------------------------------------------------------------------------------------------------------------------
     # @!group Clear / Format Text
@@ -102,13 +92,25 @@ class String
     
 
     
-    # Formt einen String so um, dass man auch mit utf8_general_ci verglichene Strings wiedererkennen kann
-    #
-    # See TestKyaniteStringChars for tests and examples.
+    unless defined? MYSQL_REPLACES
+      MYSQL_REPLACES =  [                 
+                                          [/ä/,    'a'], 
+                                          [/ö/,    'o'],  
+                                          [/ü/,    'u'],        
+                                          [/Ä/,    'a'], 
+                                          [/Ö/,    'o'],  
+                                          [/Ü/,    'u'],      
+                                          [/ss/,   'ß'],      
+                                          [/SS/,   'ß']     
+                        ]  
+    end      
+    
+    
+    # Converts a string so that you can recognize with utf8_general_ci compared strings
     #   
-    # def mysqlize
-      # self.tidy_bytes.mgsub(MYSQL_REPLACES).downcase.to_s
-    # end           
+    def mysqlize
+      self.mgsub(MYSQL_REPLACES).downcase.to_s
+    end            
     
 
     
