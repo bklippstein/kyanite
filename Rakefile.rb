@@ -22,8 +22,8 @@ $hoe = Hoe.spec Drumherum.project_name do
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
   summary               = 'General toolbox like Facets or ActiveSupport.'  
-  extra_deps            << ['drumherum',                '>= 0.1.19']  
-  extra_deps            << ['transparent_nil',          '>= 0.1.7']
+  extra_deps            << ['drumherum',                '>= 0.1.34']  
+  extra_deps            << ['transparent_nil',          '>= 0.1.20']
   extra_deps            << ['activesupport',            '>= 3.2.8']
   extra_deps            << ['facets',                   '>= 2.9.3']
   extra_deps            << ['rubytree',                 '>= 0.8.3'] 

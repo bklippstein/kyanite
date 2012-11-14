@@ -105,7 +105,7 @@
     <div class="row">      
     <dt class="r2 last">Defined in</dt>
     <dd class="r2 last">lib/kyanite/string/misc.rb<span class="defines">,<br />
-  lib/kyanite/string/list.rb,<br /> lib/kyanite/string/cast.rb,<br /> lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/enumerable/structure.rb</span>
+  lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/list.rb,<br /> lib/kyanite/string/cast.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/enumerable/structure.rb</span>
 </dd>
     </div>     
    
@@ -237,6 +237,84 @@ scan, but includes the matches.</p>
     <span class="summary_desc"><div class='inline'>
 <p>String substitution like <tt>gsub</tt>, but replaces multible patterns in
 one turn.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Overlap / Diff
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the differencing part of two strings.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the mutual part of two strings.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="#diff-instance_method" title="String#diff (method)">diff</a></span> and <span class='object_link'><a href="#overlap-instance_method" title="String#overlap (method)">overlap</a></span> in one array.</p>
 </div></span>
     
   
@@ -501,7 +579,7 @@ anything.</p>
     </ul>
   
     <h2>
-      Overlap / Diff
+      Split
       <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
 
@@ -510,14 +588,14 @@ anything.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
+      <a href="#cut-instance_method" title="#cut (instance method)">- (String) <strong>cut</strong>(len = 5) </a>
     
 
     
   </span>
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the differencing part of two strings.</p>
+<p>Cuts a string to a maximal length.</p>
 </div></span>
     
   
@@ -533,14 +611,14 @@ anything.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(b) </a>
+      <a href="#extract-instance_method" title="#extract (instance method)">- (String) <strong>extract</strong>(start_regexp, stop_regexp) </a>
     
 
     
   </span>
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the mutual part of two strings.</p>
+<p>Extracts a substring using two regular expressions.</p>
 </div></span>
     
   
@@ -556,14 +634,107 @@ anything.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
+      <a href="#fixsize-instance_method" title="#fixsize (instance method)">- (String) <strong>fixsize</strong>(len) </a>
     
 
     
   </span>
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns <span class='object_link'><a href="#diff-instance_method" title="String#diff (method)">diff</a></span> and <span class='object_link'><a href="#overlap-instance_method" title="String#overlap (method)">overlap</a></span> in one array.</p>
+<p>Forces a fixed size.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nchar-instance_method" title="#nchar (instance method)">- (String) <strong>nchar</strong>(n, replacement = nil) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <em>n</em> characters of the string.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split_by_index-instance_method" title="#split_by_index (instance method)">- (Array) <strong>split_by_index</strong>(idx) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Cuts a string in parts with given length.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split_numeric-instance_method" title="#split_numeric (instance method)">- (Array) <strong>split_numeric</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Separates a string into numeric and alphanumeric parts.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#without_versioninfo-instance_method" title="#without_versioninfo (instance method)">- (String) <strong>without_versioninfo</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes numeric parts and trailing white spaces, hyphens, underscores, and
+periods.</p>
 </div></span>
     
   
@@ -863,177 +1034,6 @@ umlauts.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Is the string upcase? Also works with special letters like german umlauts.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
-      Split
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#cut-instance_method" title="#cut (instance method)">- (String) <strong>cut</strong>(len = 5) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Cuts a string to a maximal length.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#extract-instance_method" title="#extract (instance method)">- (String) <strong>extract</strong>(start_regexp, stop_regexp) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Extracts a substring using two regular expressions.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#fixsize-instance_method" title="#fixsize (instance method)">- (String) <strong>fixsize</strong>(len) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Forces a fixed size.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#nchar-instance_method" title="#nchar (instance method)">- (String) <strong>nchar</strong>(n, replacement = nil) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <em>n</em> characters of the string.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#split_by_index-instance_method" title="#split_by_index (instance method)">- (Array) <strong>split_by_index</strong>(idx) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Cuts a string in parts with given length.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#split_numeric-instance_method" title="#split_numeric (instance method)">- (Array) <strong>split_numeric</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Separates a string into numeric and alphanumeric parts.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#without_versioninfo-instance_method" title="#without_versioninfo (instance method)">- (String) <strong>without_versioninfo</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Removes numeric parts and trailing white spaces, hyphens, underscores, and
-periods.</p>
 </div></span>
     
   
@@ -5282,7 +5282,7 @@ periods.    See tests and examples
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Mon Nov 12 11:37:12 2012 by
+      Generated on Wed Nov 14 09:30:19 2012 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 

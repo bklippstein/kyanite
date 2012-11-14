@@ -157,12 +157,32 @@
 #  [Kyanite tests and examples]  
 #  [Usage] +require 'kyanite/general/callerutils'+ 
 
+# @!macro [new] fsymbol
+#  === CallerUtils
+#  [Kyanite definitions] {FSymbol} 
+#  [Kyanite tests and examples] {TestKyaniteFSymbols} 
+#  [Usage] +require 'kyanite/fsymbol'+ 
+# 
+#  A {FSymbol} ("focusable Symbol") is 
+#  a comparable {Symbol} within a hierarchy. You can use it for classifications.
+#  In its values​​, it is limited to the values​​, 
+#  which are defined in the hierarchy. 
+#  FSymbols are comparable with <= >= <=>. A more specific {FSymbol} is larger than a more general {FSymbol} 
+#  (because the specific FSymbol contains more information)
+#  E.g. if you define a hierarchy if animal species, you can say:
+#    :insect.to_f_symbol <= :bee.to_f_symbol
+#  FSymbols are equal to Symbols with the same name.
+#  
+
+
+
   require 'drumherum'
 
   require 'kyanite/array'
 # require 'kyanite/basics'            # Auswahl
   require 'kyanite/dictionary'
   require 'kyanite/enumerable'       
+  require 'kyanite/fsymbol'
   require 'kyanite/general'
   require 'kyanite/hash'
   require 'kyanite/numeric' 

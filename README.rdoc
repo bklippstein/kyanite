@@ -13,6 +13,7 @@ Welcome to Kyanite. It's a general toolbox like Facets or ActiveSupport.
 [{Hash} {Dictionary} {Tree::TreeNode Tree}] General tools.
 [{Optimizer}] Find objects with min or max score.
 [{Undoable}] Save and restore objects. Great for try-and-error-algorithms.
+[{FSymbol}] A comparable {Symbol} within a hierarchy: A more specific {FSymbol} is larger than a more general {FSymbol}.
 [{Object} {CallerUtils}] Repeats a block until the time is up. Silence Ruby warnings. Deep copy. Examine the call stack.
 
 

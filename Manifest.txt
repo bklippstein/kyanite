@@ -18,6 +18,7 @@ lib/kyanite/enumerable/enumerable_enumerables.rb
 lib/kyanite/enumerable/enumerable_numerics.rb
 lib/kyanite/enumerable/enumerable_strings.rb
 lib/kyanite/enumerable/structure.rb
+lib/kyanite/fsymbol.rb
 lib/kyanite/general.rb
 lib/kyanite/general/callerutils.rb
 lib/kyanite/general/classutils.rb
@@ -64,6 +65,7 @@ test/string/test_misc.rb
 test/string/test_nested.rb
 test/string/test_split.rb
 test/test_dictionary.rb
+test/test_fsymbol.rb
 test/test_hash.rb
 test/test_optimizer.rb
 test/test_range.rb
