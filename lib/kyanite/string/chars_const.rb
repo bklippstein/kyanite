@@ -9,9 +9,6 @@ end
 require 'hashery' 
 
 
-
-
-
 unless defined?(TR_UPCASE_ALL_REGEXP)
   base = Hashery::Dictionary.new
   base['a'] = '     àáâă  äãā  åạą æ ảấầắằ а       '

@@ -114,6 +114,27 @@ class String
       str
     end
     
+    
+    unless defined? MYSQL_REPLACES
+      MYSQL_REPLACES =  [                 
+                                          [/ä/,    'a'], 
+                                          [/ö/,    'o'],  
+                                          [/ü/,    'u'],        
+                                          [/Ä/,    'a'], 
+                                          [/Ö/,    'o'],  
+                                          [/Ü/,    'u'],      
+                                          [/ss/,   'ß'],      
+                                          [/SS/,   'ß']     
+                        ]  
+    end      
+    
+    
+    # Converts a string so that you can recognize with utf8_general_ci compared strings
+    #   
+    def mysqlize
+      self.tidy_bytes.mgsub(MYSQL_REPLACES).downcase.to_s
+    end        
+    
 
 end
 
