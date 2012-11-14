@@ -7,7 +7,7 @@ Rakefile.rb
 init.rb
 version.rb
 lib/kyanite.rb
-lib/test_all.rb
+lib/kyanite/_test_all.rb
 lib/kyanite/array.rb
 lib/kyanite/array_of_enumerables.rb
 lib/kyanite/array_of_numerics.rb
