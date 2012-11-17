@@ -6,10 +6,10 @@ if $0 == __FILE__
 end
 
 
-require 'kyanite/string/chars_const'
+require 'kyanite/string/chars_const' unless defined? TR_FULL
 require 'kyanite/string/misc'
+require 'unicode_utils/nfkd'
 
- 
 
 
 class String
@@ -19,8 +19,62 @@ class String
     # ---------------------------------------------------------------------------------------------------------------------------------
     # @!group Clear / Format Text
     # See TestKyaniteStringChars for tests and examples.    
+    
+    
+    # reverse of {Array#to_s_utf8}
+    # @return [Array]
+    #
+    def to_a
+      result = []
+      self.each_char do |c|
+      result << c
+      end
+      result
+    end      
+    
+    # reverse of {Array#to_s_utf8}
+    # @return [Array]
+    #
+    def to_array_of_codepoints
+      self.codepoints.to_a
+    end  
+    
+    # @return [Array]    
+    def to_array_of_hex
+      self.unpack('U'*self.length).collect {|x| x.to_s 16}
+    end    
+    
+    
+    # Reduces the string to a ASCII encoding. Example:
+    #  ffi = "\uFB03"
+    #  ix = "\u2168"
+    #  high23="²³"
+    #  high5 = "\u2075"
+    #  all = ffi + ix + high23 + high5 
+    #  all.to_ascii
+    #  => "ffiIX235"
+    # 
+    # Based on +UnicodeUtils.nfkd+, but handles all characters from ISO/IEC 8859-1 and CP1252
+    # like humans do, not just deleting the accents. Example:
+    #  "ÄÖÜäöüß".to_ascii
+    #  => "AeOeUeaeoeuess"
+    #
+    # 1. Converts ÄÖÜäöüßàáâăäãāåạąæảấầắằ etc. to AeOeUeaeoeuessaaaaaaaaaaaaaaaa.
+    # 2. Then removes all non-Ascii-chars.
+    # 3. Then removes all non-printable Ascii-chars.
+    # 4. Caution: Also Newlines are removed.    
+    # About 10 times slower than {#reduce94 reduce94}, but more accurate.     
+    # 
+    def to_ascii
+      result = self.to_ascii_extra_chars 
+      result.tr!(TR_FULL, TR_REDUCED)     # not necessary, only for performance 
+      return UnicodeUtils.nfkd(result).delete('^ -~') # delete is faster than gsub
+    end     
+    
+    
 
     # Reduces the string to a base94 encoding.
+    # About 10 times faster than with +UnicodeUtils+.     
     # 1. Converts àáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰ etc. to aaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAA.
     # 2. Then removes all non-Ascii-chars.
     # 3. Then removes all non-printable Ascii-chars.
@@ -74,7 +128,7 @@ class String
       end
       
       self.gsub!( 'ß', options[:german_sz] )        if options[:german_sz]        
-      self.tr!('abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') 
+      self.tr!('abcdefghijklmnopqrstuvwxyz§', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ') 
       
       self.tr!(TR_FULL, TR_REDUCED.downcase)  
       unless options[:space]
@@ -186,7 +240,16 @@ class String
 
 end
 
+class Array    
 
+  # reverse of {String#to_array_of_codepoints}
+  # @return [String]
+  #  
+  def to_s_utf8
+    self.pack("U*").encode('utf-8')
+  end
+  
+end
 
 
 if defined? TransparentNil
@@ -216,11 +279,17 @@ if $0 == __FILE__ then
   
   #puts "Hallo"
   # puts 'Scheiße'.reduce94(:german_sz => 'z')
-  test_down =       'àáâăäãāåạąæảấầắằабćĉčçċцчďðđдèéêěĕëēėęếеэфĝğġģгĥħхìíîĭïĩīıįĳийĵюяķкĺľłļŀлмńňñņŋнòóôŏöõōøőơœопŕřŗрśŝšşсшщţťŧþтùúûŭüũūůűųưувŵýŷÿźżžжз'
-  test_up =         'ÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰАБĆĈČÇĊЦЧĎÐĐДÈÉÊĚĔËĒĖĘẾЕЭФĜĞĠĢГĤĦХÌÍÎĬÏĨĪİĮĲИЙĴЮЯĶКĹĽŁĻĿЛМŃŇÑŅŊНÒÓÔŎÖÕŌØŐƠŒОПŔŘŖРŚŜŠŞСШЩŢŤŦÞТÙÚÛŬÜŨŪŮŰŲƯУВŴÝŶŸŹŻŽЖЗ'
+  # test_down =       'àáâăäãāåạąæảấầắằабćĉčçċцчďðđдèéêěĕëēėęếеэфĝğġģгĥħхìíîĭïĩīıįĳийĵюяķкĺľłļŀлмńňñņŋнòóôŏöõōøőơœопŕřŗрśŝšşсшщţťŧþтùúûŭüũūůűųưувŵýŷÿźżžжз'
+  # test_up =         'ÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰАБĆĈČÇĊЦЧĎÐĐДÈÉÊĚĔËĒĖĘẾЕЭФĜĞĠĢГĤĦХÌÍÎĬÏĨĪİĮĲИЙĴЮЯĶКĹĽŁĻĿЛМŃŇÑŅŊНÒÓÔŎÖÕŌØŐƠŒОПŔŘŖРŚŜŠŞСШЩŢŤŦÞТÙÚÛŬÜŨŪŮŰŲƯУВŴÝŶŸŹŻŽЖЗ'
 
-  puts "hallo".upcase!
+  # puts "hallo".upcase!
 
+    full    = 'àáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰ'
+    reduced = 'aaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAA'   
+
+    full.each_char do |c|
+      puts c.noaccents
+    end  
 
 end
 

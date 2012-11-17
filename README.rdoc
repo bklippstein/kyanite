@@ -4,7 +4,7 @@ http://bklippstein.github.com/kyanite/frames.html
 Welcome to Kyanite. It's a general toolbox like Facets or ActiveSupport.
 
 == Features
-[{String}] Support for special letters like german umlauts. Reduce UTF8 strings to ASCII or less. Compare Strings. Parse nested brackets. Database Helpers. 
+[{String}] Better support for special letters like german umlauts. Reduce UTF8 strings to ASCII or less like humans whould do, not just deleting the accents. Compare Strings. Parse nested brackets. Database Helpers. 
 [{Class}] Tools for reflection. Convert {Class} <=> {String} <=> {Symbol}.
 [{Numeric} {Integer} {Float}] General tools.
 [{Range}] Invert selection of an Array or String.

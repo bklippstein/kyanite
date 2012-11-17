@@ -14,11 +14,7 @@ require 'kyanite/array'
 # @!macro string
 class TestKyaniteStringCast < UnitTest
 
-  def test_to_array_of_codepoints
-    test = "H¿llÛ"
-    assert_equal [72, 191, 108, 108, 219],    test.to_array_of_codepoints
-    assert_equal test,                        [72, 191, 108, 108, 219].to_s_utf8
-  end
+
 
   def test_to_nil
   	assert_equal 'e', 'e'.to_nil

@@ -33,13 +33,7 @@ require 'kyanite/symbol'                # size
 class Array    
 
 
-  # reverse of {String#to_array_of_codepoints}
-  # @return [String]
-  #  
-  def to_s_utf8
-    self.pack("U*").encode('utf-8')
-  end
- 
+
   
   # Cuts the front portion, and returns the rest.
   # If the remainder is only one element, it' not returned as an array but as single element.

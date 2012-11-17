@@ -111,7 +111,7 @@
     <div class="row">      
     <dt class="r1 last">Defined in</dt>
     <dd class="r1 last">lib/kyanite/set.rb<span class="defines">,<br />
-  lib/kyanite/array.rb,<br /> lib/kyanite/dictionary.rb,<br /> lib/kyanite/enumerable/structure.rb,<br /> lib/kyanite/enumerable/enumerable_strings.rb,<br /> lib/kyanite/enumerable/enumerable_numerics.rb,<br /> lib/kyanite/enumerable/enumerable_enumerables.rb</span>
+  lib/kyanite/array.rb,<br /> lib/kyanite/dictionary.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/enumerable/structure.rb,<br /> lib/kyanite/enumerable/enumerable_strings.rb,<br /> lib/kyanite/enumerable/enumerable_numerics.rb,<br /> lib/kyanite/enumerable/enumerable_enumerables.rb</span>
 </dd>
     </div>     
    
@@ -325,6 +325,38 @@ included).</p>
     </ul>
   
     <h2>
+      Upcase and Downcase with support for special letters like german umlauts
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s_utf8-instance_method" title="#to_s_utf8 (instance method)">- (String) <strong>to_s_utf8</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>reverse of <span class='object_link'><a href="String.html#to_array_of_codepoints-instance_method" title="String#to_array_of_codepoints (method)">String#to_array_of_codepoints</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Structure Reflection
       <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
@@ -461,29 +493,6 @@ characteristics of the enumerated elements.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Cuts the front portion, and returns the rest.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#to_s_utf8-instance_method" title="#to_s_utf8 (instance method)">- (String) <strong>to_s_utf8</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>reverse of <span class='object_link'><a href="String.html#to_array_of_codepoints-instance_method" title="String#to_array_of_codepoints (method)">String#to_array_of_codepoints</a></span>.</p>
 </div></span>
     
   
@@ -731,6 +740,12 @@ objects? <span class='object_link'><a href="String.html" title="String (class)">
       <pre class="lines">
 
 
+69
+70
+71
+72
+73
+74
 75
 76
 77
@@ -758,16 +773,10 @@ objects? <span class='object_link'><a href="String.html" title="String (class)">
 99
 100
 101
-102
-103
-104
-105
-106
-107
-108</pre>
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rephrase_index'>rephrase_index</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_style'>style</span><span class='op'>=</span><span class='symbol'>:inv</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_i'>i</span>    <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;</span>  <span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
@@ -842,16 +851,16 @@ recursions. Example:</p>
       <pre class="lines">
 
 
-53
-54
-55
-56
-57
-58
-59</pre>
+47
+48
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shift_complement'>shift_complement</span>
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>2</span>
@@ -1187,12 +1196,12 @@ included)</p>
       <pre class="lines">
 
 
-39
-40
-41</pre>
+248
+249
+250</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 248</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s_utf8'>to_s_utf8</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
@@ -1292,7 +1301,7 @@ included)</p>
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Wed Nov 14 23:59:33 2012 by
+      Generated on Sat Nov 17 01:22:44 2012 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 
