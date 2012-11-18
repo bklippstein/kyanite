@@ -16,12 +16,12 @@ unless defined?(TR_UPCASE_ALL_REGEXP)
   klammer_auf = "\u227a\u226a\u3008\u276c\u2329\u25c1\u25c0"
   klammer_zu =  "\u227b\u226b\u3009\u276d\u232a\u25b7\u25b6"
 
-  # Sowohl reduce94 als auch to_ascii werden diese Zeichen übersetzen.
+  # Sowohl reduce94 als auch reduce werden diese Zeichen übersetzen.
   # Zeichen, die TR_FULL ergänzen und die UnicodeUtils.nfkd nicht korrekt umsetzt.
   tr_full_b =    %q{£₤¢‹¥›•«×»÷‚‘ƒ’ˆ§´¡„¿“¦”†‡µ′″°¤∗·⋅} + leerzeichen + klammer_auf + klammer_zu
   tr_reduced_b = %q{LLc"Y"*"*"/''f'^P'!"?"|"~~u'"~~***} + (" "*leerzeichen.length) + ("<"*klammer_auf.length) + (">"*klammer_zu.length) 
 
-  # Nur to_ascii wird diese Zeichen übersetzen.
+  # Nur reduce wird diese Zeichen übersetzen.
   # Zeichen, die in TR_FULL schon drin sind und die UnicodeUtils.nfkd nicht korrekt umsetzt
   tr_full_c =    %q{ØøðđÐĐħĦıĸłŁŧþŦÞаАбБцчЦЧдДеэЕЭфФгГхХийИЙюяЮЯкКлЛмМнНоОпПрРсшщСШЩтТуУвВжзЖЗ} 
   tr_reduced_c = %q{OoddDDhHiklLttTTaAbBccCCdDeeEEfFgGhHiiIIjjJJkKlLmMnNoOpPrRsssSSStTuUvVzzZZ}
@@ -29,7 +29,7 @@ unless defined?(TR_UPCASE_ALL_REGEXP)
   
 
   
-  # Nur to_ascii wird diese Zeichen übersetzen.  
+  # Nur reduce wird diese Zeichen übersetzen.  
   TR_EXTRA_CHARS = [
   [/ß/, 'ss'],  
   [/Ö/, 'Oe'],  
@@ -267,7 +267,7 @@ if $0 == __FILE__ then
   see "Überprüfe TR_EXTRA_CHARS"
   see "========================"
   see
-  see "defined in", "Dup if <>0", "Trivial?", "Hex Code", "Character", "reduce94", "to_ascii", "Klassifizierung"
+  see "defined in", "Dup if <>0", "Trivial?", "Hex Code", "Character", "reduce94", "reduce", "Klassifizierung"
   startline = 14
   i = 0
   all = ""
@@ -280,7 +280,7 @@ if $0 == __FILE__ then
     c.to_array_of_hex,                    # sein Code in HEX    
     c,                                    # das Zeichen
     c.reduce94,                           # was reduce94 daraus macht
-    c.to_ascii,                           # was to_ascii daraus macht
+    c.reduce,                           # was reduce daraus macht
     UnicodeUtils.char_type(c)
     
     i+=1
@@ -293,7 +293,7 @@ if $0 == __FILE__ then
   see "Überprüfe TR_FULL"
   see "================="
   see  
-  see "Nr", "Dup if <>0", "Trivial?", "Hex Code", "Character", "reduce94", "to_ascii", "Klassifizierung"  
+  see "Nr", "Dup if <>0", "Trivial?", "Hex Code", "Character", "reduce94", "reduce", "Klassifizierung"  
   i = 0
   all = ""  
   #TR_FULL_TO_ASCII.each_char do |c|
@@ -305,7 +305,7 @@ if $0 == __FILE__ then
     c.to_array_of_hex,                    # sein Code in HEX    
     c,                                    # das Zeichen
     c.reduce94,                           # was reduce94 daraus macht    
-    c.to_ascii,                           # was to_ascii daraus macht  
+    c.reduce,                           # was reduce daraus macht  
     UnicodeUtils.char_type(c)
     
     i+=1    

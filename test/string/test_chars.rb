@@ -44,7 +44,7 @@ class TestKyaniteStringChars < UnitTest
       assert_equal 0, all.to_a.to_set.size-i-1, "TR_FULL: Dup in Zeichen Nr. #{i} Zeichen #{c} >> #{r}"  
       assert c.to_array_of_codepoints[0] > 127, "TR_FULL: Trivialität in Zeichen Nr. #{i} Zeichen #{c} >> #{r}"  
       assert r.to_array_of_codepoints[0] <= 127, "TR_FULL: Zeichen Nr. #{i} Zeichen #{c} >> #{r} wird nicht in ASCII umgesetzt"        
-      assert_equal c.reduce94, c.to_ascii[0]     
+      assert_equal c.reduce94, c.reduce[0]     
       i+=1
     end
   end  
@@ -87,7 +87,7 @@ class TestKyaniteStringChars < UnitTest
     full    = 'ªàáâăãāåạąảấầắằÀÁÂĂÃĀÅẠĄẢẤẦẮẰ'
     reduced = 'aaaaaaaaaaaaaaaAAAAAAAAAAAAAA' 
     assert_equal reduced,       full.reduce94      
-    assert_equal reduced,       full.to_ascii      
+    assert_equal reduced,       full.reduce      
   end
   
   def test_to_ascii_b
@@ -95,7 +95,7 @@ class TestKyaniteStringChars < UnitTest
     reduced1 =  'cccccCCCCCdDeeeeeeeeeeEEEEEEEEEE'  
     reduced2 =  'ccccchCCCCChdDeeeeeeeeeeEEEEEEEEEE'
     assert_equal reduced1,       full.reduce94  
-    assert_equal reduced2,       full.to_ascii  
+    assert_equal reduced2,       full.reduce  
   end  
   
   def test_to_ascii_c
@@ -103,14 +103,14 @@ class TestKyaniteStringChars < UnitTest
     reduced1 =  'ggggGGGGhHiiiiiiiiIIIIIIIIIjJkKllllLLLL'  
     reduced2 =  'ggghgGGGhGhHiiiiiiiiIIIIIIIIIjJkKllllLLLL'
     assert_equal reduced1,       full.reduce94  
-    assert_equal reduced2,       full.to_ascii      
+    assert_equal reduced2,       full.reduce      
   end    
   
   def test_to_ascii_e
     full    = 'ńňñņŉŃŇÑŅòóôŏõōőơÒÓÔŎÕŌŐƠ'
     reduced = 'nnnnnNNNNooooooooOOOOOOOO' 
     assert_equal reduced,       full.reduce94  
-    assert_equal reduced,       full.to_ascii      
+    assert_equal reduced,       full.reduce      
   end      
   
   def test_to_ascii_f
@@ -118,24 +118,24 @@ class TestKyaniteStringChars < UnitTest
     reduced1 =  'rrrRRRssssSSSSttTTuuuuuuuuuuUUUUUUUUUUwWyyyYYYzzzZZZ'  
     reduced2 =  'rrrRRRssshsSSShSttTTuuuuuuuuuuUUUUUUUUUUwWyyyYYYzzzhZZZh' 
     assert_equal reduced1,       full.reduce94  
-    assert_equal reduced2,       full.to_ascii      
+    assert_equal reduced2,       full.reduce      
   end    
   
   def test_to_ascii_zusammengesetzt
     full    = 'ĳĲſ…'
     reduced = 'ijIJs...'  
-    assert_equal reduced,       full.to_ascii      
+    assert_equal reduced,       full.reduce      
   end    
   
   def test_to_ascii_same_same
     same_same    = '^!"$%&/()=?@*+~#<>|,;:.-_ {[]}\\'
-    assert_equal same_same,     same_same.to_ascii 
+    assert_equal same_same,     same_same.reduce 
     same_same    = "'0123456789"
-    assert_equal same_same,     same_same.to_ascii  
+    assert_equal same_same,     same_same.reduce  
     same_same    = 'abcdefghijklmnopqrstuvwxyz'
-    assert_equal same_same,     same_same.to_ascii  
+    assert_equal same_same,     same_same.reduce  
     same_same    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    assert_equal same_same,     same_same.to_ascii     
+    assert_equal same_same,     same_same.reduce     
   end
   
   
@@ -143,7 +143,7 @@ class TestKyaniteStringChars < UnitTest
     full = '¯¨'
     reduced = ' ' * full.length
     assert_equal 2,             full.length
-    assert_equal reduced,       full.to_ascii    
+    assert_equal reduced,       full.reduce    
   end
   
   def test_to_ascii_s
@@ -155,27 +155,61 @@ class TestKyaniteStringChars < UnitTest
     reduced1 = "sOUAoua"
     reduced2 = "ffiIX235EURssOeUeAeoeueae"
     assert_equal reduced1,       full.reduce94      
-    assert_equal reduced2,       full.to_ascii      
+    assert_equal reduced2,       full.reduce      
   end
   
   def test_LANG_SPECIAL_CHARS
     LANG_SPECIAL_CHARS .each do | lang, (full, reduced) |
-      #see lang, full, reduced, full.to_ascii, full.reduce94
-      assert_equal reduced,       full.to_ascii       
+      #see lang, full, reduced, full.reduce, full.reduce94
+      assert_equal reduced,       full.reduce       
     end  
   end
   
   def test_spaces
     spaces =  "\u0020\u00a0\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u202f\u205f\u3000\u2420\u2423"
-    assert_equal spaces.to_ascii, " " * spaces.length
+    assert_equal spaces.reduce, " " * spaces.length
     assert_equal spaces.reduce94, " " * spaces.length
   end
   
   
   def test_minus_signs
     minus = "\u00ac\u2212\u2010\u2011\u2012\u2013\u2014\u2015\u2500"
-    assert_equal minus.to_ascii, "-" * minus.length
+    assert_equal minus.reduce, "-" * minus.length
     #assert_equal spaces.reduce94, " " * spaces.length    
+  end
+  
+  
+  def test_preserve
+          # 0123456789012345678901234567890123456789
+    test = "ßàáâăäãāāāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰćĉčçċĆĈČÇĊďðđĎÐĐèéêěĕëēėęếÈÉÊĚĔËĒĖĘẾĝğġģĜĞĠĢĥħĤĦìíîĭïĩīıįĳÌÍÎĬÏĨĪİĮĲĵĴķĶĺľłļŀĹĽŁĻĿńňñņŉŋŃŇÑŅŊòóôŏöõōøőơœÒÓÔŎÖÕŌØŐƠŒŕřŗŔŘŖśŝšßşŚŜŠŞţťŧþŢŤŦÞùúûŭüũūůűųưÙÚÛŬÜŨŪŮŰŲƯŵŴýŷÿÝŶŸźżžŹŻŽ"
+    belassen = test[10..27]
+    exp = "ssaaaaaeaaaaåạąæảấầắằÀÁÂĂÄÃĀÅẠAAEAAAAAccccchCCCCChdddDDDeeeeeeeeeeEEEEEEEEEEggghgGGGhGhhHHiiiiiiiiiijIIIIIIIIIIJjJkKlllllLLLLLnnnnnnjNNNNNJoooooeooooooeOOOOOeOOOOOOErrrRRRssshsssSSShSttttTTTTuuuuueuuuuuuUUUUUeUUUUUUwWyyyYYYzzzhZZZh"
+    assert_equal exp, test.reduce(:preserve => belassen)
+    assert_raise ArgumentError do
+      belassen = test[10..28] 
+      test.reduce(:preserve => belassen) 
+    end
+    test = "Háâaäãaållo\nWelt"
+    assert_equal "Haaaäaaallo\nWelt", test.reduce( :preserve =>"äöüßÄÖÜ" )
+
+  end
+  
+  
+  
+  def test_examples
+    assert_equal "Celine hoeren",       "Céline hören".reduce
+    assert_equal "AeOeUeaeoeuess",      "ÄÖÜäöüß".reduce
+    assert_equal "Celine hören 10EUR",  "Céline hören 10€".reduce( :preserve => "ÄÖÜäöüß")
+    assert_equal "Celine hören 10€",    "Céline hören 10€".reduce( :preserve => "ÄÖÜäöüß€", :fast => true)
+    assert_equal "AOUaous",             "ÄÖÜäöüß€".reduce( :fast => true ) 
+  end
+  
+  
+  def test_newlines_and_nonprintables
+    test = "Céli\x00ne\nhöre\x0c\x0e\x0fn"
+    assert_equal "Celine\nhören",      test.reduce( :preserve => "ÄÖÜäöüß")
+    assert_equal "Celine\nhoeren",     test.reduce
+    assert_equal "Celine\nhoren",      test.reduce(:fast => true )
   end
   
 
@@ -247,13 +281,7 @@ ENDOFSTRING
     assert_equal 'SCHEIZE',   'Scheiße'.reduce53(:german_sz => 'z')
     assert_equal 'SCHEIZE',   'Scheiße'.reduce53(:german_sz => 'Z')
     assert_equal 'SCHEISSE',  'Scheiße'.reduce53(:german_sz => 'SS')
-    
-    # geht vielleicht in Ruby 1.9
-    assert_equal 'Scheize',   'Scheiße'.reduce94(:german_sz => 'z')
-    assert_equal 'ScheiZe',   'Scheiße'.reduce94(:german_sz => 'Z')
-    assert_equal 'Scheisse',  'Scheiße'.reduce94(:german_sz => 'ss')    
-    assert_equal 'Schei$e',   'Scheiße'.reduce94(:german_sz => '$')      
-    assert_equal 'Schei$e',   'Schei$e'.reduce94    
+    assert_equal 'Scheiß Arsche',   'Scheiß Ärsche'.reduce94(:preserve => 'ß')
   end  
   
   

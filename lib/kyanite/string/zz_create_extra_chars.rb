@@ -13,17 +13,34 @@ require 'kyanite/hash'
 
 
 # leerzeichen= "\u0020"
-# see leerzeichen.to_ascii.to_array_of_hex, leerzeichen.reduce94.to_array_of_hex
+# see leerzeichen.reduce.to_array_of_hex, leerzeichen.reduce94.to_array_of_hex
+
+auslagerung = "\ue000-\uf8ff"
+
+result = "HalloßàáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰćĉčçċĆĈČÇĊß"
+#see result.reduce(:preserve => "Äß")
+
+result.tr!("Äß", auslagerung)
+result = result.reduce
+result.tr!(auslagerung, "Äß")
+#see result
+#see result
 
 
 
     full = <<ENDOFSTRING
-àáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰćĉčçċĆĈČÇĊďðđĎÐĐèéêěĕëēėęếÈÉÊĚĔËĒĖĘẾĝğġģĜĞĠĢĥħĤĦìíîĭïĩīıįĳÌÍÎĬÏĨĪİĮĲĵĴķĶĺľłļŀĹĽŁĻĿńňñņŉŋŃŇÑŅŊòóôŏöõōøőơœÒÓÔŎÖÕŌØŐƠŒŕřŗŔŘŖśŝšßşŚŜŠŞţťŧþŢŤŦÞùúûŭüũūůűųưÙÚÛŬÜŨŪŮŰŲƯŵŴýŷÿÝŶŸźżžŹŻŽ
+ßàáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰćĉčçċĆĈČÇĊďðđĎÐĐèéêěĕëēėęếÈÉÊĚĔËĒĖĘẾĝğġģĜĞĠĢĥħĤĦìíîĭïĩīıįĳÌÍÎĬÏĨĪİĮĲĵĴķĶĺľłļŀĹĽŁĻĿńňñņŉŋŃŇÑŅŊòóôŏöõōøőơœÒÓÔŎÖÕŌØŐƠŒŕřŗŔŘŖśŝšßşŚŜŠŞţťŧþŢŤŦÞùúûŭüũūůűųưÙÚÛŬÜŨŪŮŰŲƯŵŴýŷÿÝŶŸźżžŹŻŽ
 ENDOFSTRING
 see
+result = ""
 10000.times do
-  full.to_ascii
+  #result = full.reduce94
+  result = full.reduce(  )
+  
+
+  
 end
+#see result
 see seee.bench
 
 
@@ -33,12 +50,12 @@ see seee.bench
 
 
 full = %q{≺≻≪≫}  
-see full
+#see full
 
 i = 0
-see "Nr", "Char", "to_ascii", "reduce", "Hex Char",  "Hex to_ascii", "Hex reduce"
+see "Nr", "Char", "reduce", "reduce", "Hex Char",  "Hex reduce", "Hex reduce"
 full.each_char do |c|
-  see i, c, c.to_ascii, c.reduce94, c.to_array_of_hex, c.to_ascii.to_array_of_hex, c.reduce94.to_array_of_hex
+  see i, c, c.reduce, c.reduce94, c.to_array_of_hex, c.reduce.to_array_of_hex, c.reduce94.to_array_of_hex
   i += 1
 end  
 see    

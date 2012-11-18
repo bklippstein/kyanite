@@ -45,56 +45,75 @@ class String
     end    
     
     
-    # Reduces the string to a ASCII encoding. Example:
+    # Reduces a rich unicode string to a very limited character set like humans do. Example:
+    #  "Céline hören".reduce
+    #  => "Celine hoeren"
+    #
+    # Handles all characters from ISO/IEC 8859-1 and CP1252
+    # like humans do, not just deleting the accents. 
+    # So it's not a 1:1 translation, some unicode characters are translated to 
+    # multible characters. Example:
+    #  "ÄÖÜäöüß".reduce
+    #  => "AeOeUeaeoeuess"    
+    #
+    # For many unicode characters, this behaviour is based on +UnicodeUtils.nfkd+. Example:
     #  ffi = "\uFB03"
     #  ix = "\u2168"
     #  high23="²³"
     #  high5 = "\u2075"
     #  all = ffi + ix + high23 + high5 
-    #  all.to_ascii
+    #  all.reduce
     #  => "ffiIX235"
     # 
-    # Based on +UnicodeUtils.nfkd+, but handles all characters from ISO/IEC 8859-1 and CP1252
-    # like humans do, not just deleting the accents. Example:
-    #  "ÄÖÜäöüß".to_ascii
-    #  => "AeOeUeaeoeuess"
+    # You can preserve some characters, e.g. all special characters of a specific language. Example:
+    #  "Céline hören 10€".reduce( :preserve => "ÄÖÜäöüß")
+    #  => "Celine hören 10EUR"
     #
-    # 1. Converts ÄÖÜäöüßàáâăäãāåạąæảấầắằ etc. to AeOeUeaeoeuessaaaaaaaaaaaaaaaa.
-    # 2. Then removes all non-Ascii-chars.
-    # 3. Then removes all non-printable Ascii-chars.
-    # 4. Caution: Also Newlines are removed.    
-    # About 10 times slower than {#reduce94 reduce94}, but more accurate.     
+    # Newlines are preserved by default, but all other nonprintable ascii characters below \\x20 are removed.
+    #
+    # There is also a fast mode. It's about 10 times faster, but it supports only 1:1 translation.
+    #  "Céline hören 10€".reduce( :preserve => "ÄÖÜäöüß€", :fast => true )
+    #  => "Celine hören 10€"   
+    #
+    #  "ÄÖÜäöüß€".reduce( :fast => true ) 
+    #  => "AOUaous"        
     # 
-    def to_ascii
-      result = self.to_ascii_extra_chars 
-      result.tr!(TR_FULL, TR_REDUCED)     # not necessary, only for performance 
-      return UnicodeUtils.nfkd(result).delete('^ -~') # delete is faster than gsub
+    # Your result will only contain these characters:
+    # * printable letters and basic symbols of the 7bit ASCII charset (\\x20..\\x7e)
+    # * preserved characters as defined in the options (max 18)
+    # * newlines (\\x0a and \\x0d)
+    # 
+    # Options:
+    # [:preserve] Special characters to preserve. You can only preserve up to 18 characters.
+    # [:fast]     Fast mode, if true. About 10 times faster, but it supports only 1:1 translation.
+    # 
+    # @return [String]
+    def reduce( options ={} )
+      preserve = options[:preserve] || ''
+      raise ArgumentError, 'max preserve string length is 18 chars'   if preserve.length > 18 
+      
+      result = self.delete("\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0b\x0c\x0e-\x1f") 
+      result.tr!(preserve, "\x0e-\x1f")                               if preserve.length > 0
+      
+      result = result.to_ascii_extra_chars                            unless options[:fast]
+      result.tr!(TR_FULL, TR_REDUCED)     
+      result = UnicodeUtils.nfkd(result)                              unless options[:fast]
+      
+      result.delete!("^\x09-\x7e")          
+      result.tr!("\x0e-\x1f", preserve)                               if preserve.length > 0    
+      result
     end     
     
     
 
-    # Reduces the string to a base94 encoding.
-    # About 10 times faster than with +UnicodeUtils+.     
-    # 1. Converts àáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰ etc. to aaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAA.
-    # 2. Then removes all non-Ascii-chars.
-    # 3. Then removes all non-printable Ascii-chars.
-    # 4. Caution: Also Newlines are removed. 
-    #   
-    # See tests and examples {TestKyaniteStringChars#test_reduce94_a here}.
+    # @deprecated
     # @return [String]
     def reduce94( options={} )
-      dup.reduce94!(options)
+      reduce(  {:fast => true}.merge(options)  )
     end        
     
 
-    # In-place-variant of {#reduce94 reduce94}.   
-    # @return [String]
-    def reduce94!( options={} )       
-      self.gsub!( 'ß', options[:german_sz] )        if options[:german_sz]      
-      self.tr!(TR_FULL, TR_REDUCED)
-      self.delete!('^ -~')
-      self
-    end    
+
     
     # Reduziert den String auf ein Base53-Encoding, 
     # bestehend aus Großbuchstaben, Minuszeichen und zu Kleinbuchstaben umgeformten Sonderzeichen.

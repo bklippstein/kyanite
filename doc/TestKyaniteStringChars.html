@@ -181,6 +181,27 @@ scan, but includes the matches.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#test_examples-instance_method" title="#test_examples (instance method)">- (Object) <strong>test_examples</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#test_german_sz-instance_method" title="#test_german_sz (instance method)">- (Object) <strong>test_german_sz</strong> </a>
     
 
@@ -245,6 +266,48 @@ scan, but includes the matches.</p>
   <span class="summary_signature">
     
       <a href="#test_mysqlize-instance_method" title="#test_mysqlize (instance method)">- (Object) <strong>test_mysqlize</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_newlines_and_nonprintables-instance_method" title="#test_newlines_and_nonprintables (instance method)">- (Object) <strong>test_newlines_and_nonprintables</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_preserve-instance_method" title="#test_preserve (instance method)">- (Object) <strong>test_preserve</strong> </a>
     
 
     
@@ -805,15 +868,15 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-260
-261
-262
-263
-264
-265</pre>
+288
+289
+290
+291
+292
+293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_camelcase'>test_camelcase</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TUKTUK</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TukTuk</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce53'>reduce53</span>
@@ -841,18 +904,18 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-336
-337
-338
-339
-340
-341
-342
-343
-344</pre>
+364
+365
+366
+367
+368
+369
+370
+371
+372</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 336</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 364</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_capitalize'>test_capitalize</span>
   <span class='id identifier rubyid_test_down'>test_down</span> <span class='op'>=</span>       <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>äaoöuü</span><span class='tstring_end'>'</span></span>
@@ -905,22 +968,22 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333</pre>
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 321</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 349</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_capitalized?'>test_capitalized?</span>
   <span class='id identifier rubyid_assert'>assert</span> <span class='op'>!</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hallo</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_capitalized?'>capitalized?</span>
@@ -955,38 +1018,38 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318</pre>
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 290</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 318</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_downcase_upcase'>test_downcase_upcase</span>
   <span class='id identifier rubyid_test_down'>test_down</span> <span class='op'>=</span>       <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>àáâăäãāåạąảấầắằабćĉčçċцчďðđдèéêěĕëēėęếеэфĝğġģгĥħхìíîĭïĩīıįийĵюяķкĺľłļŀлмńňñņŋнòóôŏöõōøőơœопŕřŗрśŝšşсшщţťŧþтùúûŭüũūůűųưувŵýŷÿźżžжз</span><span class='tstring_end'>'</span></span>
@@ -1023,6 +1086,44 @@ scan, but includes the matches.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="test_examples-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>test_examples</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_examples'>test_examples</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Celine hoeren</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Céline hören</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AeOeUeaeoeuess</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ÄÖÜäöüß</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Celine hören 10EUR</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Céline hören 10€</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span> <span class='symbol'>:preserve</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ÄÖÜäöüß</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Celine hören 10€</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Céline hören 10€</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span> <span class='symbol'>:preserve</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ÄÖÜäöüß€</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:fast</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AOUaous</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>             <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ÄÖÜäöüß€</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span> <span class='symbol'>:fast</span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rparen'>)</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="test_german_sz-instance_method">
   
     - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>test_german_sz</strong> 
@@ -1037,27 +1138,21 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257</pre>
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 240</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 274</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_german_sz'>test_german_sz</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCHEIßE</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_upcase2'>upcase2</span>
@@ -1069,13 +1164,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCHEIZE</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce53'>reduce53</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>z</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCHEIZE</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce53'>reduce53</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Z</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCHEISSE</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce53'>reduce53</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-  
-  <span class='comment'># geht vielleicht in Ruby 1.9
-</span>  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheize</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>z</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ScheiZe</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Z</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheisse</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ss</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Schei$e</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiße</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='lparen'>(</span><span class='symbol'>:german_sz</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>$</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>      
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Schei$e</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Schei$e</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>    
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiß Arsche</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Scheiß Ärsche</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='lparen'>(</span><span class='symbol'>:preserve</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ß</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1109,8 +1198,8 @@ scan, but includes the matches.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_LANG_SPECIAL_CHARS'>test_LANG_SPECIAL_CHARS</span>
   <span class='const'>LANG_SPECIAL_CHARS</span> <span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_lang'>lang</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_full'>full</span><span class='comma'>,</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='rparen'>)</span> <span class='op'>|</span>
-    <span class='comment'>#see lang, full, reduced, full.to_ascii, full.reduce94
-</span>    <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>       
+    <span class='comment'>#see lang, full, reduced, full.reduce, full.reduce94
+</span>    <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>       
   <span class='kw'>end</span>  
 <span class='kw'>end</span></pre>
     </td>
@@ -1144,7 +1233,7 @@ scan, but includes the matches.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_minus_signs'>test_minus_signs</span>
   <span class='id identifier rubyid_minus'>minus</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\u00ac\u2212\u2010\u2011\u2012\u2013\u2014\u2015\u2500</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_minus'>minus</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_minus'>minus</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_minus'>minus</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_minus'>minus</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
   <span class='comment'>#assert_equal spaces.reduce94, &quot; &quot; * spaces.length    
 </span><span class='kw'>end</span></pre>
     </td>
@@ -1167,20 +1256,20 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279</pre>
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 297</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_mysqlize'>test_mysqlize</span>
   <span class='id identifier rubyid_test0'>test0</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>aaoouuß</span><span class='tstring_end'>'</span></span>  
@@ -1192,6 +1281,94 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_test0'>test0</span><span class='comma'>,</span>   <span class='id identifier rubyid_test1'>test1</span><span class='period'>.</span><span class='id identifier rubyid_mysqlize'>mysqlize</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_test0'>test0</span><span class='comma'>,</span>   <span class='id identifier rubyid_test2'>test2</span><span class='period'>.</span><span class='id identifier rubyid_mysqlize'>mysqlize</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_test0'>test0</span><span class='comma'>,</span>   <span class='id identifier rubyid_test3'>test3</span><span class='period'>.</span><span class='id identifier rubyid_mysqlize'>mysqlize</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_newlines_and_nonprintables-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>test_newlines_and_nonprintables</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+208
+209
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 208</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_newlines_and_nonprintables'>test_newlines_and_nonprintables</span>
+  <span class='id identifier rubyid_test'>test</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Céli\x00ne\nhöre\x0c\x0e\x0fn</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Celine\nhören</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>      <span class='id identifier rubyid_test'>test</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span> <span class='symbol'>:preserve</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ÄÖÜäöüß</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Celine\nhoeren</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>     <span class='id identifier rubyid_test'>test</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Celine\nhoren</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>      <span class='id identifier rubyid_test'>test</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:fast</span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_preserve-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>test_preserve</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 182</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_preserve'>test_preserve</span>
+        <span class='comment'># 0123456789012345678901234567890123456789
+</span>  <span class='id identifier rubyid_test'>test</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ßàáâăäãāāāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰćĉčçċĆĈČÇĊďðđĎÐĐèéêěĕëēėęếÈÉÊĚĔËĒĖĘẾĝğġģĜĞĠĢĥħĤĦìíîĭïĩīıįĳÌÍÎĬÏĨĪİĮĲĵĴķĶĺľłļŀĹĽŁĻĿńňñņŉŋŃŇÑŅŊòóôŏöõōøőơœÒÓÔŎÖÕŌØŐƠŒŕřŗŔŘŖśŝšßşŚŜŠŞţťŧþŢŤŦÞùúûŭüũūůűųưÙÚÛŬÜŨŪŮŰŲƯŵŴýŷÿÝŶŸźżžŹŻŽ</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_belassen'>belassen</span> <span class='op'>=</span> <span class='id identifier rubyid_test'>test</span><span class='lbracket'>[</span><span class='int'>10</span><span class='op'>..</span><span class='int'>27</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_exp'>exp</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ssaaaaaeaaaaåạąæảấầắằÀÁÂĂÄÃĀÅẠAAEAAAAAccccchCCCCChdddDDDeeeeeeeeeeEEEEEEEEEEggghgGGGhGhhHHiiiiiiiiiijIIIIIIIIIIJjJkKlllllLLLLLnnnnnnjNNNNNJoooooeooooooeOOOOOeOOOOOOErrrRRRssshsssSSShSttttTTTTuuuuueuuuuuuUUUUUeUUUUUUwWyyyYYYzzzhZZZh</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_exp'>exp</span><span class='comma'>,</span> <span class='id identifier rubyid_test'>test</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:preserve</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_belassen'>belassen</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assert_raise'>assert_raise</span> <span class='const'>ArgumentError</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_belassen'>belassen</span> <span class='op'>=</span> <span class='id identifier rubyid_test'>test</span><span class='lbracket'>[</span><span class='int'>10</span><span class='op'>..</span><span class='int'>28</span><span class='rbracket'>]</span> 
+    <span class='id identifier rubyid_test'>test</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:preserve</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_belassen'>belassen</span><span class='rparen'>)</span> 
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_test'>test</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Háâaäãaållo\nWelt</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Haaaäaaallo\nWelt</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_test'>test</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span> <span class='symbol'>:preserve</span> <span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>äöüßÄÖÜ</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span>
+
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1213,14 +1390,14 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-209
-210
-211
-212
-213</pre>
+243
+244
+245
+246
+247</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 209</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 243</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_reduce53_a'>test_reduce53_a</span>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>   ŕřŗŔŘŖśŝšßşŚŜ    ŠŞţťŧþŢŤŦÞùúûŭ   üũūůűųưÙÚÛ    ÜŨŪŮŰŲƯŵ   ŴýŷÿÝŶŸźżžŹŻŽ  </span><span class='tstring_end'>'</span></span>
@@ -1247,14 +1424,14 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-215
-216
-217
-218
-219</pre>
+249
+250
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 215</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 249</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_reduce53_b'>test_reduce53_b</span>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   h A-- $%$%--llo §-$\n$^°  </span><span class='tstring_end'>&quot;</span></span>
@@ -1281,14 +1458,14 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-221
-222
-223
-224
-225</pre>
+255
+256
+257
+258
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 255</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_reduce53_c'>test_reduce53_c</span>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   h A-- $%Ѥ%--llo\n §-$\n$^°  </span><span class='tstring_end'>&quot;</span></span>
@@ -1315,14 +1492,14 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-227
-228
-229
-230
-231</pre>
+261
+262
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 227</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 261</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_reduce53_d'>test_reduce53_d</span>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   h Ä-- $%Ѥ%--llo\n §-$\n$^°  </span><span class='tstring_end'>&quot;</span></span>
@@ -1349,14 +1526,14 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-233
-234
-235
-236
-237</pre>
+267
+268
+269
+270
+271</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_reduce53_e'>test_reduce53_e</span>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   h ä-- $%Ѥ%--llo\n §-$\n$^°  </span><span class='tstring_end'>&quot;</span></span>
@@ -1383,32 +1560,32 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206</pre>
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 184</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_reduce94_full'>test_reduce94_full</span>
   <span class='id identifier rubyid_full'>full</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;ENDOFSTRING</span>
@@ -1464,7 +1641,7 @@ scan, but includes the matches.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_spaces'>test_spaces</span>
   <span class='id identifier rubyid_spaces'>spaces</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\u0020\u00a0\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u202f\u205f\u3000\u2420\u2423</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_spaces'>spaces</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_spaces'>spaces</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_spaces'>spaces</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_spaces'>spaces</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_spaces'>spaces</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_spaces'>spaces</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1575,7 +1752,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ªàáâăãāåạąảấầắằÀÁÂĂÃĀÅẠĄẢẤẦẮẰ</span><span class='tstring_end'>'</span></span>
   <span class='id identifier rubyid_reduced'>reduced</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>aaaaaaaaaaaaaaaAAAAAAAAAAAAAA</span><span class='tstring_end'>'</span></span> 
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>      
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>      
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>      
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1613,7 +1790,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_reduced1'>reduced1</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cccccCCCCCdDeeeeeeeeeeEEEEEEEEEE</span><span class='tstring_end'>'</span></span>  
   <span class='id identifier rubyid_reduced2'>reduced2</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ccccchCCCCChdDeeeeeeeeeeEEEEEEEEEE</span><span class='tstring_end'>'</span></span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced1'>reduced1</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>  
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>  
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>  
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1651,7 +1828,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_reduced1'>reduced1</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ggggGGGGhHiiiiiiiiIIIIIIIIIjJkKllllLLLL</span><span class='tstring_end'>'</span></span>  
   <span class='id identifier rubyid_reduced2'>reduced2</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ggghgGGGhGhHiiiiiiiiIIIIIIIIIjJkKllllLLLL</span><span class='tstring_end'>'</span></span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced1'>reduced1</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>  
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>      
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>      
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1687,7 +1864,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ńňñņŉŃŇÑŅòóôŏõōőơÒÓÔŎÕŌŐƠ</span><span class='tstring_end'>'</span></span>
   <span class='id identifier rubyid_reduced'>reduced</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>nnnnnNNNNooooooooOOOOOOOO</span><span class='tstring_end'>'</span></span> 
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>  
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>      
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>      
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1725,7 +1902,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_reduced1'>reduced1</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rrrRRRssssSSSSttTTuuuuuuuuuuUUUUUUUUUUwWyyyYYYzzzZZZ</span><span class='tstring_end'>'</span></span>  
   <span class='id identifier rubyid_reduced2'>reduced2</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rrrRRRssshsSSShSttTTuuuuuuuuuuUUUUUUUUUUwWyyyYYYzzzhZZZh</span><span class='tstring_end'>'</span></span> 
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced1'>reduced1</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>  
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>      
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>      
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1771,7 +1948,7 @@ scan, but includes the matches.</p>
   <span class='id identifier rubyid_reduced1'>reduced1</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sOUAoua</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_reduced2'>reduced2</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ffiIX235EURssOeUeAeoeueae</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced1'>reduced1</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span>      
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>      
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced2'>reduced2</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>      
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1809,13 +1986,13 @@ scan, but includes the matches.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_to_ascii_same_same'>test_to_ascii_same_same</span>
   <span class='id identifier rubyid_same_same'>same_same</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>^!&quot;$%&amp;/()=?@*+~#&lt;&gt;|,;:.-_ {[]}\\</span><span class='tstring_end'>'</span></span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span> 
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span> 
   <span class='id identifier rubyid_same_same'>same_same</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>'0123456789</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>  
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>  
   <span class='id identifier rubyid_same_same'>same_same</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abcdefghijklmnopqrstuvwxyz</span><span class='tstring_end'>'</span></span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>  
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>  
   <span class='id identifier rubyid_same_same'>same_same</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><span class='tstring_end'>'</span></span>
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>     
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_same_same'>same_same</span><span class='comma'>,</span>     <span class='id identifier rubyid_same_same'>same_same</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>     
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1849,7 +2026,7 @@ scan, but includes the matches.</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_test_to_ascii_zusammengesetzt'>test_to_ascii_zusammengesetzt</span>
   <span class='id identifier rubyid_full'>full</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ĳĲſ…</span><span class='tstring_end'>'</span></span>
   <span class='id identifier rubyid_reduced'>reduced</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ijIJs...</span><span class='tstring_end'>'</span></span>  
-  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span>      
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_reduced'>reduced</span><span class='comma'>,</span>       <span class='id identifier rubyid_full'>full</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span>      
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1959,7 +2136,7 @@ scan, but includes the matches.</p>
 </span>    <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_to_set'>to_set</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='id identifier rubyid_i'>i</span><span class='op'>-</span><span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TR_FULL: Dup in Zeichen Nr. </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='rbrace'>}</span><span class='tstring_content'> Zeichen </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span><span class='tstring_content'> &gt;&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_r'>r</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>  
     <span class='id identifier rubyid_assert'>assert</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_to_array_of_codepoints'>to_array_of_codepoints</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='int'>127</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TR_FULL: Trivialität in Zeichen Nr. </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='rbrace'>}</span><span class='tstring_content'> Zeichen </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span><span class='tstring_content'> &gt;&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_r'>r</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>  
     <span class='id identifier rubyid_assert'>assert</span> <span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_to_array_of_codepoints'>to_array_of_codepoints</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>&lt;=</span> <span class='int'>127</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TR_FULL: Zeichen Nr. </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='rbrace'>}</span><span class='tstring_content'> Zeichen </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span><span class='tstring_content'> &gt;&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_r'>r</span><span class='rbrace'>}</span><span class='tstring_content'> wird nicht in ASCII umgesetzt</span><span class='tstring_end'>&quot;</span></span>        
-    <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii'>to_ascii</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>     
+    <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_reduce94'>reduce94</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>     
     <span class='id identifier rubyid_i'>i</span><span class='op'>+=</span><span class='int'>1</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -2035,12 +2212,12 @@ scan, but includes the matches.</p>
       <pre class="lines">
 
 
-347
-348
-349</pre>
+375
+376
+377</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 347</span>
+      <pre class="code"><span class="info file"># File 'test/string/test_chars.rb', line 375</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_utf8_size'>test_utf8_size</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>3</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Özi</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>   
@@ -2058,7 +2235,7 @@ scan, but includes the matches.</p>
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Sat Nov 17 01:22:46 2012 by
+      Generated on Sun Nov 18 01:11:30 2012 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 

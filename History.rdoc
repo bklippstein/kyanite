@@ -1,5 +1,5 @@
 == 0.8.0 2012-11-17
-* added String#to_ascii with human-like handling of unicode special characters
+* added String#reduce with human-like handling of unicode special characters
 
 == 0.7.5 2012-11-14
 * added FSymbol class

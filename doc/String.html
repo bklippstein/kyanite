@@ -589,6 +589,30 @@ strings.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#reduce-instance_method" title="#reduce (instance method)">- (String) <strong>reduce</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reduces a rich unicode string to a very limited character set like humans
+do.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#reduce53-instance_method" title="#reduce53 (instance method)">- (String) <strong>reduce53</strong>(options = {}) </a>
     
 
@@ -632,7 +656,7 @@ strings.</p>
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#reduce94-instance_method" title="#reduce94 (instance method)">- (String) <strong>reduce94</strong>(options = {}) </a>
@@ -641,39 +665,14 @@ strings.</p>
     
   </span>
   
-    <span class="summary_desc"><div class='inline'>
-<p>Reduces the string to a base94 encoding.</p>
-</div></span>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'></div></span>
     
   
   
   
   
   
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#reduce94%21-instance_method" title="#reduce94! (instance method)">- (String) <strong>reduce94!</strong>(options = {}) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>In-place-variant of <span class='object_link'><a href="#reduce94-instance_method" title="String#reduce94 (method)">reduce94</a></span>.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
+  <span class="deprecated note title">deprecated</span>
   
 </li>
 
@@ -734,29 +733,6 @@ strings.</p>
   </span>
   
     <span class="summary_desc"><div class='inline'></div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#to_ascii-instance_method" title="#to_ascii (instance method)">- (Object) <strong>to_ascii</strong> </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Reduces the string to a ASCII encoding.</p>
-</div></span>
     
   
   
@@ -1822,12 +1798,12 @@ german umlauts.</p>
       <pre class="lines">
 
 
-221
-222
-223</pre>
+240
+241
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 240</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_capitalize'>capitalize</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_slice'>slice</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_upcase2'>upcase2</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_slice'>slice</span><span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase2'>downcase2</span>
@@ -1877,12 +1853,12 @@ umlauts.</p>
       <pre class="lines">
 
 
-227
-228
-229</pre>
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 227</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_capitalized?'>capitalized?</span>
   <span class='kw'>self</span> <span class='op'>=~</span> <span class='const'>TR_UPCASE_ALL_REGEXP</span>
@@ -2288,12 +2264,12 @@ Active Support.)</p>
       <pre class="lines">
 
 
-193
-194
-195</pre>
+212
+213
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 193</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 212</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_downcase2'>downcase2</span> 
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_tr'>tr</span><span class='lparen'>(</span><span class='const'>TR_UPCASE</span><span class='comma'>,</span> <span class='const'>TR_DOWNCASE</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -2342,12 +2318,12 @@ Active Support.)</p>
       <pre class="lines">
 
 
-199
-200
-201</pre>
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 199</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_downcase2!'>downcase2!</span> 
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='const'>TR_UPCASE</span><span class='comma'>,</span> <span class='const'>TR_DOWNCASE</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase!'>downcase!</span>
@@ -2397,12 +2373,12 @@ umlauts.</p>
       <pre class="lines">
 
 
-237
-238
-239</pre>
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 237</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_downcase?'>downcase?</span>
   <span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span>
@@ -3626,12 +3602,12 @@ strings</p>
       <pre class="lines">
 
 
-165
-166
-167</pre>
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 165</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mysqlize'>mysqlize</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_mgsub'>mgsub</span><span class='lparen'>(</span><span class='const'>MYSQL_REPLACES</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -3999,6 +3975,156 @@ longest of the two original strings. If both had the same length, we get
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="reduce-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>) <strong>reduce</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reduces a rich unicode string to a very limited character set like humans
+do. Example:</p>
+
+<pre class="code ruby"><code>&quot;Céline hören&quot;.reduce
+=&gt; &quot;Celine hoeren&quot;</code></pre>
+
+<p>Handles all characters from ISO/IEC 8859-1 and CP1252 like humans do, not
+just deleting the accents.  So it’s not a 1:1 translation, some unicode
+characters are translated to  multible characters. Example:</p>
+
+<pre class="code ruby"><code>&quot;ÄÖÜäöüß&quot;.reduce
+=&gt; &quot;AeOeUeaeoeuess&quot;</code></pre>
+
+<p>For many unicode characters, this behaviour is based on
+<tt>UnicodeUtils.nfkd</tt>. Example:</p>
+
+<pre class="code ruby"><code>ffi = &quot;\uFB03&quot;
+ix = &quot;\u2168&quot;
+high23=&quot;²³&quot;
+high5 = &quot;\u2075&quot;
+all = ffi + ix + high23 + high5 
+all.reduce
+=&gt; &quot;ffiIX235&quot;</code></pre>
+
+<p>You can preserve some characters, e.g. all special characters of a specific
+language. Example:</p>
+
+<pre class="code ruby"><code>&quot;Céline hören 10€&quot;.reduce( :preserve =&gt; &quot;ÄÖÜäöüß&quot;)
+=&gt; &quot;Celine hören 10EUR&quot;</code></pre>
+
+<p>Newlines are preserved by default, but all other nonprintable ascii
+characters below \x20 are removed.</p>
+
+<p>There is also a fast mode. It’s about 10 times faster, but it supports only
+1:1 translation.</p>
+
+<pre class="code ruby"><code>&quot;Céline hören 10€&quot;.reduce( :preserve =&gt; &quot;ÄÖÜäöüß€&quot;, :fast =&gt; true )
+=&gt; &quot;Celine hören 10€&quot;   
+
+&quot;ÄÖÜäöüß€&quot;.reduce( :fast =&gt; true ) 
+=&gt; &quot;AOUaous&quot;</code></pre>
+
+<p>Your result will only contain these characters:</p>
+<ul><li>
+<p>printable letters and basic symbols of the 7bit ASCII charset (\x20..\x7e)</p>
+</li><li>
+<p>preserved characters as defined in the options (max 18)</p>
+</li><li>
+<p>newlines (\x0a and \x0d)</p>
+</li></ul>
+
+<p>Options:</p>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>:preserve
+<dd>
+<p>Special characters to preserve. You can only preserve up to 18 characters.</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:fast
+<dd>
+<p>Fast mode, if true. About 10 times faster, but it supports only 1:1
+translation.</p>
+</dd> </div></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 91</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_preserve'>preserve</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:preserve</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>max preserve string length is 18 chars</span><span class='tstring_end'>'</span></span>   <span class='kw'>if</span> <span class='id identifier rubyid_preserve'>preserve</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>18</span> 
+  
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0b\x0c\x0e-\x1f</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> 
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='id identifier rubyid_preserve'>preserve</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x0e-\x1f</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>                               <span class='kw'>if</span> <span class='id identifier rubyid_preserve'>preserve</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+  
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii_extra_chars'>to_ascii_extra_chars</span>                            <span class='kw'>unless</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fast</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='const'>TR_FULL</span><span class='comma'>,</span> <span class='const'>TR_REDUCED</span><span class='rparen'>)</span>     
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>UnicodeUtils</span><span class='period'>.</span><span class='id identifier rubyid_nfkd'>nfkd</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>                              <span class='kw'>unless</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fast</span><span class='rbracket'>]</span>
+  
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_delete!'>delete!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>^\x09-\x7e</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>          
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x0e-\x1f</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_preserve'>preserve</span><span class='rparen'>)</span>                               <span class='kw'>if</span> <span class='id identifier rubyid_preserve'>preserve</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>    
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="reduce53-instance_method">
   
     - (<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>) <strong>reduce53</strong>(options = {}) 
@@ -4051,12 +4177,12 @@ special characters.</p>
       <pre class="lines">
 
 
-116
-117
-118</pre>
+135
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reduce53'>reduce53</span><span class='lparen'>(</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
   <span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_reduce53!'>reduce53!</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -4105,31 +4231,31 @@ special characters.</p>
       <pre class="lines">
 
 
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
 142
 143
-144</pre>
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reduce53!'>reduce53!</span><span class='lparen'>(</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
 
@@ -4169,21 +4295,7 @@ special characters.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Reduces the string to a base94 encoding. About 10 times faster than with
-<tt>UnicodeUtils</tt>.</p>
-<ol><li>
-<p>Converts àáâăäãāåạąæảấầắằÀÁÂĂÄÃĀÅẠĄÆẢẤẦẮẰ etc. to
-aaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAA.</p>
-</li><li>
-<p>Then removes all non-Ascii-chars.</p>
-</li><li>
-<p>Then removes all non-printable Ascii-chars.</p>
-</li><li>
-<p>Caution: Also Newlines are removed.</p>
-</li></ol>
-
-<p>See tests and examples here.</p>
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'></div></div>
 
 
   </div>
@@ -4210,75 +4322,15 @@ aaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAA.</p>
       <pre class="lines">
 
 
-85
-86
-87</pre>
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reduce94'>reduce94</span><span class='lparen'>(</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rparen'>)</span>
-  <span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_reduce94!'>reduce94!</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="reduce94!-instance_method">
-  
-    - (<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>) <strong>reduce94!</strong>(options = {}) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>In-place-variant of <span class='object_link'><a href="#reduce94-instance_method" title="String#reduce94 (method)">reduce94</a></span>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="String (class)">String</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-92
-93
-94
-95
-96
-97</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 92</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_reduce94!'>reduce94!</span><span class='lparen'>(</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rparen'>)</span>       
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gsub!'>gsub!</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ß</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:german_sz</span><span class='rbracket'>]</span> <span class='rparen'>)</span>        <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:german_sz</span><span class='rbracket'>]</span>      
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='const'>TR_FULL</span><span class='comma'>,</span> <span class='const'>TR_REDUCED</span><span class='rparen'>)</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_delete!'>delete!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>^ -~</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-  <span class='kw'>self</span>
+  <span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span>  <span class='lbrace'>{</span><span class='symbol'>:fast</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4787,77 +4839,6 @@ only with positive integers. Example:</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_to_array_of_hex'>to_array_of_hex</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>U</span><span class='tstring_end'>'</span></span><span class='op'>*</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='int'>16</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="to_ascii-instance_method">
-  
-    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_ascii</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Reduces the string to a ASCII encoding. Example:</p>
-
-<pre class="code ruby"><code>ffi = &quot;\uFB03&quot;
-ix = &quot;\u2168&quot;
-high23=&quot;²³&quot;
-high5 = &quot;\u2075&quot;
-all = ffi + ix + high23 + high5 
-all.to_ascii
-=&gt; &quot;ffiIX235&quot;</code></pre>
-
-<p>Based on <tt>UnicodeUtils.nfkd</tt>, but handles all characters from
-ISO/IEC 8859-1 and CP1252 like humans do, not just deleting the accents.
-Example:</p>
-
-<pre class="code ruby"><code>&quot;ÄÖÜäöüß&quot;.to_ascii
-=&gt; &quot;AeOeUeaeoeuess&quot;</code></pre>
-<ol><li>
-<p>Converts ÄÖÜäöüßàáâăäãāåạąæảấầắằ etc. to AeOeUeaeoeuessaaaaaaaaaaaaaaaa.</p>
-</li><li>
-<p>Then removes all non-Ascii-chars.</p>
-</li><li>
-<p>Then removes all non-printable Ascii-chars.</p>
-</li><li>
-<p>Caution: Also Newlines are removed.</p>
-</li></ol>
-
-<p>About 10 times slower than <span class='object_link'><a href="#reduce94-instance_method" title="String#reduce94 (method)">reduce94</a></span>, but more accurate.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-68
-69
-70
-71
-72</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 68</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_to_ascii'>to_ascii</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_ascii_extra_chars'>to_ascii_extra_chars</span> 
-  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='const'>TR_FULL</span><span class='comma'>,</span> <span class='const'>TR_REDUCED</span><span class='rparen'>)</span>     <span class='comment'># not necessary, only for performance 
-</span>  <span class='kw'>return</span> <span class='const'>UnicodeUtils</span><span class='period'>.</span><span class='id identifier rubyid_nfkd'>nfkd</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>^ -~</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='comment'># delete is faster than gsub
-</span><span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -5409,12 +5390,12 @@ Active Support.)</p>
       <pre class="lines">
 
 
-209
-210
-211</pre>
+228
+229
+230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 209</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_upcase2'>upcase2</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_tr'>tr</span><span class='lparen'>(</span><span class='const'>TR_DOWNCASE</span><span class='comma'>,</span> <span class='const'>TR_UPCASE</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
@@ -5463,12 +5444,12 @@ Active Support.)</p>
       <pre class="lines">
 
 
-215
-216
-217</pre>
+234
+235
+236</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 215</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 234</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_upcase2!'>upcase2!</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_tr!'>tr!</span><span class='lparen'>(</span><span class='const'>TR_DOWNCASE</span><span class='comma'>,</span> <span class='const'>TR_UPCASE</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_upcase!'>upcase!</span>
@@ -5517,12 +5498,12 @@ Active Support.)</p>
       <pre class="lines">
 
 
-232
-233
-234</pre>
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 251</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_upcase?'>upcase?</span>
   <span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span>
@@ -5601,7 +5582,7 @@ periods.    See tests and examples
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Sat Nov 17 01:22:45 2012 by
+      Generated on Sun Nov 18 01:11:29 2012 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 
