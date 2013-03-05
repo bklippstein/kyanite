@@ -6,7 +6,7 @@
 <title>
   Class: CallerUtils
   
-    &mdash; Documentation by YARD 0.8.3
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -214,7 +214,7 @@
 <p>Examines the call stack, returns the size of the stack, or the last caller.
 Example:</p>
 
-<pre class="code ruby"><code>CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit']) 
+<pre class="code ruby"><code class="ruby">CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit']) 
 =&gt; &quot;C:/Ruby-Projekte/kyanite/lib/kyanite/general/callerutils.rb:110:in `&lt;main&gt;'&quot;
 
 CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit'], :mode=&gt; :size) 
@@ -377,7 +377,7 @@ the caller, <tt>:size</tt> returns the size of the call stack.</p>
 <p>Determines the root directory of a caller on heuristic way. The name of the
 main directory is usually the name of the application or library. Example:</p>
 
-<pre class="code ruby"><code>my_caller  = CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit']) 
+<pre class="code ruby"><code class="ruby">my_caller  = CallerUtils.mycaller(:skip =&gt; ['ruby\gems', 'ruby/gems', 'test/unit']) 
 CallerUtils.mycaller_maindir(my_caller)           
 =&gt; &quot;C:/Ruby-Projekte/kyanite&quot;</code></pre>
 
@@ -481,8 +481,8 @@ CallerUtils.mycaller_maindir(my_caller)
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Sun Nov 18 01:11:30 2012 by
-<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+      Generated on Tue Mar  5 09:37:18 2013 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.5.2
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 
         target="_parent">

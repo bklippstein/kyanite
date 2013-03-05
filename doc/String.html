@@ -6,7 +6,7 @@
 <title>
   Class: String
   
-    &mdash; Documentation by YARD 0.8.3
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -1495,7 +1495,7 @@ periods.</p>
     
 <p>Generates a random string.  Example:</p>
 
-<pre class="code ruby"><code>String.random( :de, 20)
+<pre class="code ruby"><code class="ruby">String.random( :de, 20)
 =&gt; brräbkpßrdirnenshrnh
 
 String.random( :en, 20)
@@ -1610,7 +1610,7 @@ String.random( :password, 20)
     
 <p>Returns the matching opposite bracket. Examples:</p>
 
-<pre class="code ruby"><code>'('.anti          -&gt;  ')'
+<pre class="code ruby"><code class="ruby">'('.anti          -&gt;  ')'
 '{'.anti          -&gt;  '}'
 ']'.anti          -&gt;  '['
 '&lt;hallo&gt;'.anti    -&gt;  '&lt;/hallo&gt;'
@@ -1702,7 +1702,7 @@ converting paths to namespaces.</p>
 
 <p>Examples:</p>
 
-<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active_record</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_camelize'>camelize</span>                <span class='comment'># =&gt; &quot;ActiveRecord&quot;
+<pre class="code ruby"><code class="ruby"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active_record</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_camelize'>camelize</span>                <span class='comment'># =&gt; &quot;ActiveRecord&quot;
 </span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active_record</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_camelize'>camelize</span><span class='lparen'>(</span><span class='symbol'>:lower</span><span class='rparen'>)</span>        <span class='comment'># =&gt; &quot;activeRecord&quot;
 </span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active_record/errors</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_camelize'>camelize</span>         <span class='comment'># =&gt; &quot;ActiveRecord::Errors&quot;
 </span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active_record/errors</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_camelize'>camelize</span><span class='lparen'>(</span><span class='symbol'>:lower</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;activeRecord::Errors&quot;</span></code></pre>
@@ -1882,14 +1882,14 @@ umlauts.</p>
     
 <p>Tries to find a constant with the name specified in the argument string:</p>
 
-<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Module</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_constantize'>constantize</span>     <span class='comment'># =&gt; Module
+<pre class="code ruby"><code class="ruby"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Module</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_constantize'>constantize</span>     <span class='comment'># =&gt; Module
 </span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test::Unit</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_constantize'>constantize</span> <span class='comment'># =&gt; Test::Unit</span></code></pre>
 
 <p>The name is assumed to be the one of a top-level constant, no matter
 whether it starts with "::" or not. No lexical context is taken into
 account:</p>
 
-<pre class="code ruby"><code><span class='const'>C</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>outside</span><span class='tstring_end'>'</span></span>
+<pre class="code ruby"><code class="ruby"><span class='const'>C</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>outside</span><span class='tstring_end'>'</span></span>
 <span class='kw'>module</span> <span class='const'>M</span>
   <span class='const'>C</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>inside</span><span class='tstring_end'>'</span></span>
   <span class='const'>C</span>               <span class='comment'># =&gt; 'inside'
@@ -2025,7 +2025,7 @@ See License.txt.</p>
     
 <p>Cuts a string to a maximal length. Example.:</p>
 
-<pre class="code ruby"><code>'Hello'.cut(3) =&gt; 'Hel'</code></pre>
+<pre class="code ruby"><code class="ruby">'Hello'.cut(3) =&gt; 'Hel'</code></pre>
 
 <p>See tests and examples <span class='object_link'><a href="TestKyaniteStringSplit.html#test_cut-instance_method" title="TestKyaniteStringSplit#test_cut (method)">here</a></span>.</p>
 
@@ -2092,7 +2092,7 @@ See License.txt.</p>
 
 <p>Examples:</p>
 
-<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord::CoreExtensions::String::Inflections</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_demodulize'>demodulize</span> <span class='comment'># =&gt; &quot;Inflections&quot;
+<pre class="code ruby"><code class="ruby"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord::CoreExtensions::String::Inflections</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_demodulize'>demodulize</span> <span class='comment'># =&gt; &quot;Inflections&quot;
 </span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Inflections</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_demodulize'>demodulize</span>                                       <span class='comment'># =&gt; &quot;Inflections&quot;</span></code></pre>
 
 <p>From ActiveSupport, Copyright (c) 2005 David Heinemeier Hansson. See
@@ -2152,7 +2152,7 @@ License.txt.</p>
     
 <p>Returns the differencing part of two strings. Example:</p>
 
-<pre class="code ruby"><code>&quot;Hello darling&quot;.diff(&quot;Hello&quot;) 
+<pre class="code ruby"><code class="ruby">&quot;Hello darling&quot;.diff(&quot;Hello&quot;) 
 =&gt; &quot; darling&quot;</code></pre>
 
 <p>When in doubt, the longest differencing string. If there is still doubt,
@@ -2456,7 +2456,7 @@ umlauts.</p>
     
 <p>Extracts a substring using two regular expressions. Example:</p>
 
-<pre class="code ruby"><code>string = '&lt;select id=&quot;hello&quot;&gt;&lt;option value=&quot;0&quot;&gt;none&lt;/option&gt;&lt;/select&gt;'
+<pre class="code ruby"><code class="ruby">string = '&lt;select id=&quot;hello&quot;&gt;&lt;option value=&quot;0&quot;&gt;none&lt;/option&gt;&lt;/select&gt;'
 string.extract(  /select.*?id=&quot;/  ,  '&quot;'  )  =&gt;  'hello'</code></pre>
 
 <p>See tests and examples <span class='object_link'><a href="TestKyaniteStringSplit.html#test_extract-instance_method" title="TestKyaniteStringSplit#test_extract (method)">here</a></span>.</p>
@@ -2782,7 +2782,7 @@ false+</p>
     
 <p>Returns the positions of the next bracket pair. Example:</p>
 
-<pre class="code ruby"><code>'Hello(welt)wort'.index_bracket  -&gt;  5..10</code></pre>
+<pre class="code ruby"><code class="ruby">'Hello(welt)wort'.index_bracket  -&gt;  5..10</code></pre>
 
 <p>See tests and examples <span class='object_link'><a href="TestKyaniteStringNested.html#test_020_index_bracket-instance_method" title="TestKyaniteStringNested#test_020_index_bracket (method)">here</a></span>.</p>
 
@@ -3002,7 +3002,7 @@ false+</p>
 
 <p>Example:</p>
 
-<pre class="code ruby"><code>array = ['Anna','Birte','Charlie']
+<pre class="code ruby"><code class="ruby">array = ['Anna','Birte','Charlie']
 &quot;kisses_from = &quot;.list_with(array)
 =&gt; &quot;kisses_from = 'Anna' OR kisses_from = 'Birte' OR kisses_from = 'Charlie'&quot;</code></pre>
 
@@ -3524,7 +3524,7 @@ false+</p>
 <p>String substitution like <tt>gsub</tt>, but replaces multible patterns in
 one turn. Example:</p>
 
-<pre class="code ruby"><code>&quot;between&quot;.mgsub([[/ee/, 'II'], [/e/, 'E']])      
+<pre class="code ruby"><code class="ruby">&quot;between&quot;.mgsub([[/ee/, 'II'], [/e/, 'E']])      
 =&gt; &quot;bEtwIIn&quot;</code></pre>
 
 <p>Tests <span class='object_link'><a href="TestKyaniteStringMisc.html" title="TestKyaniteStringMisc (class)">here</a></span>.</p>
@@ -3636,7 +3636,7 @@ from the end of the string.</p>
 <p>Alternatively a replacement string can be given, which will replace the
 <em>n</em> characters.  Example:</p>
 
-<pre class="code ruby"><code>'abcde'.nchar(1)  =&gt;      'a'
+<pre class="code ruby"><code class="ruby">'abcde'.nchar(1)  =&gt;      'a'
 'abcde'.nchar(2)  =&gt;      'ab'
 'abcde'.nchar(3)  =&gt;      'abc'
 'abcde'.nchar(2,'')  =&gt;   'cde'</code></pre>
@@ -3830,7 +3830,7 @@ from the end of the string.</p>
     
 <p>Returns the mutual part of two strings. Example:</p>
 
-<pre class="code ruby"><code>&quot;Hello world&quot;.overlap(&quot;Hello darling&quot;) 
+<pre class="code ruby"><code class="ruby">&quot;Hello world&quot;.overlap(&quot;Hello darling&quot;) 
 =&gt; &quot;Hello&quot;</code></pre>
 
 <p>See more examples and tests <span class='object_link'><a href="TestKyaniteStringDiff.html#test_overlap-instance_method" title="TestKyaniteStringDiff#test_overlap (method)">here</a></span>.</p>
@@ -3989,20 +3989,20 @@ longest of the two original strings. If both had the same length, we get
 <p>Reduces a rich unicode string to a very limited character set like humans
 do. Example:</p>
 
-<pre class="code ruby"><code>&quot;Céline hören&quot;.reduce
+<pre class="code ruby"><code class="ruby">&quot;Céline hören&quot;.reduce
 =&gt; &quot;Celine hoeren&quot;</code></pre>
 
 <p>Handles all characters from ISO/IEC 8859-1 and CP1252 like humans do, not
 just deleting the accents.  So it’s not a 1:1 translation, some unicode
 characters are translated to  multible characters. Example:</p>
 
-<pre class="code ruby"><code>&quot;ÄÖÜäöüß&quot;.reduce
+<pre class="code ruby"><code class="ruby">&quot;ÄÖÜäöüß&quot;.reduce
 =&gt; &quot;AeOeUeaeoeuess&quot;</code></pre>
 
 <p>For many unicode characters, this behaviour is based on
 <tt>UnicodeUtils.nfkd</tt>. Example:</p>
 
-<pre class="code ruby"><code>ffi = &quot;\uFB03&quot;
+<pre class="code ruby"><code class="ruby">ffi = &quot;\uFB03&quot;
 ix = &quot;\u2168&quot;
 high23=&quot;²³&quot;
 high5 = &quot;\u2075&quot;
@@ -4013,7 +4013,7 @@ all.reduce
 <p>You can preserve some characters, e.g. all special characters of a specific
 language. Example:</p>
 
-<pre class="code ruby"><code>&quot;Céline hören 10€&quot;.reduce( :preserve =&gt; &quot;ÄÖÜäöüß&quot;)
+<pre class="code ruby"><code class="ruby">&quot;Céline hören 10€&quot;.reduce( :preserve =&gt; &quot;ÄÖÜäöüß&quot;)
 =&gt; &quot;Celine hören 10EUR&quot;</code></pre>
 
 <p>Newlines are preserved by default, but all other nonprintable ascii
@@ -4022,7 +4022,7 @@ characters below \x20 are removed.</p>
 <p>There is also a fast mode. It’s about 10 times faster, but it supports only
 1:1 translation.</p>
 
-<pre class="code ruby"><code>&quot;Céline hören 10€&quot;.reduce( :preserve =&gt; &quot;ÄÖÜäöüß€&quot;, :fast =&gt; true )
+<pre class="code ruby"><code class="ruby">&quot;Céline hören 10€&quot;.reduce( :preserve =&gt; &quot;ÄÖÜäöüß€&quot;, :fast =&gt; true )
 =&gt; &quot;Celine hören 10€&quot;   
 
 &quot;ÄÖÜäöüß€&quot;.reduce( :fast =&gt; true ) 
@@ -4351,7 +4351,7 @@ special characters.</p>
     
 <p>Reorder string in random order. Example:</p>
 
-<pre class="code ruby"><code>&quot;Random order&quot;.shuffle
+<pre class="code ruby"><code class="ruby">&quot;Random order&quot;.shuffle
 =&gt; &quot;oeo rdRdnmar&quot;</code></pre>
 
 
@@ -4555,14 +4555,14 @@ special characters.</p>
 <p>Separates a string into numeric and alphanumeric parts. Currently works
 only with positive integers. Example:</p>
 
-<pre class="code ruby"><code>'abc123'.split_numeric  &gt;&gt;  ['abc',123]   (Array)
+<pre class="code ruby"><code class="ruby">'abc123'.split_numeric  &gt;&gt;  ['abc',123]   (Array)
 '123abc'.split_numeric  &gt;&gt;  [123,'abc']   (Array)
 '123'.split_numeric     &gt;&gt;  123           (Integer)
 'abc'.split_numeric     &gt;&gt;  'abc'         (String)</code></pre>
 
 <p>It even works with more than two parts:</p>
 
-<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>123abc456</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_split_numeric'>split_numeric</span>  <span class='op'>&gt;&gt;</span>  <span class='lbracket'>[</span><span class='int'>123</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='int'>456</span><span class='rbracket'>]</span>
+<pre class="code ruby"><code class="ruby"><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>123abc456</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_split_numeric'>split_numeric</span>  <span class='op'>&gt;&gt;</span>  <span class='lbracket'>[</span><span class='int'>123</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='int'>456</span><span class='rbracket'>]</span>
 <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc123def</span><span class='tstring_end'>'</span></span><span class='period'>.</span><span class='id identifier rubyid_split_numeric'>split_numeric</span>  <span class='op'>&gt;&gt;</span>  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='int'>123</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>def</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span></code></pre>
 
 <p>See tests and examples <span class='object_link'><a href="TestKyaniteStringSplit.html#test_split_numeric-instance_method" title="TestKyaniteStringSplit#test_split_numeric (method)">here</a></span>.</p>
@@ -4924,7 +4924,7 @@ down_case.</p>
 <p>classes <span class='object_link'><a href="Class.html" title="Class (class)">Class</a></span>, <span class='object_link'><a href="Symbol.html" title="Symbol (class)">Symbol</a></span>, <span class='object_link'><a href="" title="String (class)">String</a></span>. The class name will contain only
 lowercase letters.</p>
 
-<pre class="code ruby"><code>'MyModul::MyClass'  =&gt;  'my_class'</code></pre>
+<pre class="code ruby"><code class="ruby">'MyModul::MyClass'  =&gt;  'my_class'</code></pre>
 
 <p>Tests and examples <span class='object_link'><a href="TestKyaniteClassutils.html" title="TestKyaniteClassutils (class)">here</a></span>.</p>
 
@@ -5293,7 +5293,7 @@ paths.</p>
 
 <p>Examples:</p>
 
-<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_underscore'>underscore</span>         <span class='comment'># =&gt; &quot;active_record&quot;
+<pre class="code ruby"><code class="ruby"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_underscore'>underscore</span>         <span class='comment'># =&gt; &quot;active_record&quot;
 </span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord::Errors</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_underscore'>underscore</span> <span class='comment'># =&gt; active_record/errors</span></code></pre>
 
 <p>From ActiveSupport, Copyright (c) 2005 David Heinemeier Hansson. See
@@ -5582,8 +5582,8 @@ periods.    See tests and examples
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Sun Nov 18 01:11:29 2012 by
-<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+      Generated on Tue Mar  5 09:37:17 2013 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.5.2
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 
         target="_parent">
