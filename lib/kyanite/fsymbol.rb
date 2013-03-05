@@ -27,7 +27,7 @@ class FSymbol
     
   
   def initialize( value, def_tree=nil)
-    raise ArgumentError, 'Value darf nicht nil sein!'       if value.nil?    
+    raise ArgumentError, 'First parameter (value) must not be nil!'       if value.nil?    
     @value = value    
     
     if @@instance_cache[value]
@@ -40,8 +40,9 @@ class FSymbol
     else
       @@def_tree_cache = def_tree
     end
+    raise ArgumentError, "FSymbol could not be created. No def_tree."                                 if def_tree.nil?     
     tree = def_tree.find(value) || nil
-    raise ArgumentError, "FSymbol konnte nicht erzeugt werden. Value :#{value} nicht im Definitionstree gefunden."       if tree.nil? 
+    raise ArgumentError, "FSymbol could not be created. Did not found value :#{value} in def_tree."   if tree.nil? 
     
     @childs = tree.all_child_keys    
     @@instance_cache[value] = self
