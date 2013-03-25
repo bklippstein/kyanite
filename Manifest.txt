@@ -1,10 +1,8 @@
-console.rb
 History.rdoc
 License.rdoc
 Manifest.txt
 README.rdoc
 Rakefile.rb
-init.rb
 version.rb
 lib/kyanite.rb
 lib/kyanite/_test_all.rb

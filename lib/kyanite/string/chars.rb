@@ -249,12 +249,12 @@ class String
 
     # Is the string upcase? Also works with special letters like german umlauts.    
     def upcase?
-      (self == self.upcase)
+      (self == self.upcase2)
     end
     
     # Is the string downcase? Also works with special letters like german umlauts.     
     def downcase?
-      (self == self.upcase)
+      (self == self.upcase2)
     end    
 
 end

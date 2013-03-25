@@ -105,7 +105,7 @@
     <div class="row">      
     <dt class="r2 last">Defined in</dt>
     <dd class="r2 last">lib/kyanite/string/misc.rb<span class="defines">,<br />
-  lib/kyanite/string/list.rb,<br /> lib/kyanite/string/cast.rb,<br /> lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/string/chars_const.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/enumerable/structure.rb</span>
+  lib/kyanite/string/list.rb,<br /> lib/kyanite/string/diff.rb,<br /> lib/kyanite/string/cast.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/string/split.rb,<br /> lib/kyanite/string/nested.rb,<br /> lib/kyanite/string/random.rb,<br /> lib/kyanite/string/include.rb,<br /> lib/kyanite/general/classutils.rb,<br /> lib/kyanite/string/chars_const.rb,<br /> lib/kyanite/enumerable/structure.rb</span>
 </dd>
     </div>     
    
@@ -212,6 +212,84 @@ scan, but includes the matches.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Returns SQL-RegExp for searching in Postgres comma-separated list.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Overlap / Diff
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the differencing part of two strings.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the mutual part of two strings.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="#diff-instance_method" title="String#diff (method)">diff</a></span> and <span class='object_link'><a href="#overlap-instance_method" title="String#overlap (method)">overlap</a></span> in one array.</p>
 </div></span>
     
   
@@ -463,84 +541,6 @@ anything.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Get a hex representation for a char.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
-      Overlap / Diff
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#diff-instance_method" title="#diff (instance method)">- (String) <strong>diff</strong>(b) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the differencing part of two strings.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#overlap-instance_method" title="#overlap (instance method)">- (String) <strong>overlap</strong>(b) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the mutual part of two strings.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#overlapdiff-instance_method" title="#overlapdiff (instance method)">- (Array) <strong>overlapdiff</strong>(b) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <span class='object_link'><a href="#diff-instance_method" title="String#diff (method)">diff</a></span> and <span class='object_link'><a href="#overlap-instance_method" title="String#overlap (method)">overlap</a></span> in one array.</p>
 </div></span>
     
   
@@ -1116,84 +1116,6 @@ periods.</p>
     </ul>
   
     <h2>
-      Random
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#random-class_method" title="random (class method)">+ (String) <strong>random</strong>(type = :en, size = 16) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Generates a random string.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#shuffle-instance_method" title="#shuffle (instance method)">- (String) <strong>shuffle</strong>(separator = //) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Reorder string in random order.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#shuffle%21-instance_method" title="#shuffle! (instance method)">- (String) <strong>shuffle!</strong>(separator = //) </a>
-    
-
-    
-  </span>
-  
-    <span class="summary_desc"><div class='inline'>
-<p>In-place-variant of <span class='object_link'><a href="#shuffle-instance_method" title="String#shuffle (method)"><tt>shuffle</tt></a></span>.</p>
-</div></span>
-    
-  
-  
-  
-  
-  
-  
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
       Nested
       <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
@@ -1280,6 +1202,84 @@ periods.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Returns the depth of nesting (number of nesting levels).</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Random
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#random-class_method" title="random (class method)">+ (String) <strong>random</strong>(type = :en, size = 16) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates a random string.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle-instance_method" title="#shuffle (instance method)">- (String) <strong>shuffle</strong>(separator = //) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reorder string in random order.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle%21-instance_method" title="#shuffle! (instance method)">- (String) <strong>shuffle!</strong>(separator = //) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In-place-variant of <span class='object_link'><a href="#shuffle-instance_method" title="String#shuffle (method)"><tt>shuffle</tt></a></span>.</p>
 </div></span>
     
   
@@ -2381,7 +2381,7 @@ umlauts.</p>
       <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_downcase?'>downcase?</span>
-  <span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upcase2'>upcase2</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5506,7 +5506,7 @@ Active Support.)</p>
       <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 251</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_upcase?'>upcase?</span>
-  <span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upcase2'>upcase2</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5582,7 +5582,7 @@ periods.    See tests and examples
     <div id="footer">      
       <div id="project-footer">
 </div>      
-      Generated on Tue Mar  5 09:37:17 2013 by
+      Generated on Mon Mar 25 12:20:26 2013 by
 <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.5.2
 with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
         title="Klippstein Template for Ruby YARD" 
