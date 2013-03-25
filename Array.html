@@ -1,0 +1,1317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Array
+  
+    &mdash; Documentation by YARD 0.8.5.2
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (A)</a> &raquo;
+    
+    
+    <span class="title">Array</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+      <div id="project-header">
+  
+</div>      
+    </div>
+    
+    <div id="body">    
+      <iframe id="search_frame"></iframe>
+      <div id="content"><h1>Class: Array
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <div class="row">
+      <dt class="r1">Inherits</dt>
+      <dd class="r1">
+        <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+        
+          <ul class="fullTree">
+            <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+            
+              <li class="next">Array</li>
+            
+          </ul>
+          <a href="#" class="inheritanceTree">show all</a>
+        
+      </dd>
+    </div>
+    
+  
+  
+    
+  
+    
+    <div class="row">    
+      <dt class="r2">Includes</dt>
+      <dd class="r2"><span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></dd>
+    </div>      
+      
+    
+  
+  
+  
+    <div class="row">      
+    <dt class="r1 last">Defined in</dt>
+    <dd class="r1 last">lib/kyanite/set.rb<span class="defines">,<br />
+  lib/kyanite/array.rb,<br /> lib/kyanite/dictionary.rb,<br /> lib/kyanite/string/chars.rb,<br /> lib/kyanite/enumerable/structure.rb,<br /> lib/kyanite/enumerable/enumerable_strings.rb,<br /> lib/kyanite/enumerable/enumerable_numerics.rb,<br /> lib/kyanite/enumerable/enumerable_enumerables.rb</span>
+</dd>
+    </div>     
+   
+</dl>
+<div class="clear"></div>
+
+<div class="box-additions">
+  <dl class="box">
+    <div class="row">     
+    <dt class="r1 last">Subclasses</dt>
+    <dd class="r1 last"><span class='object_link'><a href="ArrayOfEnumerables.html" title="ArrayOfEnumerables (class)">ArrayOfEnumerables</a></span>, <span class='object_link'><a href="ArrayOfNumerics.html" title="ArrayOfNumerics (class)">ArrayOfNumerics</a></span>, <span class='object_link'><a href="ArrayOfStrings.html" title="ArrayOfStrings (class)">ArrayOfStrings</a></span></dd>
+    </div>      
+  </dl>
+</div><div class="docstring">
+  <div class="discussion">
+    
+<h3>Array Additions</h3>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>Kyanite definitions
+<dd>
+<p><span class='object_link'><a href="" title="Array (class)">Array</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Kyanite tests and examples
+<dd>
+<p><span class='object_link'><a href="TestKyaniteArray.html" title="TestKyaniteArray (class)">TestKyaniteArray</a></span></p>
+</dd> </div><div class=rdoc-dl-row> <dt>Usage
+<dd>
+<p><tt>require ‘kyanite/array’</tt></p>
+</dd> </div></dl>
+
+<h3>Required from <a href="http://rubyworks.github.com/rubyfaux/?doc=http://rubyworks.github.com/facets/docs/facets-2.9.3/core.json#api-class-Array" target="_parent" title="Facets Array">Facets Array</a>:  </h3>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt><tt>delete_unless(&amp;amp;block)</tt>
+<dd>
+<p>Inverse of <tt>delete_if</tt></p>
+</dd> </div><div class=rdoc-dl-row> <dt><tt>delete_values(*values)</tt>
+<dd>
+<p>Delete multiple values from array (findet und löscht bestimmte Werte)</p>
+</dd> </div><div class=rdoc-dl-row> <dt><tt>delete_values_at(*selectors)</tt>
+<dd>
+<p>Delete multiple values from array given indexes or index range (löscht
+Elemente an bestimmten Positionen)</p>
+</dd> </div><div class=rdoc-dl-row> <dt><tt>rotate(n=1)</tt>
+<dd>
+<p>Rotates an array’s elements from back to front n times (alles rückt n
+Positionen auf)</p>
+</dd> </div><div class=rdoc-dl-row> <dt><tt>select!{ |obj| block }</tt>
+<dd>
+<p>As with <tt>select</tt> but modifies the Array in place.</p>
+</dd> </div><div class=rdoc-dl-row> <dt><tt>to_h(arrayed=nil)</tt>
+<dd>
+<p>Converts a two-element associative array into a hash.</p>
+</dd> </div></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  
+    <h2>
+      Cast
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_array_of_enumerables-instance_method" title="#to_array_of_enumerables (instance method)">- (ArrayOfEnumerables) <strong>to_array_of_enumerables</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="ArrayOfEnumerables.html" title="ArrayOfEnumerables (class)">ArrayOfEnumerables</a></span> (this is an <span class='object_link'><a href="" title="Array (class)">Array</a></span> with modul
+<span class='object_link'><a href="EnumerableEnumerables.html" title="EnumerableEnumerables (module)">EnumerableEnumerables</a></span> included).</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_array_of_numerics-instance_method" title="#to_array_of_numerics (instance method)">- (ArrayOfNumerics) <strong>to_array_of_numerics</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="ArrayOfNumerics.html" title="ArrayOfNumerics (class)">ArrayOfNumerics</a></span> (this is an <span class='object_link'><a href="" title="Array (class)">Array</a></span> with modul
+<span class='object_link'><a href="EnumerableNumerics.html" title="EnumerableNumerics (module)">EnumerableNumerics</a></span> included).</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_array_of_strings-instance_method" title="#to_array_of_strings (instance method)">- (ArrayOfStrings) <strong>to_array_of_strings</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="ArrayOfStrings.html" title="ArrayOfStrings (class)">ArrayOfStrings</a></span> (this is an <span class='object_link'><a href="" title="Array (class)">Array</a></span> with modul <span class='object_link'><a href="EnumerableStrings.html" title="EnumerableStrings (module)">EnumerableStrings</a></span>
+included).</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_dictionary-instance_method" title="#to_dictionary (instance method)">- (Dictionary) <strong>to_dictionary</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="Dictionary.html" title="Dictionary (class)">Dictionary</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_ordered_set-instance_method" title="#to_ordered_set (instance method)">- (OrderedSet) <strong>to_ordered_set</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="OrderedSet.html" title="OrderedSet (class)">OrderedSet</a></span>, tests and examples <span class='object_link'><a href="TestKyaniteSet.html#test_ordered_set-instance_method" title="TestKyaniteSet#test_ordered_set (method)">here</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_sorted_set-instance_method" title="#to_sorted_set (instance method)">- (SortedSet) <strong>to_sorted_set</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <span class='object_link'><a href="SortedSet.html" title="SortedSet (class)">SortedSet</a></span>, tests and examples <span class='object_link'><a href="TestKyaniteSet.html#test_sorted_set-instance_method" title="TestKyaniteSet#test_sorted_set (method)">here</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Upcase and Downcase with support for special letters like german umlauts
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s_utf8-instance_method" title="#to_s_utf8 (instance method)">- (String) <strong>to_s_utf8</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>reverse of <span class='object_link'><a href="String.html#to_array_of_codepoints-instance_method" title="String#to_array_of_codepoints (method)">String#to_array_of_codepoints</a></span>.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Structure Reflection
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#contentclass-instance_method" title="#contentclass (instance method)">- (Object) <strong>contentclass</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>What kind of objects contains the collection? Returns the class of content
+elements, or <tt>Object</tt> if there are several.</p>
+</div></span>
+    
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class='object_link'><a href="Enumerable.html#contentclass-instance_method" title="Enumerable#contentclass (method)">Enumerable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#distribution-instance_method" title="#distribution (instance method)">- (Array) <strong>distribution</strong>(mode = :size) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the distribution of <tt>size</tt>, <tt>class</tt> or any other
+characteristics of the enumerated elements.</p>
+</div></span>
+    
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class='object_link'><a href="Enumerable.html#distribution-instance_method" title="Enumerable#distribution (method)">Enumerable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_collection%3F-instance_method" title="#is_collection? (instance method)">- (true) <strong>is_collection?</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>-- Defined for all objects: Do I contain multiple objects? <span class='object_link'><a href="String.html" title="String (class)">String</a></span> and
+<span class='object_link'><a href="Range.html" title="Range (class)">Range</a></span> are not considered as collection.</p>
+</div></span>
+    
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class='object_link'><a href="Enumerable.html#is_collection%3F-instance_method" title="Enumerable#is_collection? (method)">Enumerable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rephrase_index-instance_method" title="#rephrase_index (instance method)">- (Integer) <strong>rephrase_index</strong>(i, style = :inv) </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rephrases the index of an Array pos / neg / inv.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shift_complement-instance_method" title="#shift_complement (instance method)">- (Object) <strong>shift_complement</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Cuts the front portion, and returns the rest.</p>
+</div></span>
+    
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transpose%21-instance_method" title="#transpose! (instance method)">- (Object) <strong>transpose!</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In-place-variant of <tt>transpose</tt>.</p>
+</div></span>
+    
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class='object_link'><a href="Enumerable.html#transpose%21-instance_method" title="Enumerable#transpose! (method)">Enumerable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="contentclass-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>contentclass</strong>(options = {}) 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class='object_link'><a href="Enumerable.html#contentclass-instance_method" title="Enumerable#contentclass (method)">Enumerable</a></span>
+    </span>
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>What kind of objects contains the collection? Returns the class of content
+elements, or <tt>Object</tt> if there are several.</p>
+
+<p>Parameters is the accuracy with which the content is checked.</p>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>:precision  =&gt; 1
+<dd>
+<p>only the first element is checked</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:precision  =&gt; 2
+<dd>
+<p>the first and the last elements are checked      (STANDARD)</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:precision  =&gt; :all
+<dd>
+<p>every element is checked</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:ignore_nil =&gt; true
+<dd>
+<p>NilClass will not be listed                      (STANDARD)</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:ignore_nil =&gt; false
+<dd>
+<p>NilClass will be listed</p>
+</dd> </div></dl>
+
+<p>Tests and examples <span class='object_link'><a href="TestKyaniteEnumerableStructure.html#test_contentclass_mono-instance_method" title="TestKyaniteEnumerableStructure#test_contentclass_mono (method)">here</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="distribution-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt>) <strong>distribution</strong>(mode = :size) 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class='object_link'><a href="Enumerable.html#distribution-instance_method" title="Enumerable#distribution (method)">Enumerable</a></span>
+    </span>
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the distribution of <tt>size</tt>, <tt>class</tt> or any other
+characteristics of the enumerated elements. See also <span class='object_link'><a href="Hash.html#distribution-instance_method" title="Hash#distribution (method)">Hash#distribution</a></span>.
+Tests and examples <span class='object_link'><a href="TestKyaniteEnumerableStructure.html#test_distribution_class-instance_method" title="TestKyaniteEnumerableStructure#test_distribution_class (method)">here</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_collection?-instance_method">
+  
+    - (<tt>true</tt>) <strong>is_collection?</strong> 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class='object_link'><a href="Enumerable.html#is_collection%3F-instance_method" title="Enumerable#is_collection? (method)">Enumerable</a></span>
+    </span>
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>-- Defined for all objects: Do I contain multiple objects? <span class='object_link'><a href="String.html" title="String (class)">String</a></span> and
+<span class='object_link'><a href="Range.html" title="Range (class)">Range</a></span> are not considered as collection.</p>
+
+<p>Tests and examples <span class='object_link'><a href="TestKyaniteEnumerableStructure.html#test_is_collection-instance_method" title="TestKyaniteEnumerableStructure#test_is_collection (method)">here</a></span>. <tt>true</tt>   -- Defined for all objects: Do I contain multiple
+objects? <span class='object_link'><a href="String.html" title="String (class)">String</a></span> and <span class='object_link'><a href="Range.html" title="Range (class)">Range</a></span> are not considered as collection.</p>
+
+<p>Tests and examples <span class='object_link'><a href="TestKyaniteEnumerableStructure.html#test_is_collection-instance_method" title="TestKyaniteEnumerableStructure#test_is_collection (method)">here</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rephrase_index-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>rephrase_index</strong>(i, style = :inv) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rephrases the index of an Array pos / neg / inv.</p>
+<dl class="rdoc-list"><div class=rdoc-dl-row> <dt>:pos
+<dd>
+<p>The index is rephrased as a positive integer</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:detect_last
+<dd>
+<p>The index is rephrased as a positive integer, but the last index is -1</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:neg
+<dd>
+<p>The index is rephrased as a negative integer</p>
+</dd> </div><div class=rdoc-dl-row> <dt>:inv
+<dd>
+<p>if it was positive, then it will get negative, and vice versa</p>
+</dd> </div></dl>
+
+<p>See tests and examples <span class='object_link'><a href="TestKyaniteArray.html#test_rephrase_index-instance_method" title="TestKyaniteArray#test_rephrase_index (method)">here</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rephrase_index'>rephrase_index</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_style'>style</span><span class='op'>=</span><span class='symbol'>:inv</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_i'>i</span>    <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;</span>  <span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_i'>i</span>    <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&lt;</span>  <span class='op'>-</span><span class='id identifier rubyid_size'>size</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_style'>style</span>
+  <span class='kw'>when</span> <span class='symbol'>:inv</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;=</span><span class='int'>0</span>    <span class='comment'># pos &gt;&gt; neg
+</span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>-</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='kw'>else</span>        <span class='comment'># neg &gt;&gt; pos
+</span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='symbol'>:pos</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;=</span> <span class='int'>0</span>   <span class='comment'># pos bleibt
+</span>          <span class='id identifier rubyid_i'>i</span>
+        <span class='kw'>else</span>        <span class='comment'># neg &gt;&gt; pos
+</span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>    
+  <span class='kw'>when</span> <span class='symbol'>:neg</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;=</span> <span class='int'>0</span>   <span class='comment'># pos &gt;&gt; neg
+</span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>-</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='kw'>else</span>        <span class='comment'># neg bleibt
+</span>          <span class='id identifier rubyid_i'>i</span>
+        <span class='kw'>end</span>   
+  <span class='kw'>when</span> <span class='symbol'>:detect_last</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>&gt;=</span> <span class='int'>0</span>   <span class='comment'># pos bleibt eigentlich
+</span>          <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>==</span> <span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+            <span class='op'>-</span><span class='int'>1</span>      <span class='comment'># nur der Letzte wird -1 genannt
+</span>          <span class='kw'>else</span>
+            <span class='id identifier rubyid_i'>i</span>
+          <span class='kw'>end</span>
+        <span class='kw'>else</span>        <span class='comment'># neg &gt;&gt; pos
+</span>          <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>              
+  <span class='kw'>end</span> <span class='comment'>#case
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shift_complement-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>shift_complement</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Cuts the front portion, and returns the rest. If the remainder is only one
+element, it' not returned as an array but as single element. Useful for
+recursions. Example:</p>
+
+<pre class="code ruby"><code class="ruby">[1,2,3].shift_complement  =&gt;  [2,3]
+[1,2,3].shift_complement.shift_complement  =&gt;  3
+[1,2,3].shift_complement.shift_complement.shift_complement  =&gt;  nil</code></pre>
+
+<p>See tests and examples <span class='object_link'><a href="TestKyaniteArray.html#test_array_shift_complement-instance_method" title="TestKyaniteArray#test_array_shift_complement (method)">here</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/array.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shift_complement'>shift_complement</span>
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>2</span>
+    <span class='kw'>self</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='kw'>self</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_array_of_enumerables-instance_method">
+  
+    - (<tt><span class='object_link'><a href="ArrayOfEnumerables.html" title="ArrayOfEnumerables (class)">ArrayOfEnumerables</a></span></tt>) <strong>to_array_of_enumerables</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <span class='object_link'><a href="ArrayOfEnumerables.html" title="ArrayOfEnumerables (class)">ArrayOfEnumerables</a></span> (this is an <span class='object_link'><a href="" title="Array (class)">Array</a></span> with modul
+<span class='object_link'><a href="EnumerableEnumerables.html" title="EnumerableEnumerables (module)">EnumerableEnumerables</a></span> included)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ArrayOfEnumerables.html" title="ArrayOfEnumerables (class)">ArrayOfEnumerables</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_enumerables.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_array_of_enumerables'>to_array_of_enumerables</span>
+  <span class='const'>ArrayOfEnumerables</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_array_of_numerics-instance_method">
+  
+    - (<tt><span class='object_link'><a href="ArrayOfNumerics.html" title="ArrayOfNumerics (class)">ArrayOfNumerics</a></span></tt>) <strong>to_array_of_numerics</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <span class='object_link'><a href="ArrayOfNumerics.html" title="ArrayOfNumerics (class)">ArrayOfNumerics</a></span> (this is an <span class='object_link'><a href="" title="Array (class)">Array</a></span> with modul
+<span class='object_link'><a href="EnumerableNumerics.html" title="EnumerableNumerics (module)">EnumerableNumerics</a></span> included)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ArrayOfNumerics.html" title="ArrayOfNumerics (class)">ArrayOfNumerics</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_numerics.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_array_of_numerics'>to_array_of_numerics</span>
+  <span class='const'>ArrayOfNumerics</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_array_of_strings-instance_method">
+  
+    - (<tt><span class='object_link'><a href="ArrayOfStrings.html" title="ArrayOfStrings (class)">ArrayOfStrings</a></span></tt>) <strong>to_array_of_strings</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <span class='object_link'><a href="ArrayOfStrings.html" title="ArrayOfStrings (class)">ArrayOfStrings</a></span> (this is an <span class='object_link'><a href="" title="Array (class)">Array</a></span> with modul <span class='object_link'><a href="EnumerableStrings.html" title="EnumerableStrings (module)">EnumerableStrings</a></span>
+included)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ArrayOfStrings.html" title="ArrayOfStrings (class)">ArrayOfStrings</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/enumerable/enumerable_strings.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_array_of_strings'>to_array_of_strings</span>
+  <span class='const'>ArrayOfStrings</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_dictionary-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Dictionary.html" title="Dictionary (class)">Dictionary</a></span></tt>) <strong>to_dictionary</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <span class='object_link'><a href="Dictionary.html" title="Dictionary (class)">Dictionary</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Dictionary.html" title="Dictionary (class)">Dictionary</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/dictionary.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_dictionary'>to_dictionary</span>
+  <span class='comment'># TODO: effizienter
+</span>  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Dictionary</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_zeile'>zeile</span> <span class='op'>|</span>
+      <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_zeile'>zeile</span>
+    <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_ordered_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="OrderedSet.html" title="OrderedSet (class)">OrderedSet</a></span></tt>) <strong>to_ordered_set</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <span class='object_link'><a href="OrderedSet.html" title="OrderedSet (class)">OrderedSet</a></span>, tests and examples <span class='object_link'><a href="TestKyaniteSet.html#test_ordered_set-instance_method" title="TestKyaniteSet#test_ordered_set (method)">here</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="OrderedSet.html" title="OrderedSet (class)">OrderedSet</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/set.rb', line 184</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_ordered_set'>to_ordered_set</span>
+  <span class='const'>OrderedSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s_utf8-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s_utf8</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>reverse of <span class='object_link'><a href="String.html#to_array_of_codepoints-instance_method" title="String#to_array_of_codepoints (method)">String#to_array_of_codepoints</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+267
+268
+269</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/string/chars.rb', line 267</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s_utf8'>to_s_utf8</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>U*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_sorted_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="SortedSet.html" title="SortedSet (class)">SortedSet</a></span></tt>) <strong>to_sorted_set</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <span class='object_link'><a href="SortedSet.html" title="SortedSet (class)">SortedSet</a></span>, tests and examples <span class='object_link'><a href="TestKyaniteSet.html#test_sorted_set-instance_method" title="TestKyaniteSet#test_sorted_set (method)">here</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="SortedSet.html" title="SortedSet (class)">SortedSet</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+191
+192
+193</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kyanite/set.rb', line 191</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_sorted_set'>to_sorted_set</span>
+  <span class='const'>SortedSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transpose!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>transpose!</strong> 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class='object_link'><a href="Enumerable.html#transpose%21-instance_method" title="Enumerable#transpose! (method)">Enumerable</a></span>
+    </span>
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>In-place-variant of <tt>transpose</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+    </div>   
+
+    <div id="footer">      
+      <div id="project-footer">
+</div>      
+      Generated on Mon Mar 25 12:20:25 2013 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.5.2
+with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
+        title="Klippstein Template for Ruby YARD" 
+        target="_parent">
+        yard_klippstein_template
+        </a>  
+
+
+
+    </div>     
+    
+  </body>
+</html>
